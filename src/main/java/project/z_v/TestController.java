@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class TestController {
 
+
+
     @GetMapping("/index")
     public String index() {
         return "asd";
@@ -14,5 +16,10 @@ public class TestController {
     @GetMapping("test")
     public String test() {
         return "test";
+    }
+
+    @GetMapping("subintest")
+    public String subintet() {
+        return "testes";
     }
 }
