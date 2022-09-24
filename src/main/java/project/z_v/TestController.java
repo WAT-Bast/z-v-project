@@ -22,4 +22,9 @@ public class TestController {
     public String subintet() {
         return "testes";
     }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
 }
