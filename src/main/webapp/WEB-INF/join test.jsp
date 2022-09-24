@@ -16,7 +16,7 @@
     <div>
         <i class="fa-solid fa-chevron-left"></i>
         <nav class="navbar">
-            <div>Z&V</div>
+            <div>Z&V 아주 떨리는구만</div>
         </nav>
         <div class="mainBox">
             <form method="post" class="formStyle">
