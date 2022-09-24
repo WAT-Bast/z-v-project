@@ -22,6 +22,7 @@ public class TestController {
     public String subintet() {
         return "testes";
     }
+<<<<<<< HEAD
     @GetMapping("/test1")
     public String test1() {
         return "join";
@@ -32,4 +33,11 @@ public class TestController {
         return "join test";
     }
 
+=======
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+>>>>>>> 8273ae5a3dc64d8baea4363f5b9a42a68f88360c
 }
