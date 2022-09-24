@@ -22,4 +22,14 @@ public class TestController {
     public String subintet() {
         return "testes";
     }
+    @GetMapping("/test1")
+    public String test1() {
+        return "join";
+    }
+
+    @GetMapping("/join")
+    public String join() {
+        return "join test";
+    }
+
 }
