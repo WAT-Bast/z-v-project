@@ -30,7 +30,9 @@
         <div class="Search_text">
             <form action="" method="post">
                 <input type="text" name="search" value="" type="submit">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <button type="button" class="search_Btn" onClick="location.href=''">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
             </form>
         </div>
         <div class="filter">
