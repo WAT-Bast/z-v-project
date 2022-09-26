@@ -19,9 +19,9 @@ public class TestController {
         return "test";
     }
 
-    @GetMapping("subintest")
-    public String subintet() {
-        return "testes";
+    @GetMapping("/join")
+    public String join() {
+        return "join test";
     }
 
     @GetMapping ("/login")
