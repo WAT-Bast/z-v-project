@@ -108,7 +108,6 @@
             <a href="">개인정보공시</a>
         </div>
     </div>
-    <div>
         <div class="importance">페이지 제작 : 누구보다 빛나조</div>
 </footer>
 </body>
