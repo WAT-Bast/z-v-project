@@ -8,16 +8,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <script src="https://kit.fontawesome.com/16dd1d1568.js" crossorigin="anonymous"></script>
     <link href="resources/css/join.css" rel="stylesheet" type="text/css">
-    <script src="https://kit.fontawesome.com/37439a23d9.js" crossorigin="anonymous"></script>
     <title>회원가입</title>
 </head>
 <body>
     <div>
-        <i class="fa-solid fa-chevron-left"></i>
-        <nav class="navbar">
-            <div>Z&V 아주 떨리는구만!</div>
-        </nav>
+        <div class="join_navbar">
+            <div class="join_navbar_container">
+                <div class="join_navbar_icon"><i class="fa-solid fa-chevron-left"></i></div>
+                <a class="join_navbar_title">Z&V</a>
+            </div>
+        </div>
         <div class="mainBox">
             <form method="post" class="formStyle">
                 <h3>회원가입</h3>
