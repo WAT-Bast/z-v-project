@@ -1,0 +1,222 @@
+body{
+    margin: 0px;
+}
+
+/* navbar */
+.main_bar {
+    background-color: rgb(217,231,251);
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+.home {
+    margin-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    text-decoration-line: none;
+    text-decoration-color: black;
+    text-decoration: none dotted 5px;
+}
+.main_bar img{
+    margin-right: 5px;
+    width: 45px;
+    height: 40px;
+}
+.home_str{
+    margin-top: 7px;
+    color: black;
+    font-weight: bolder;
+    font-size: large;
+}
+
+/* main */
+.main_bar button {
+    margin-top: 15px;
+    margin-right: 10px;
+    height: 30px;
+    width: 100px;
+    border-radius: 40px;
+    background-color: white;
+    font-weight: bold;
+}
+.Search{
+    display: flex;
+    margin: 20px 0px 30px 0px;
+    justify-content: center;
+
+}
+.Search_text{
+    width: 500px;
+    height: 35px;
+    border: 3px solid #183052;
+    border-radius: 40px;
+    color: #183052;
+}
+.Search_text input{
+    width: 430px;
+    height: 20px;
+    border: none;
+    margin-top: 6px;
+    margin-left: 30px;
+}
+.Search_text input:focus{
+    outline:none;
+}
+.filter i{
+    font-size: 35px;
+    margin-left: 10px;
+    color: #f2f2f2;
+}
+.filter i:hover{
+    color: #183052;
+}
+
+/* poster */
+.poster img{
+    margin-bottom: 5%;
+    width: 100%;
+    height: 400px;
+}
+
+/* Advantages */
+.Advantages{
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 570px;
+}
+.Advantages_str{
+    padding-top: 30px;
+    font-size: 25px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+}
+.Advantages_bar{
+    margin: 15px 0px;
+    display: flex;
+    justify-content: center;
+}
+.Advantages_bar_child{
+    width: 50px;
+    height: 5px;
+    background-color: #183052;
+}
+.Advantages_th{
+    display: flex;
+    justify-content: center;
+}
+.Hospitals{
+    width: 300px;
+    background-color: white;
+    height: 450px;
+    /*margin-right: 60px;*/
+    /*margin-right: 50px;*/
+}
+.Advantage_img{
+    margin: 25px 0px 5px 0px;
+    display: flex;
+    justify-content: center;
+}
+.Advantages_th img{
+    width: 250px;
+    height: 250px;
+}
+.big_str{
+    font-size:large;
+    font-weight: bolder;
+    text-align: center;
+}
+.Advantages_th hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 230px;
+}
+.small_str{
+    font-size: small;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.last_str{
+    padding: 10px;
+    font-size:large;
+    font-weight: bolder;
+    text-align: center;
+}
+.Reviews{
+    width: 300px;
+    background-color: white;
+    height: 450px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
+.like_List{
+    width: 300px;
+    background-color: white;
+    height: 450px;
+
+}
+.go_button{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.go_button button{
+    font-size:large;
+    font-weight: bolder;
+    color: black;
+    background-color: white;
+    border: none;
+}
+
+/* Best_List_bar */
+.Best_List_bar{
+    margin-top: 70px;
+    background-color: rgb(217,231,251);
+    display: flex;
+    height: 50px;
+    justify-content: space-around;
+    padding-left: 150px;
+}
+.name{
+    display: flex;
+    margin-top: 5px;
+}
+.name_icon{
+    margin-top: 5px;
+    font-size: 30px;
+    margin-right: 10px;
+}
+.name_str{
+    font-size: 25px;
+    font-weight: bolder;
+}
+.a{
+    width: 300px;
+}
+.Best_List{
+    height: 500px;
+}
+
+/* footer */
+footer {
+    background-color: #f3f3f3;
+    padding: 70px 0px 100px 0px;
+    color: #c1c1c1;
+}
+.information{
+    display: flex;
+    margin-bottom: 10px;
+    font-size: larger;
+}
+.information a{
+    text-decoration-line: none;
+    text-decoration-color: black;
+    text-decoration: none dotted 5px;
+    color: #c1c1c1;
+}
+.importance{
+    justify-content: center;
+    display: flex;
+
+}
