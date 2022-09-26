@@ -10,7 +10,7 @@
 <head>
     <script src="https://kit.fontawesome.com/16dd1d1568.js" crossorigin="anonymous"></script>
     <link href="resources/css/join.css" rel="stylesheet" type="text/css">
-    <title>회원가입</title>
+    <title>sign up</title>
 </head>
 <body>
     <div>
