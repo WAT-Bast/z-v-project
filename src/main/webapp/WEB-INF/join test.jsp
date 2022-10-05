@@ -9,7 +9,7 @@
 <html>
 <head>
     <script src="https://kit.fontawesome.com/16dd1d1568.js" crossorigin="anonymous"></script>
-    <link href="resources/css/join.css" rel="stylesheet" type="text/css">
+    <link href="resources/CSS/join.css" rel="stylesheet" type="text/css">
     <title></title>
 </head>
 <body>

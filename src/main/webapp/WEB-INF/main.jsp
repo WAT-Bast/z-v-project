@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link href="resources/css/main.css" rel="stylesheet" type="text/css">
+    <link href="resources/CSS/main.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/40a67f0cba.js" crossorigin="anonymous"></script>
     <title>Z&V 홈페이지</title>
 </head>
@@ -30,7 +30,9 @@
         <div class="Search_text">
             <form action="" method="post">
                 <input type="text" name="search" value="" type="submit">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <button type="button" class="search_Btn" onClick="location.href=''">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
             </form>
         </div>
         <div class="filter">
