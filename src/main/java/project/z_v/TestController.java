@@ -6,10 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class TestController {
 
-    @GetMapping("/main")
-    public String main() {
-        return "main";
-    }
+
 
     @GetMapping("/index")
     public String index() {
@@ -30,4 +27,10 @@ public class TestController {
     public String login() {
         return "login";
     }
+
+    @GetMapping("/main")
+    public String main() {
+        return "main";
+    }
+
 }

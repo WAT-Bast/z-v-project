@@ -35,6 +35,14 @@
             <div>
                 <input class="inputSize" type="email" name="userEmail" placeholder="이메일" maxlength="20">
             </div>
+            <div>
+                <input class="inputSize" type="checkbox" name="animal" placeholder="키우는 동물" maxlength="20">
+            </div>
+            <div>
+                <select class="inputSize" name="area">
+                    <option></option>
+                </select>
+            </div>
             <input class="finishBtn" type="submit" value="가입하기">
         </form>
     </div>
