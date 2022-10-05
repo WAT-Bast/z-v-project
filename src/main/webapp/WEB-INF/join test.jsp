@@ -23,7 +23,7 @@
     <div class="mainBox">
         <form method="post" class="formStyle">
             <h3>회원가입</h3>
-            <div>
+            <div class="test">
                 <input class="inputSize" type="text" name="userID" placeholder="아이디" maxlength="20" >
             </div>
             <div>
@@ -35,14 +35,26 @@
             <div>
                 <input class="inputSize" type="email" name="userEmail" placeholder="이메일" maxlength="20">
             </div>
-            <div>
-                <input class="inputSize" type="checkbox" name="animal" placeholder="키우는 동물" maxlength="20">
+            <div class="animal_check">
+                <label class="labelText">키우는 동물 : </label>
+                <div class="animal_box">
+                    <input type="checkbox" name="animal">강아지
+                    <input type="checkbox" name="animal">고양이
+                    <input type="checkbox" name="animal">햄스터
+                    <input type="checkbox" name="animal">기타
+                </div>
             </div>
-            <div>
-                <select class="inputSize" name="area">
-                    <option></option>
+            <hr>
+            <div class="listBox_All">
+                <label class="labelText">거주 지역</label>
+                <select class="list_box" name="area" >
+                    <option value="">서울</option>
+                    <option value="">인천</option>
+                    <option value="">대전</option>
+                    <option value="">부산</option>
                 </select>
             </div>
+            <hr>
             <input class="finishBtn" type="submit" value="가입하기">
         </form>
     </div>
