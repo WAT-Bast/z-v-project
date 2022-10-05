@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <title>login</title>
     <script src="https://kit.fontawesome.com/5ef77fbbed.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/resources/css/login_css.css">
+    <link rel="stylesheet" href="/resources/CSS/login_css.css">
 </head>
 <body>
 
