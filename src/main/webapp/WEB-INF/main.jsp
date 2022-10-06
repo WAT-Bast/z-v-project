@@ -35,11 +35,38 @@
                 </button>
             </form>
         </div>
-        <div class="filter">
-            <i class="fa-regular fa-rectangle-list"></i>
-        </div>
     </div>
-
+    <div class="filter">
+        <form method="post" class="filter_list">
+            <div class="filter_box">
+                <div>지역</div>
+                <select class="Area_list" name="area">
+                    <option value="">서울</option>
+                    <option value="">인천</option>
+                    <option value="">대전</option>
+                    <option value="">부산</option>
+                </select>
+            </div>
+            <div class="filter_box">
+                <div>구</div>
+                <select class="District_list" name="area">
+                    <option value="">강남구</option>
+                    <option value="">구</option>
+                    <option value="">구</option>
+                    <option value="">구</option>
+                </select>
+            </div>
+            <div class="filter_box">
+                <div>옵션</div>
+                <select class="Options_list" name="area">
+                    <option value="">샵</option>
+                    <option value="">24시</option>
+                    <option value="">대전</option>
+                    <option value="">부산</option>
+                </select>
+            </div>
+        </form>
+    </div>
     <!--poster-->
     <div class="poster">
         <img src="resources/img/포스터.png" alt="">
@@ -98,7 +125,9 @@
         <div class="a"></div>
     </div>
     <div class="Best_List">
-        <div></div>
+        <div>
+
+        </div>
     </div>
 </div>
 <!--footer-->
@@ -110,7 +139,7 @@
             <a href="">개인정보공시</a>
         </div>
     </div>
-        <div class="importance">페이지 제작 : 누구보다 빛나조</div>
+    <div class="importance">페이지 제작 : 누구보다 빛나조</div>
 </footer>
 </body>
 </html>
