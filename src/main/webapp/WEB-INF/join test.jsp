@@ -23,17 +23,20 @@
     <div class="mainBox">
         <form method="post" class="formStyle">
             <h3>회원가입</h3>
-            <div class="test">
+            <div class="idBox">
                 <input class="inputSize" type="text" name="userID" placeholder="아이디" maxlength="20" >
+                <div>
+                <input class="idCheckBtn" type="submit" value="중복확인">
+                </div>
             </div>
             <div>
-                <input class="inputSize" type="password" name="userPW" placeholder="비밀번호" maxlength="20">
+                <input class="inputSize_1" type="password" name="userPW" placeholder="비밀번호" maxlength="20">
             </div>
             <div>
-                <input class="inputSize" type="text" name="userName" placeholder="이름" maxlength="20">
+                <input class="inputSize_1" type="text" name="userName" placeholder="이름" maxlength="20">
             </div>
             <div>
-                <input class="inputSize" type="email" name="userEmail" placeholder="이메일" maxlength="20">
+                <input class="inputSize_1" type="email" name="userEmail" placeholder="이메일" maxlength="20">
             </div>
             <div class="animal_check">
                 <label class="labelText">키우는 동물 : </label>
@@ -48,14 +51,22 @@
             <div class="listBox_All">
                 <label class="labelText">거주 지역</label>
                 <select class="list_box" name="area" >
-                    <option value="">서울</option>
                     <option value="">인천</option>
+                    <option value="">서울</option>
                     <option value="">대전</option>
                     <option value="">부산</option>
                 </select>
+                <select class="list_box" name="area" >
+                    <option value="">남동구</option>
+                    <option value="">서구</option>
+                    <option value="">연수구</option>
+                    <option value="">구?</option>
+                </select>
             </div>
             <hr>
-            <input class="finishBtn" type="submit" value="가입하기">
+            <div class="finishBtn_Box">
+                <input class="finishBtn" type="submit" value="가입하기">
+            </div>
         </form>
     </div>
 </div>
