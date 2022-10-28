@@ -33,4 +33,9 @@ public class TestController {
         return "main";
     }
 
+    @GetMapping("/allPage")
+    public String allPage() {
+        return "allPage";
+    }
+
 }
