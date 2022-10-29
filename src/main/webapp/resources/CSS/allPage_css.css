@@ -149,11 +149,17 @@ body{
 
 .list_img {
     display: flex;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: 20%;
 }
 
-.list_img_1 {
+.list_img_2, .list_img_4, .list_img_6, .list_img_8, .list_img_10 {
+    display: flex;
+    margin-top: 90px;
+    margin-left: 20%;
+}
+
+.list_img_1, .list_img_3, .list_img_5, .list_img_7, .list_img_9, .list_img_11 {
     display: flex;
     margin-top: -100px;
     margin-left: 55%;
@@ -193,6 +199,7 @@ body{
     font-weight: 600;
     margin-top: -3px;
 }
+
 
 
 
