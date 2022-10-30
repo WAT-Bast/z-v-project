@@ -12,6 +12,7 @@
     <script src="https://kit.fontawesome.com/40a67f0cba.js" crossorigin="anonymous"></script>
     <title>Z&V 홈페이지</title>
 </head>
+
 <body>
 <!-- navbar -->
 <div class="main_bar">
