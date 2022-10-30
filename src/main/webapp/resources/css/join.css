@@ -34,13 +34,13 @@ body {
 
 h3 {
     padding-bottom: 30px;
+    text-align: center;
 }
 
 .mainBox {
     margin: auto;
     width: 500px;
     height: 600px;
-    text-align: center;
     padding-top: 20px;
     border-radius: 100px;
     border: 5px solid #c8e5ff;
@@ -48,6 +48,19 @@ h3 {
 }
 
 .inputSize {
+    width: 330px;
+    height: 35px;
+    font-size: 15px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid #2e88ff;
+    padding: 20px;
+    margin-bottom: 33px;
+    margin-left: 50px;
+}
+
+.inputSize_1 {
     width: 400px;
     height: 35px;
     font-size: 15px;
@@ -56,8 +69,8 @@ h3 {
     border-right: none;
     border-bottom: 3px solid #2e88ff;
     padding: 20px;
-    margin-bottom: 35px;
-    text-align: start;
+    margin-bottom: 33px;
+    margin-left: 50px;
 }
 
 .animal_check {
@@ -68,7 +81,7 @@ h3 {
 
 .list_box {
     text-align: center;
-    width: 250px;
+    width: 100px;
     height: 35px;
     border: none;
     border-radius: 10px;
@@ -99,4 +112,28 @@ hr {
     border: 3px solid #c8e5ff;
     border-radius: 10px;
     background-color: white;
+}
+
+.listBox_All {
+    text-align: center;
+}
+
+.finishBtn_Box {
+    text-align: center;
+}
+
+.idCheckBtn {
+    /*border: none;*/
+    border: 2px solid #77adff;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+    padding: 7px;
+    margin-left: 15px;
+    font-weight: 700;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.idBox {
+    display: flex;
 }

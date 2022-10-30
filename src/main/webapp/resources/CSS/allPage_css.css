@@ -1,0 +1,205 @@
+body{
+    margin: 0px;
+}
+
+.allPage_bar {
+    background-color: rgb(217,231,251);
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.home {
+    margin-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    text-decoration-line: none;
+    text-decoration-color: black;
+    text-decoration: none dotted 5px;
+}
+
+.allPage_bar img{
+    margin-right: 5px;
+    width: 45px;
+    height: 40px;
+}
+
+.home_str{
+    margin-top: 7px;
+    color: black;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.allPage_bar button {
+    margin-top: 15px;
+    margin-right: 10px;
+    height: 30px;
+    width: 100px;
+    border-radius: 40px;
+    background-color: white;
+    font-weight: bold;
+}
+
+.Search{
+    display: flex;
+    margin: 20px 0px 30px 0px;
+    justify-content: center;
+}
+
+.Search_text{
+    width: 500px;
+    height: 35px;
+    border: 3.5px solid #d9d9d9;
+    border-radius: 40px;
+    color: #183052;
+}
+
+.Search_text form{
+    display: flex;
+}
+
+.Search_text input{
+    width: 430px;
+    height: 20px;
+    border: none;
+    margin-top: 6px;
+    margin-left: 30px;
+}
+
+.search_Btn{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border: none;
+    background-color: white;
+}
+
+.Search_text i{
+    font-size: 20px;
+}
+
+.Search_text input:focus{
+    outline:none;
+}
+
+.filter{
+    background-color: rgb(217,231,251);
+    height: 60px;
+    margin-bottom: 30px;
+}
+
+.filter_list{
+    display: flex;
+    justify-content: center;
+}
+
+.filter_box{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
+}
+
+.filter_box div{
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.filter_box select {
+    margin-left: 10px;
+    width: 130px;
+    height: 30px;
+    border-radius: 10px;
+    border-color: black;
+    border-width: 2px;
+}
+
+.Area_list {
+    margin-right: 50px;
+    text-align: center;
+}
+
+.District_list {
+    margin-right: 40px;
+    text-align: center;
+}
+
+.Options_list {
+    text-align: center;
+}
+
+.allList {
+    border-top: 5px solid #d9e7fb;
+    border-bottom: 5px solid #d9e7fb;
+    padding-left: 300px;
+    padding-bottom: 13px;
+    padding-top: 13px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #313131;
+}
+
+.listBox_img {
+    position: relative;
+}
+
+.list_img {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 20%;
+}
+
+.list_img_2, .list_img_4, .list_img_6, .list_img_8, .list_img_10 {
+    display: flex;
+    margin-top: 90px;
+    margin-left: 20%;
+}
+
+.list_img_1, .list_img_3, .list_img_5, .list_img_7, .list_img_9, .list_img_11 {
+    display: flex;
+    margin-top: -100px;
+    margin-left: 55%;
+}
+
+/*이미지 조절*/
+.imgSize {
+    width: 200px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+/*찜 하트 아이콘 조절*/
+.iconSize {
+    position: absolute;
+    color: #777777;
+    font-size: 25px;
+    margin-left: 165px;
+    margin-top: 15px;
+}
+
+.iconSize:hover {
+    color: red;
+}
+
+.hospitalName {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 1px;
+}
+
+.star {
+    color: #183052;
+}
+
+.starText {
+    font-weight: 600;
+    margin-top: -3px;
+}
+
+
+
+
