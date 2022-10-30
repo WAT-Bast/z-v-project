@@ -34,4 +34,9 @@ public class TestController {
         return "main";
     }
 
+    @GetMapping("/manager")
+    public String manager(){
+        return "Manager";
+    }
+
 }
