@@ -42,6 +42,4 @@ public class TestController {
     public String allPage() {
         return "allPage";
     }
-
-
 }
