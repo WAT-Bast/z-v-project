@@ -19,7 +19,7 @@
         <div class="home_str">Z&V</div>
     </a>
     <form action="" method="post">
-        <button type="button" class="navyBtn" onClick="location.href=''" type="submit">로그아웃</button>
+        <button class="navyBtn" onClick="location.href=''" type="submit">로그아웃</button>
     </form>
 </div>
 <div class="allPage_contents">
@@ -240,44 +240,6 @@
     </div>
 </div>
 <div class="list_img_9">
-    <div class="listBox_img">
-        <div  class="imgSize">
-            <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
-        </div>
-        <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
-    </div>
-    <div class="name_box">
-        <p class="hospitalName">24시 유앤미 동물병원</p>
-        <span class="star">
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-    </span>
-        <p class="starText">(4.5)</p>
-    </div>
-</div>
-<div class="list_img_10">
-    <div class="listBox_img">
-        <div  class="imgSize">
-            <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
-        </div>
-        <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
-    </div>
-    <div class="name_box">
-        <p class="hospitalName">24시 유앤미 동물병원</p>
-        <span class="star">
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-    </span>
-        <p class="starText">(4.5)</p>
-    </div>
-</div>
-<div class="list_img_11">
     <div class="listBox_img">
         <div  class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
