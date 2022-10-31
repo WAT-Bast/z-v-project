@@ -1,5 +1,6 @@
 body{
     margin: 0px;
+    height: 250vh;
 }
 
 /* navbar */
@@ -93,16 +94,10 @@ body{
     border-color: rgb(217, 231, 251);
     background-color: white;
     margin-top: 30px;
-    width: 955px;
-    display: flex;
-    justify-content: center;
+    width: 100%;
 }
 
-.all {
-    /*background-color: yellow;*/
-    display: flex;
-    justify-content: center;
-}
+
 
 .hospital_img_box {
     /*background-color: pink;*/
@@ -119,10 +114,10 @@ body{
 }
 
 .hospital_img_container i {
-    font-size: xxx-large;
+    font-size: xx-large;
     position: relative;
-    left: 700px;
-    top: 155px;
+    left: 730px;
+    top: 170px;
 }
 
 .hospital_address {
@@ -138,6 +133,17 @@ body{
     /*background-color: blueviolet;*/
     position: relative;
     margin-left: 30px;
+    outline: none;
+    font-size: medium;
+}
+
+.Address_Box:after {
+    content: "";
+    display: block;
+    width: 900px;
+    border-bottom: 2px solid rgb(230,230,230);
+    margin-left: 320px;
+    margin-top: 10px;
 }
 
 .address_icon {
@@ -145,24 +151,44 @@ body{
     right: 35px;
 }
 
+.address_icon i {
+    color: rgb(200,200,200);
+}
+
 .Address_Box {
     /*background-color: bisque;*/
+    margin-bottom: 10px;
 }
 
 
 .hospital_phoneNumber {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
 
 .hospital_link {
     display: flex;
     justify-content: center;
+    /*background-color: blue;*/
+    margin-top: 15px;
+    margin-bottom: 30px;
 }
+
+.phoneNumber_container:after {
+    content: "";
+    display: block;
+    width: 900px;
+    border-bottom: 2px solid rgb(230,230,230);
+    margin-left: 320px;
+    margin-top: 10px;
+}
+
 
 .phoneNumberBox {
     width: 50%;
     position: relative;
+    font-size: medium;
 }
 
 .link_urlBox {
@@ -175,13 +201,16 @@ body{
     right: 55px;
 }
 
+.phoneNumber_icon i {
+    color: rgb(200,200,200);
+}
+
 .phoneNumberBox {
     /*background-color: #c8e5ff;*/
     display: flex;
-}
-
-.link_Box {
-    /*background-color: coral;*/
+    border: none;
+    outline: none;
+    margin-left: 1px;
 }
 
 
@@ -196,11 +225,24 @@ body{
     display: flex;
 }
 
+.time_container:after {
+    content: "";
+    display: block;
+    width: 900px;
+    border-bottom: 2px solid rgb(230,230,230);
+    margin-left: 320px;
+    margin-bottom: 15px;
+}
+
 .time_icon {
     /*margin-right: 700px;*/
     /*background-color: yellow;*/
     padding-right: 25px;
     margin-top: 3px;
+}
+
+.time_icon i {
+    color: rgb(200,200,200);
 }
 
 .monday_box {
@@ -213,6 +255,9 @@ body{
     width: 750px;
     margin-left: 20px;
     margin-bottom: 10px;
+    border: none;
+    outline: none;
+    font-size: medium;
 }
 
 .week_box {
@@ -231,4 +276,231 @@ body{
 .week_title {
     width: 90%;
     margin-left: 20px;
+    border: none;
+    outline: none;
+    font-size: medium;
+}
+
+.link_Box {
+    /*background-color: yellow;*/
+    width: 50%;
+    display: flex;
+}
+
+.link_icon {
+    position: relative;
+    right: 55px;
+}
+
+.link_icon i {
+    color: rgb(200,200,200);
+}
+
+.link_urlBox {
+    width: 50%;
+    position: relative;
+    /*background-color: purple;*/
+    border: none;
+    outline: none;
+    font-size: medium;
+}
+
+.review_container {
+    /*background-color: red;*/
+    border-top: 30px solid rgb(230,230,230);
+}
+
+.visitor_review {
+    /*background-color: pink;*/
+    position: relative;
+    left: 320px;
+    height: 30px;
+    width: 500px;
+}
+
+.visitor_review:after {
+    content: "";
+    display: block;
+    width: 900px;
+    border-bottom: 2px solid rgb(230,230,230);
+
+}
+
+
+.hospital_form_container input[type=radio] {
+    display: none;
+}
+
+.hospital_form_container label {
+    font-size: 2em;
+    color: transparent;
+    text-shadow: 0 0 0 #f0f0f0;
+}
+
+.hospital_form_container label:hover {
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+
+.hospital_form_container label:hover ~ label {
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+
+.hospital_form_container input[type=radio]:checked ~ label {
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+
+.review {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.review_score_container {
+    margin-top: 100px;
+    display: flex;
+    /*justify-content: center;*/
+    /*background-color: #2e88ff;*/
+    margin-right: 8%;
+    /*width: 400px;*/
+}
+
+.score {
+    /*background-color: pink;*/
+    display: flex;
+    justify-content: center;
+    font-size: xxx-large;
+    font-weight: bolder;
+    color: gray;
+}
+
+.review_score {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    color: rgb(190,190,190);
+}
+
+#canvas {
+    /*background-color: pink;*/
+    margin-top: 50px;
+    margin-left: 20%;
+}
+
+
+
+
+.hospital_form_container input[type=radio] {
+    display: none;
+}
+
+.hospital_form_container label {
+    font-size: 2em;
+    color: transparent;
+    text-shadow: 0 0 0 #f0f0f0;
+}
+
+.hospital_form_container label:hover {
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+
+.hospital_form_container label:hover ~ label {
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+
+.hospital_form_container input[type=radio]:checked ~ label {
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+
+.review_comment {
+    display: flex;
+    /*background-color: yellowgreen;*/
+    margin-top: 60px;
+}
+
+.review_comment_Box {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 120px;
+    /*background-color: bisque;*/
+    margin-left: 25%;
+}
+
+.review_name {
+    /*background-color: coral;*/
+    display: flex;
+    align-items: flex-start;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    width: 7%;
+}
+
+.review_score_container {
+    /*background-color: pink;*/
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.comment {
+    width: 700px;
+    background-color: rgb(230,230,230);
+    border: none;
+    outline: none;
+    margin-right: 0;
+}
+
+.comment input::placeholder {
+    color: white;
+}
+
+
+
+.review_comment_btn {
+    background-color: rgb(230,230,230);
+    width: 100px;
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.review_score_container2 input[type=radio] {
+    display: none;
+}
+
+.review_score_container2 label {
+    font-size: 1.5em;
+    color: transparent;
+    text-shadow: 0 0 0 #f0f0f0;
+}
+
+.review_score_container2 label:hover {
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+
+.review_score_container2 label:hover ~ label {
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+
+.review_score_container2 input[type=radio]:checked ~ label {
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+
+.ScoreBox2 {
+    /*background-color: bisque;*/
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 5px;
+}
+
+.user_review_Box {
+    /*background-color: darksalmon;*/
+}
+
+.review_comment_container {
+    display: flex;
+    justify-content: center;
+    /*background-color: #2e88ff;*/
 }
