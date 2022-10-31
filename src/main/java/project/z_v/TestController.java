@@ -2,6 +2,7 @@ package project.z_v;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class TestController {
@@ -23,7 +24,7 @@ public class TestController {
         return "join test";
     }
 
-    @GetMapping("/login")
+    @GetMapping ("/login")
     public String login() {
         return "login";
     }
@@ -33,9 +34,8 @@ public class TestController {
         return "main";
     }
 
-    @GetMapping("/allPage")
-    public String allPage() {
-        return "allPage";
-    }
+    @GetMapping("/manager")
+    public String manager(){
+        return "Manager";
 
 }
