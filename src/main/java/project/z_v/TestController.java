@@ -38,4 +38,8 @@ public class TestController {
         return "allPage";
     }
 
+    @GetMapping("/manager")
+    public String manager() {
+        return "Manager";
+    }
 }
