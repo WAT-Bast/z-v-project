@@ -2,10 +2,10 @@ package project.z_v;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class TestController {
-
 
 
     @GetMapping("/index")
@@ -33,13 +33,13 @@ public class TestController {
         return "main";
     }
 
+    @GetMapping("/manager")
+    public String manager() {
+        return "Manager";
+    }
+
     @GetMapping("/allPage")
     public String allPage() {
         return "allPage";
-    }
-
-    @GetMapping("/interest")
-    public String interest() {
-        return "interest";
     }
 }
