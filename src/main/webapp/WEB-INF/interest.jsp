@@ -25,7 +25,7 @@
             <div class="big_subject">
                 <div class="middle_subject">
                     <div class="small_subject">
-                        <img src="img/hospital.jpg" alt="hospital" class="hospital_img">
+                        <img src="resources/img/hospital.jpg" alt="hospital" class="hospital_img">
                         <form action="">
                             <button type="button" class="interest_Btn" onClick="location.href=''">
                                 <i class="fa-solid fa-heart"></i>
@@ -35,7 +35,7 @@
                         <div class="address">인천 연수구 동춘동</div>
                     </div>
                     <div class="small_second_subject">
-                        <img src="img/hospital.jpg" alt="hospital" class="hospital_img">
+                        <img src="resources/img/hospital.jpg" alt="hospital" class="hospital_img">
                         <form action="">
                             <button type="button" class="interest_Btn" onClick="location.href=''">
                                 <i class="fa-solid fa-heart"></i>
@@ -45,7 +45,7 @@
                         <div class="address">인천 연수구 동춘동</div>
                     </div>
                     <div class="small_subject">
-                        <img src="img/hospital.jpg" alt="hospital" class="hospital_img">
+                        <img src="resources/img/hospital.jpg" alt="hospital" class="hospital_img">
                         <form action="">
                             <button type="button" class="interest_Btn" onClick="location.href=''">
                                 <i class="fa-solid fa-heart"></i>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="middle_subject">
                     <div class="small_subject">
-                        <img src="img/hospital.jpg" alt="hospital" class="hospital_img">
+                        <img src="resources/img/hospital.jpg" alt="hospital" class="hospital_img">
                         <form action="">
                             <button type="button" class="interest_Btn" onClick="location.href=''">
                                 <i class="fa-solid fa-heart"></i>
@@ -67,7 +67,7 @@
                         <div class="address">인천 연수구 동춘동</div>
                     </div>
                     <div class="small_second_subject">
-                        <img src="img/hospital.jpg" alt="hospital" class="hospital_img">
+                        <img src="resources/img/hospital.jpg" alt="hospital" class="hospital_img">
                         <form action="">
                             <button type="button" class="interest_Btn" onClick="location.href=''">
                                 <i class="fa-solid fa-heart"></i>
@@ -77,7 +77,7 @@
                         <div class="address">인천 연수구 동춘동</div>
                     </div>
                     <div class="small_subject">
-                        <img src="img/hospital.jpg" alt="hospital" class="hospital_img">
+                        <img src="resources/img/hospital.jpg" alt="hospital" class="hospital_img">
                         <form action="">
                             <button type="button" class="interest_Btn" onClick="location.href=''">
                                 <i class="fa-solid fa-heart"></i>
@@ -89,7 +89,7 @@
                 </div>
                 <div class="middle_subject">
                     <div class="small_subject">
-                        <img src="img/hospital.jpg" alt="hospital" class="hospital_img">
+                        <img src="resources/img/hospital.jpg" alt="hospital" class="hospital_img">
                         <form action="">
                             <button type="button" class="interest_Btn" onClick="location.href=''">
                                 <i class="fa-solid fa-heart"></i>
@@ -99,7 +99,7 @@
                         <div class="address">인천 연수구 동춘동</div>
                     </div>
                     <div class="small_second_subject">
-                        <img src="img/hospital.jpg" alt="hospital" class="hospital_img">
+                        <img src="resources/img/hospital.jpg" alt="hospital" class="hospital_img">
                         <form action="">
                             <button type="button" class="interest_Btn" onClick="location.href=''">
                                 <i class="fa-solid fa-heart"></i>
@@ -109,7 +109,7 @@
                         <div class="address">인천 연수구 동춘동</div>
                     </div>
                     <div class="small_subject">
-                        <img src="img/hospital.jpg" alt="hospital" class="hospital_img">
+                        <img src="resources/img/hospital.jpg" alt="hospital" class="hospital_img">
                         <form action="">
                             <button type="button" class="interest_Btn" onClick="location.href=''">
                                 <i class="fa-solid fa-heart"></i>
