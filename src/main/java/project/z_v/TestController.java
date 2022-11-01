@@ -49,4 +49,8 @@ public class TestController {
         return "interest";
     }
 
+    @GetMapping("/ShopRemove")
+    public String ShopRemove() {
+        return "ShopRemove";
+    }
 }
