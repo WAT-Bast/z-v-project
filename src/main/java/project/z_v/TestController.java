@@ -36,12 +36,17 @@ public class TestController {
     @GetMapping("/manager")
     public String manager() {
         return "Manager";
-
     }
 
-    @GetMapping("/footer")
-    public String footer() {
-        return "footer";
+
+    @GetMapping("/allPage")
+    public String allPage() {
+        return "allPage";
+    }
+
+    @GetMapping("/interest")
+    public String interest() {
+        return "interest";
     }
 
 }
