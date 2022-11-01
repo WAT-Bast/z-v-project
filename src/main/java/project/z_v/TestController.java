@@ -38,6 +38,7 @@ public class TestController {
         return "Manager";
     }
 
+
     @GetMapping("/allPage")
     public String allPage() {
         return "allPage";
@@ -47,4 +48,5 @@ public class TestController {
     public String interest() {
         return "interest";
     }
+
 }
