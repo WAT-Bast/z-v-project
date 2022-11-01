@@ -44,13 +44,13 @@ public class TestController {
         return "allPage";
     }
 
+    @GetMapping("/hospital_information")
+    public String hospital_information() {
+        return "hospital_information";
+    }
+
     @GetMapping("/interest")
     public String interest() {
         return "interest";
-    }
-
-    @GetMapping("/ShopRemove")
-    public String ShopRemove() {
-        return "ShopRemove";
     }
 }
