@@ -42,4 +42,9 @@ public class TestController {
     public String allPage() {
         return "allPage";
     }
+
+    @GetMapping("/hospital_information")
+    public String hospital_information() {
+        return "hospital_information";
+    }
 }
