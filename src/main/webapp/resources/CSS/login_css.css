@@ -54,6 +54,7 @@ body {
     border-bottom: 3px solid #2e88ff;
     /*padding: 20px;*/
     margin-top: 40px;
+    margin-left: 15px;
 }
 
 .login_button {
@@ -69,7 +70,9 @@ body {
 
 .login_id_box {
     margin-top: 70px;
+    /*background-color: pink;*/
 }
+
 
 .sign_up_button {
     background-color: white;
