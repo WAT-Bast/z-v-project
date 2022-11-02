@@ -1,6 +1,6 @@
 body{
     margin: 0px;
-    height: 250vh;
+    height: 400vh;
 }
 
 /* navbar */
@@ -105,25 +105,23 @@ body{
     justify-content: center;
 }
 
-.hospital_img_container {
-    background-color: rgb(230,230,230);
-    padding: 180px;
-    margin-top: 25px;
-    width: 600px;
 
+.hospital_img_container img {
+    width: 800px;
+    height: 350px;
 }
 
-.hospital_img_container i {
-    font-size: xx-large;
-    position: relative;
-    left: 730px;
-    top: 170px;
+
+.hospital_img_container {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 30px;
 }
 
 .hospital_address {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    /*margin-top: 20px;*/
     /*background-color: red;*/
 }
 
@@ -398,11 +396,11 @@ body{
     text-shadow: 0 0 0 #f0f0f0;
 }
 
-.hospital_form_container label:hover {
+.hospital_form_container label {
     text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
 }
 
-.hospital_form_container label:hover ~ label {
+.hospital_form_container label ~ label {
     text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
 }
 
@@ -474,11 +472,11 @@ body{
     text-shadow: 0 0 0 #f0f0f0;
 }
 
-.review_score_container2 label:hover {
+.review_score_container2 label {
     text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
 }
 
-.review_score_container2 label:hover ~ label {
+.review_score_container2 label ~ label {
     text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
 }
 
