@@ -32,9 +32,12 @@
                 <div>
                     <input class="formControl" type="password" name="userPW" placeholder="비밀번호" maxlength="20">
                 </div>
-                <div class="login_box">
-                    <button class="id_pw_find" type="submit">아이디/비밀번호 찾기</button>
-                    <button class="sign_up_button" type="submit">회원가입</button>
+                <div class="login_find_container">
+                    <button type="submit" type="button" class="id_find">아이디 찾기</button>
+                    <div class="login_bar">|</div>
+                    <button type="submit" type="button" class="pw_find">비밀번호 찾기</button>
+                    <div class="login_bar">|</div>
+                    <button type="submit" type="button" class="sign_up_find">회원가입</button>
                 </div>
                 <input type="submit" class="login_button" value="로그인하기">
             </form>
