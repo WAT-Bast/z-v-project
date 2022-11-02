@@ -126,21 +126,99 @@
         <div class="a"></div>
     </div>
     <div class="Best_List">
-        <div>
+        <div class="Best_Line">
+
+            <div class="Best_Piece">
+                <div class="listBox_img">
+                    <img src="resources/img/동물병원.png" alt="Z&V 로고" class="Best_img">
+                    <form>
+                        <button type="submit" class="interest_icon" value="interest" onclick="">
+                            <i class="fa-solid fa-heart"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="Description">
+                    <div class="hospitalName">24시 유앤미 동물병원</div>
+                    <span class="star">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </span>
+                    <p class="starText">(4.5)</p>
+                </div>
+            </div>
+            <div class="Best_Piece">
+                <div class="listBox_img">
+                    <img src="resources/img/동물병원.png" alt="Z&V 로고" class="Best_img">
+                    <form>
+                        <button type="submit" class="interest_icon" value="interest" onclick="">
+                            <i class="fa-solid fa-heart"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="Description">
+                    <div class="hospitalName">24시 유앤미 동물병원</div>
+                    <span class="star">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </span>
+                    <p class="starText">(4.5)</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="Best_Line">
+
+            <div class="Best_Piece">
+                <div class="listBox_img">
+                    <img src="resources/img/동물병원.png" alt="Z&V 로고" class="Best_img">
+                    <form>
+                        <button type="submit" class="interest_icon" value="interest" onclick="">
+                            <i class="fa-solid fa-heart"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="Description">
+                    <div class="hospitalName">24시 유앤미 동물병원</div>
+                    <span class="star">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </span>
+                    <p class="starText">(4.5)</p>
+                </div>
+            </div>
+            <div class="Best_Piece">
+                <div class="listBox_img">
+                    <img src="resources/img/동물병원.png" alt="Z&V 로고" class="Best_img">
+                    <form>
+                        <button type="submit" class="interest_icon" value="interest" onclick="">
+                            <i class="fa-solid fa-heart"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="Description">
+                    <div class="hospitalName">24시 유앤미 동물병원</div>
+                    <span class="star">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </span>
+                    <p class="starText">(4.5)</p>
+                </div>
+            </div>
 
         </div>
     </div>
 </div>
-<!--footer-->
-<footer>
-    <div class="importance">
-        <div class="information">
-            <a href="">개인정보처리방침&nbsp;/&nbsp;</a>
-            <a href="">침해행위금지&nbsp;/&nbsp;</a>
-            <a href="">개인정보공시</a>
-        </div>
-    </div>
-    <div class="importance">페이지 제작 : 누구보다 빛나조</div>
-</footer>
 </body>
 </html>
