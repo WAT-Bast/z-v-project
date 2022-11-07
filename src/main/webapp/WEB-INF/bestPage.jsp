@@ -9,7 +9,7 @@
 <html>
 <head>
     <script src="https://kit.fontawesome.com/16dd1d1568.js" crossorigin="anonymous"></script>
-    <link href="resources/CSS/bestPage_css.css" rel="stylesheet" type="text/css">
+    <link href="resources/CSS/bestPage.css" rel="stylesheet" type="text/css">
     <title>Title</title>
 </head>
 <body>
