@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class TestController {
 
-
     @GetMapping("/index")
     public String index() {
         return "asd";
@@ -23,7 +22,7 @@ public class TestController {
         return "join test";
     }
 
-    @GetMapping("/login")
+    @GetMapping ("/login")
     public String login() {
         return "login";
     }
@@ -34,23 +33,10 @@ public class TestController {
     }
 
     @GetMapping("/manager")
-    public String manager() {
-        return "Manager";
-    }
+    public String manager(){
+        return "Manager"; }
 
-
-    @GetMapping("/allPage")
-    public String allPage() {
-        return "allPage";
-    }
-
-    @GetMapping("/hospital_information")
-    public String hospital_information() {
-        return "hospital_information";
-    }
-
-    @GetMapping("/interest")
-    public String interest() {
-        return "interest";
-    }
+    @GetMapping("/bestPage")
+    public String bestPage(){
+        return "bestPage"; }
 }
