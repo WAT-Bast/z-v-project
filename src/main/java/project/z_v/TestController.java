@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class TestController {
 
-
-
     @GetMapping("/index")
     public String index() {
         return "asd";
@@ -37,4 +35,8 @@ public class TestController {
     @GetMapping("/manager")
     public String manager(){
         return "Manager"; }
+
+    @GetMapping("/bestPage")
+    public String bestPage(){
+        return "bestPage"; }
 }
