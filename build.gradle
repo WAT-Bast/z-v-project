@@ -20,6 +20,7 @@ dependencies {
     implementation 'javax.servlet:jstl'
     implementation "org.springframework.boot:spring-boot-devtools"
     implementation "org.apache.tomcat.embed:tomcat-embed-jasper"
+    implementation 'mysql:mysql-connector-java'
 }
 
 tasks.named('test') {
