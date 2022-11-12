@@ -21,22 +21,22 @@
         </div>
     </div>
     <div class="mainBox">
-        <form method="post" class="formStyle">
+        <form method="post" class="formStyle" name="joinForm">
             <h3>회원가입</h3>
             <div class="idBox">
-                <input class="inputSize" type="text" name="userID" placeholder="아이디" maxlength="20" >
+                <input class="inputSize" type="text" name="user_ID" placeholder="아이디" maxlength="20" >
                 <div>
                 <input class="idCheckBtn" type="submit" value="중복확인">
                 </div>
             </div>
             <div>
-                <input class="inputSize_1" type="password" name="userPW" placeholder="비밀번호" maxlength="20">
+                <input class="inputSize_1" type="password" name="user_PW" placeholder="비밀번호" maxlength="20">
             </div>
             <div>
-                <input class="inputSize_1" type="text" name="userName" placeholder="이름" maxlength="20">
+                <input class="inputSize_1" type="text" name="user_name" placeholder="이름" maxlength="20">
             </div>
             <div>
-                <input class="inputSize_1" type="email" name="userEmail" placeholder="이메일" maxlength="20">
+                <input class="inputSize_1" type="email" name="user_email" placeholder="이메일" maxlength="20">
             </div>
             <div class="animal_check">
                 <label class="labelText">키우는 동물 : </label>
@@ -50,13 +50,13 @@
             <hr>
             <div class="listBox_All">
                 <label class="labelText">거주 지역</label>
-                <select class="list_box" name="area" >
+                <select class="list_box" name="Area" >
                     <option value="">인천</option>
                     <option value="">서울</option>
                     <option value="">대전</option>
                     <option value="">부산</option>
                 </select>
-                <select class="list_box" name="area" >
+                <select class="list_box" name="Area" >
                     <option value="">남동구</option>
                     <option value="">서구</option>
                     <option value="">연수구</option>
@@ -65,7 +65,7 @@
             </div>
             <hr>
             <div class="finishBtn_Box">
-                <input class="finishBtn" type="submit" value="가입하기">
+                <input class="finishBtn" type="submit" value="가입하기" onclick="joinAction()">
             </div>
         </form>
     </div>
