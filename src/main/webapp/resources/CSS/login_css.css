@@ -55,6 +55,7 @@ body {
     /*padding: 20px;*/
     margin-top: 40px;
     margin-left: 15px;
+    outline: none;
 }
 
 .login_button {
