@@ -308,19 +308,6 @@ body{
     font-size: medium;
 }
 
-.map_Box {
-    /*background-color: yellow;*/
-    padding-left: 21%;
-    margin-bottom: 20px;
-}
-
-.map_input{
-    width: 30%;
-    /*background-color: purple;*/
-    font-size: medium;
-    border: none;
-}
-
 .shop_title {
     /*background-color: pink;*/
     font-size: 18px;
