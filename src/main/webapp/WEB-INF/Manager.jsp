@@ -16,7 +16,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
 </head>
 <body>
-navbar
 <div class="main_bar_container">
     <div class="main_bar">
         <a href="" class="home">
