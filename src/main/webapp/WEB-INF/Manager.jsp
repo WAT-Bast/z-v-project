@@ -81,10 +81,6 @@
                         </div>
                     </div>
 
-                <div class="map_Box">
-                        <input class="map_input" type="text" type="submit" placeholder="병원 위도, 경도를 적어주세요 Ex)100. 100">
-                </div>
-
                 </div>
                 <div class="shop_box">
                     <div class="shop_title">shop</div>
@@ -93,11 +89,12 @@
                         <input class="shop_radioBtn_text" type="radio" name="shopBtn" value="no" /> No
                     </div>
                 </div>
+
                 <div class="Operating_hours_box">
                     <div class="Operating_hours_title">24시 운영</div>
                     <div class="Operating_hours_radioBtn">
-                        <input class="Operating_hours_radioBtn_text" type="radio" name="shopBtn" checked="checked" value="yes" /> Yes
-                        <input class="Operating_hours_radioBtn_text" type="radio" name="shopBtn" value="no" /> No
+                        <input class="Operating_hours_radioBtn_text" type="radio" name="hours_Btn" checked="checked" value="yes" /> Yes
+                        <input class="Operating_hours_radioBtn_text" type="radio" name="hours_Btn" value="no" /> No
                     </div>
                 </div>
             <div class="hospital_area_box">
@@ -132,8 +129,6 @@
             </form>
 
     </div>
-
-
 
 </body>
 </html>
