@@ -7,6 +7,8 @@ import project.z_v.UserDB.User;
 
 public interface UserRepository extends JpaRepository<User,Long> {
 
+    boolean existsByUserId(String userId);
+
 
 
 
