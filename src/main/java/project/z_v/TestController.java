@@ -2,9 +2,11 @@ package project.z_v;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import project.z_v.UserDB.User;
 import project.z_v.UserDB.repository.UserRepository;
 
@@ -30,13 +32,20 @@ public class TestController {
 
     @GetMapping("/join")
     public String join() {
-        return "join test";
+        return "join_test";
+    }
+
+    @GetMapping("duplicate/id")
+    public void duplicateId(@RequestParam String loginId, Model model) {
+        if(userRepository.existsByUserId(loginId)){
+            model.addAttribute("isDuplicate", true);
+        }
     }
 
     @PostMapping("/join")
     public String join(@ModelAttribute User user) {
         userRepository.save(user);
-        return "main";
+        return "join_test";
     }
 
     @GetMapping ("/login")

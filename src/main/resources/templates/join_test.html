@@ -1,17 +1,11 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: SEC
-  Date: 2022-09-25
-  Time: 오전 12:03
-  To change this template use File | Settings | File Templates.
---%>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
 <head>
-    <script src="https://kit.fontawesome.com/16dd1d1568.js" crossorigin="anonymous"></script>
-    <link href="resources/CSS/join.css" rel="stylesheet" type="text/css">
+    <script th:inline="javascript" src="https://kit.fontawesome.com/16dd1d1568.js" crossorigin="anonymous"></script>
+    <link href="../css/join.css" rel="stylesheet" type="text/css">
     <title></title>
 </head>
-<script type="text/javascript">
+<script th:inline="javascript">
     function checkJoin() {
         if(document.joinForm.user_ID.value == "") {
             alert("아이디를 입력해주세요.");
@@ -45,12 +39,13 @@
 
 
     <div class="mainBox">
-        <form method="post" class="formStyle" name="joinForm">
+        <form method="post" class="formStyle"   name="joinForm" >
             <h3>회원가입</h3>
             <div class="idBox">
-                <input class="inputSize" type="text" name="user_ID" placeholder="아이디" maxlength="20" >
+                <input class="inputSize" type="text" name="userId" placeholder="아이디" maxlength="20" >
                 <div>
                 <input class="idCheckBtn" type="submit" value="중복확인">
+
                 </div>
             </div>
             <div>
@@ -74,14 +69,6 @@
                 </div>
             </div>
 
-            <%
-                String [] animal = request.getParameterValues("animal");
-                if(animal != null) {
-                    for(int i=0; i<animal.length; i++){
-                        out.println(" " + animal[i]);
-                    }
-                }
-            %>
             <hr>
             <div class="listBox_All">
                 <label class="labelText">거주 지역</label>
@@ -151,7 +138,7 @@
             </script>
             <hr>
             <div class="finishBtn_Box">
-                <input class="finishBtn" type="submit" value="가입하기" onclick="checkJoin()"/>
+                <input class="finishBtn" type="submit" value="가입하기" />
             </div>
         </form>
     </div>

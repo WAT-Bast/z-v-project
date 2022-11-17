@@ -3,12 +3,13 @@ package project.z_v.UserDB;
 import javax.persistence.*;
 
 @Entity
+
 public class User {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long user_number;
-    private String user_ID;
+    private String userId;
     private String user_PW;
     private String user_name;
     private String user_email;
@@ -17,8 +18,8 @@ public class User {
 
     public User(){}
 
-    public User(String user_ID, String user_PW, String user_name, String user_email, String animal, String Area) {
-        this.user_ID = user_ID;
+    public User(String userId, String user_PW, String user_name, String user_email, String animal, String Area) {
+        this.userId = userId;
         this.user_PW = user_PW;
         this.user_name = user_name;
         this.user_email= user_email;
@@ -34,12 +35,12 @@ public class User {
         this.user_number = id;
     }
 
-    public String getUser_ID() {
-        return user_ID;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUser_ID(String user_ID) {
-        this.user_ID = user_ID;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getUser_PW() {
