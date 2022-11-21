@@ -15,7 +15,7 @@
         </a>
         <form action="" method="post" class="manager_form">
             <i class="fa-solid fa-heart"></i>
-            <button type="button" class="navyBtn" onClick="location.href=''" type="submit">관리자</button>
+            <button class="navyBtn" onClick="location.href=''" type="submit">관리자</button>
         </form>
     </div>
 </div>
@@ -25,7 +25,7 @@
     <div class="hospital_title">
         <form class="hospital_form_container" method="post" name="manager">
             <div class="hospital_title_name_box">
-                <input type="text" type="submit" class="hospital_name_input" placeholder="병원명을 입력해주세요.">
+                <input type="text" class="hospital_name_input" placeholder="병원명을 입력해주세요.">
             </div>
 
 
@@ -40,27 +40,27 @@
                 <div class="Address_Box">
                     <div class="hospital_address">
                         <div class="address_icon"><i class="fa-solid fa-location-dot"></i></div>
-                        <input class="address_inputBox" type="text" type="submit" placeholder="병원 주소를 입력해주세요.">
+                        <input class="address_inputBox" type="text" placeholder="병원 주소를 입력해주세요.">
                     </div>
                 </div>
 
                             <div class="time_container">
                                 <div class="test">
                                     <div class="time_icon"><i class="fa-regular fa-clock"></i></div>
-                                    <div class="monday_box"><li class="monday_container"><div class="monday"><strong>월</strong></div><input class="Monday_title" type="text" type="submit" placeholder="병원 운영시간을 적어주세요."></li></div>
+                                    <div class="monday_box"><li class="monday_container"><div class="monday"><strong>월</strong></div><input class="Monday_title" type="text" placeholder="병원 운영시간을 적어주세요."></li></div>
                                 </div>
-                                <div class="week_box"><li class="week_container"><strong>화</strong><input class="week_title" type="text" type="submit" placeholder="병원 운영시간을 적어주세요."></li></div>
-                                <div class="week_box"><li class="week_container"><strong>수</strong><input class="week_title" type="text" type="submit" placeholder="병원 운영시간을 적어주세요."></li></div>
-                                <div class="week_box"><li class="week_container"><strong>목</strong><input class="week_title" type="text" type="submit" placeholder="병원 운영시간을 적어주세요."></li></div>
-                                <div class="week_box"><li class="week_container"><strong>금</strong><input class="week_title" type="text" type="submit" placeholder="병원 운영시간을 적어주세요."></li></div>
-                                <div class="week_box"><li class="week_container"><strong>토</strong><input class="week_title" type="text" type="submit" placeholder="병원 운영시간을 적어주세요."></li></div>
-                                <div class="week_box"><li class="week_container"><strong>일</strong><input class="week_title" type="text" type="submit" placeholder="병원 운영시간을 적어주세요."></li></div>
+                                <div class="week_box"><li class="week_container"><strong>화</strong><input class="week_title" type="text"  placeholder="병원 운영시간을 적어주세요."></li></div>
+                                <div class="week_box"><li class="week_container"><strong>수</strong><input class="week_title" type="text"  placeholder="병원 운영시간을 적어주세요."></li></div>
+                                <div class="week_box"><li class="week_container"><strong>목</strong><input class="week_title" type="text"  placeholder="병원 운영시간을 적어주세요."></li></div>
+                                <div class="week_box"><li class="week_container"><strong>금</strong><input class="week_title" type="text"  placeholder="병원 운영시간을 적어주세요."></li></div>
+                                <div class="week_box"><li class="week_container"><strong>토</strong><input class="week_title" type="text"  placeholder="병원 운영시간을 적어주세요."></li></div>
+                                <div class="week_box"><li class="week_container"><strong>일</strong><input class="week_title" type="text"  placeholder="병원 운영시간을 적어주세요."></li></div>
                             </div>
             <div class="phoneNumber_container">
                 <div class="hospital_phoneNumber">
                     <div class="phoneNumberBox">
                         <div class="phoneNumber_icon"><i class="fa-solid fa-phone"></i></div>
-                        <input class="phoneNumberBox" type="tel" type="submit" placeholder="병원 전화번호를 적어주세요.">
+                        <input class="phoneNumberBox" type="tel"  placeholder="병원 전화번호를 적어주세요.">
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                     <div class="hospital_link">
                         <div class="link_Box">
                             <div class="link_icon"><i class="fa-solid fa-house"></i></div>
-                            <input class="link_urlBox" type="url" type="submit" placeholder="병원의 홈페이지 주소를 적어주세요.">
+                            <input class="link_urlBox" type="url" placeholder="병원의 홈페이지 주소를 적어주세요.">
                         </div>
                     </div>
 
@@ -105,7 +105,7 @@
                 </div>
 
             <div class="animal_box">
-                <label class="label_text">주 진찰 동물 : </label>
+                <div class="label_text">주 진찰 동물 :</div>
                 <div class="animal_box_list">
                     <input type="checkbox" name="animal">강아지
                     <input type="checkbox" name="animal">고양이
@@ -113,6 +113,34 @@
                     <input type="checkbox" name="animal">기타
                 </div>
             </div>
+            <br>
+            <div class="map_class">
+                <div id="map" style="width:75%;height:400px;"></div>
+                <script class="map_scr" type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=82ae9863074c3e5fe237c9bb8fdcd654"></script>
+                <script>
+                    var container = document.getElementById('map');
+                    var options = {
+                        center: new kakao.maps.LatLng(37.46600455348215, 126.70753044325791),
+                        level: 3
+                    };
+
+                    var map = new kakao.maps.Map(container, options);
+
+                    var markerPosition  = new kakao.maps.LatLng(37.46604302079694, 126.7076009421976);
+
+                    // 마커를 생성합니다
+                    var marker = new kakao.maps.Marker({
+                        position: markerPosition
+                    });
+
+                    // 마커가 지도 위에 표시되도록 설정합니다
+                    marker.setMap(map);
+
+                    // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+                    // marker.setMap(null);
+                </script>
+            </div>
+
 
             <div class="finishBtn_Box">
                 <input class="finishBtn" type="submit" value="등록하기">
