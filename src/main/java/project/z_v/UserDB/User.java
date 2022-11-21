@@ -2,8 +2,8 @@ package project.z_v.UserDB;
 
 import javax.persistence.*;
 
-@Entity
 
+@Entity
 public class User {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
