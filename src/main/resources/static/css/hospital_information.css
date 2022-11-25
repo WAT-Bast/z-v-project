@@ -3,6 +3,10 @@ body{
     height: 400vh;
 }
 
+input:disabled {
+    background-color: white;
+}
+
 /* navbar */
 .main_bar {
     background-color: rgb(217,231,251);
@@ -79,22 +83,22 @@ body{
 }
 
 .hospital_name_input {
+    /*background-color: #77adff;*/
     border: none;
     font-size: 30px;
     font-weight: bolder;
     margin-top: auto;
     margin-bottom: auto;
-    padding-left: 150px;
-    outline: none;
+    padding-left: 280px;
+    /*outline: none;*/
 }
 
 .hospital_title_name_box {
     border-style: solid none;
     border-width: 5px;
     border-color: rgb(217, 231, 251);
-    background-color: white;
     margin-top: 30px;
-    width: 100%;
+    /*padding-left: 280px;*/
 }
 
 
@@ -108,14 +112,14 @@ body{
 
 .hospital_img_container img {
     width: 800px;
-    height: 350px;
+    height: 300px;
 }
 
 
 .hospital_img_container {
     text-align: center;
     margin-top: 25px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .hospital_address {
@@ -127,12 +131,13 @@ body{
 
 .address_inputBox {
     width: 50%;
-    border: none;
+    /*border: none;*/
     /*background-color: blueviolet;*/
-    position: relative;
+    /*position: relative;*/
     margin-left: 30px;
-    outline: none;
-    font-size: medium;
+    font-weight: 700;
+    /*outline: none;*/
+    /*font-size: medium;*/
 }
 
 .Address_Box:after {
@@ -141,12 +146,13 @@ body{
     width: 900px;
     border-bottom: 2px solid rgb(230,230,230);
     margin-left: 320px;
-    margin-top: 10px;
+    /*margin-top: 10px;*/
 }
 
 .address_icon {
     position: relative;
     right: 35px;
+    padding-top: 15px;
 }
 
 .address_icon i {
@@ -179,7 +185,7 @@ body{
     width: 900px;
     border-bottom: 2px solid rgb(230,230,230);
     margin-left: 320px;
-    margin-top: 10px;
+    /*margin-top: 10px;*/
 }
 
 
@@ -187,10 +193,21 @@ body{
     width: 50%;
     position: relative;
     font-size: medium;
+    display: flex;
+    border: none;
+    outline: none;
+    /*margin-top: 0px;*/
+    margin-bottom: 9px;
+    font-weight: 700;
 }
 
 .link_urlBox {
+    text-decoration-line: none;
     width: 50%;
+}
+
+.siteTextStyle {
+    color: #313131;
 }
 
 .phoneNumber_icon {
@@ -202,15 +219,6 @@ body{
 .phoneNumber_icon i {
     color: rgb(200,200,200);
 }
-
-.phoneNumberBox {
-    /*background-color: #c8e5ff;*/
-    display: flex;
-    border: none;
-    outline: none;
-    margin-left: 1px;
-}
-
 
 .test {
     display: flex;
@@ -252,6 +260,7 @@ body{
 .Monday_title {
     width: 750px;
     margin-left: 20px;
+    margin-right: 30px;
     margin-bottom: 10px;
     border: none;
     outline: none;
@@ -268,14 +277,15 @@ body{
     /*background-color: aquamarine;*/
     width: 55%;
     margin-left: 40px;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
 }
 
 .week_title {
     width: 90%;
     margin-left: 20px;
-    border: none;
-    outline: none;
+    margin-top: 0px;
+    /*border: none;*/
+    /*outline: none;*/
     font-size: medium;
 }
 
@@ -383,9 +393,6 @@ body{
     margin-left: 20%;
 }
 
-
-
-
 .hospital_form_container input[type=radio] {
     display: none;
 }
@@ -418,7 +425,7 @@ body{
     display: flex;
     justify-content: center;
     width: 50%;
-    height: 120px;
+    height: 100px;
     /*background-color: bisque;*/
     margin-left: 20%;
 }
@@ -427,10 +434,10 @@ body{
     /*background-color: coral;*/
     display: flex;
     align-items: flex-start;
-    margin-right: 10px;
     margin-top: 10px;
     font-weight: bold;
-    width: 7%;
+    width: 10%;
+    /*text-align: center;*/
 }
 
 .review_score_container {
@@ -501,4 +508,12 @@ body{
     display: flex;
     justify-content: center;
     /*background-color: #2e88ff;*/
+}
+
+.map_class {
+    padding-left: 320px;
+}
+
+.monday_box {
+    padding-top: 5px;
 }

@@ -65,4 +65,8 @@ public class TestController {
     @GetMapping("/bestPage")
     public String bestPage(){
         return "bestPage"; }
+
+    @GetMapping("/hospital_information")
+    public String hospital_information(){
+        return "hospital_information"; }
 }
