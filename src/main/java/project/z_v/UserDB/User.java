@@ -1,9 +1,14 @@
 package project.z_v.UserDB;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 
 @Entity
+@Getter
+@Setter
 public class User {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,59 +32,5 @@ public class User {
         this.Area = Area;
     }
 
-    public Long getId() {
-        return user_number;
-    }
 
-    public void setId(Long id) {
-        this.user_number = id;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getUser_PW() {
-        return user_PW;
-    }
-
-    public void setUser_PW(String user_PW) {
-        this.user_PW = user_PW;
-    }
-
-    public String getUser_name() {
-        return user_name;
-    }
-
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
-    }
-
-    public String getUser_email() {
-        return user_email;
-    }
-
-    public void setUser_email(String user_email) {
-        this.user_email = user_email;
-    }
-
-    public String getAnimal() {
-        return animal;
-    }
-
-    public void setAnimal(String animal) {
-        this.animal = animal;
-    }
-
-    public String getArea() {
-        return Area;
-    }
-
-    public void setArea(String area) {
-        Area = area;
-    }
 }

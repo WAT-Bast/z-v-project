@@ -1,24 +1,30 @@
 package project.z_v;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
+import org.springframework.http.HttpRequest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import project.LoginDto;
 import project.z_v.UserDB.User;
 import project.z_v.UserDB.repository.UserRepository;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.util.Optional;
+
 @Controller
+@RequiredArgsConstructor
 public class TestController {
 
     private final UserRepository userRepository;
+    private final HttpSession httpSession;
 
-    @Autowired
-    public TestController(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
     @GetMapping("/index")
     public String index() {
@@ -49,14 +55,51 @@ public class TestController {
     }
 
     @GetMapping ("/login")
-    public String login() {
-        return "login";
+    public String login() { return "login";}
+
+
+    @PostMapping("/login")
+    public String login(LoginDto loginDto,Model model) {
+        User user = userRepository.findByUserId(loginDto.getLoginId());
+        System.out.println("user = " + user);
+        String str = "hi";
+
+        if (user==null){
+            str = null;
+            model.addAttribute("loginIdMessage", str) ;
+            model.addAttribute("passwordMessage", str);
+            return "redirect:/login";
+        }
+
+        if (user.getUser_PW().equals(loginDto.getPassword())){
+            httpSession.setAttribute("user", user);
+            return "main";
+        } else {
+            model.addAttribute("passwordMessage", "비밀번호를 다시 입력하세요");
+            return "redirect:/login";
+        }
     }
 
-    @GetMapping("/main")
-    public String main() {
-        return "main";
+
+
+    @RequestMapping(value="/main", method = {RequestMethod.GET, RequestMethod.POST})
+    public String main(Model model, HttpServletRequest request){
+
+        HttpSession session = request.getSession(true);
+        User user = (User)session.getAttribute("user");
+        
+        if(user != null) {
+            System.out.println("user.getUserId() = " + user.getUserId());
+        }
+//
+//        String userName = (String)session.getAttribute("userName");
+//      System.out.println("user.getUserId() = " +  session.getId());
+//        User user = (User)session.getAttribute("user");
+//        System.out.println("user.getUserId() = " + user.getUserId());
+//        model.addAttribute("user",user);
+        return "/main";
     }
+
 
     @GetMapping("/manager")
     public String manager(){
