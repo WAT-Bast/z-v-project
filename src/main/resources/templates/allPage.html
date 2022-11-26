@@ -26,6 +26,8 @@
             </form>
         </div>
     </div>
+
+
     <div class="filter">
         <form method="post" class="filter_list">
             <div class="filter_box">
@@ -61,9 +63,50 @@
 <div class="allList">
     <a>전체 목록</a>
 </div>
+
+<div class="container">
+
+
+
+    <table>
+        <tbody>
+        <!--th:href="@{/templates/hospital_information}" => 버튼을 누르면 저기로 이동-->
+        <tr>
+            <td>
+                <div class="listBox_img">
+                    <div class="imgSize">
+                        <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
+                    </div>
+                    <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
+                </div>
+            </td>
+        </tr>
+
+        <tr th:each="Hospital : ${Hospitals}"><!-- => 리스트 불러오기-->
+            <td class="hospitalName" th:text="${Hospital.Hosptial_name}"> 24시 유앤미 동물병원</td>
+            <td>
+                <span class="star">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                </span>
+                <p class="starText">(4.5)</p>
+            </td>
+            <td th:text="${#lists.size(prod.comments)}"><!-- => 리뷰 개수-->
+                <p class="starText">(4.5)</p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+</div>
 <div class="list_img">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -82,7 +125,7 @@
 </div>
 <div class="list_img_1">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -101,7 +144,7 @@
 </div>
 <div class="list_img_2">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -120,7 +163,7 @@
 </div>
 <div class="list_img_3">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -139,7 +182,7 @@
 </div>
 <div class="list_img_4">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -158,7 +201,7 @@
 </div>
 <div class="list_img_5">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -177,7 +220,7 @@
 </div>
 <div class="list_img_6">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -196,7 +239,7 @@
 </div>
 <div class="list_img_7">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -215,7 +258,7 @@
 </div>
 <div class="list_img_8">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -234,7 +277,7 @@
 </div>
 <div class="list_img_9">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -253,3 +296,35 @@
 </div>
 </body>
 </html>
+
+<header th:insert="common/header.html"></header>
+<div class="container">
+
+
+    <table class="table">
+        <tbody>
+
+        for (let i = 0; i < rowCnt; i++) {
+        <tr class="text-center" th:each="manager : ${postList}">
+            for (let j = 0; j < columnCnt; j++) {
+            <th scope="row">
+                <span th:text="${post.id}"></span>
+            </th>
+            <td>
+                <a th:href="@{'/manager/' + ${post.id}}">
+                    <span th:text="${post.title}"></span>
+                </a>
+            </td>
+            }
+        </tr>
+        }
+        </tbody>
+
+    </table>
+    <div class="row">
+        <div class="col-auto mr-auto"></div>
+        <div class="col-auto">
+            <a class="btn btn-primary" th:href="@{/post}" role="button">글쓰기</a>
+        </div>
+    </div>
+</div>

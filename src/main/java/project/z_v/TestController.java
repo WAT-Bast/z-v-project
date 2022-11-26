@@ -1,6 +1,8 @@
 package project.z_v;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.annotation.UserConfigurations;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,14 +13,10 @@ import project.z_v.UserDB.User;
 import project.z_v.UserDB.repository.UserRepository;
 
 @Controller
+@RequiredArgsConstructor
 public class TestController {
 
     private final UserRepository userRepository;
-
-    @Autowired
-    public TestController(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
     @GetMapping("/index")
     public String index() {
@@ -72,8 +70,13 @@ public class TestController {
     public String ShopRemove(){
         return "ShopRemove"; }
 
+    @Autowired
+    private  BoardRepository boardRepository;
+
     @GetMapping("/allPage")
-    public String allPage(){
-        return "allPage"; }
+    public String allPage(Model model){
+        List<Hospital> Hospitals = boardRepository.findAll();
+        model.addAttribute("Hospitals",Hospitals);
+        return "bord/allPage"; }
 
 }
