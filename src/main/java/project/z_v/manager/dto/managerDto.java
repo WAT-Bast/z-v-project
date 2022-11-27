@@ -36,9 +36,32 @@ public class managerDto {
 
     private String image_information;
 
+    private double locationLatitude;
+
+    private double locationlongitude;
+
     public managerEntity toManagerEntity() {
         return new managerEntity(Hospital_number, Hosptial_name, Hospital_address, Tell, site, Shop_number,
-                aDay, TimeMon, TimeTues, TimeWednes, TimeThurs, TimeFri, TimeSatur, TimeSun,Area_address, image_information);
+                aDay, TimeMon, TimeTues, TimeWednes, TimeThurs, TimeFri, TimeSatur, TimeSun,Area_address, image_information
+                ,locationLatitude, locationlongitude);
+    }
+
+
+
+    public double getLocationLatitude() {
+        return locationLatitude;
+    }
+
+    public void setLocationLatitude(double locationLatitude) {
+        this.locationLatitude = locationLatitude;
+    }
+
+    public double getLocationlongitude() {
+        return locationlongitude;
+    }
+
+    public void setLocationlongitude(double locationlongitude) {
+        this.locationlongitude = locationlongitude;
     }
 
     public Long getHospital_number() {

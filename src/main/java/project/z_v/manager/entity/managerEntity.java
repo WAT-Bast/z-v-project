@@ -64,7 +64,13 @@ import javax.persistence.*;
         @Column
         private String image_information;
 
-        public managerEntity(Long hospital_number, String hosptial_name, String hospital_address, String tell, String site, boolean shop_number, boolean aDay, String timeMon, String timeTues, String timeWednes, String timeThurs, String timeFri, String timeSatur, String timeSun, String area_address, String image_information) {
+        @Column
+        private double locationLatitude;
+
+        @Column
+        private double locationlongitude;
+
+        public managerEntity(Long hospital_number, String hosptial_name, String hospital_address, String tell, String site, boolean shop_number, boolean aDay, String timeMon, String timeTues, String timeWednes, String timeThurs, String timeFri, String timeSatur, String timeSun, String area_address, String image_information, double locationLatitude, double locationlongitude ) {
             Hospital_number = hospital_number;
             Hosptial_name = hosptial_name;
             Hospital_address = hospital_address;
@@ -81,9 +87,29 @@ import javax.persistence.*;
             TimeSun = timeSun;
             Area_address = area_address;
             this.image_information = image_information;
+            this.locationLatitude = locationLatitude;
+            this.locationlongitude = locationlongitude;
         }
 
+
+
         public managerEntity() {
+        }
+
+        public double getLocationLatitude() {
+            return locationLatitude;
+        }
+
+        public void setLocationLatitude(double locationLatitude) {
+            this.locationLatitude = locationLatitude;
+        }
+
+        public double getLocationlongitude() {
+            return locationlongitude;
+        }
+
+        public void setLocationlongitude(double locationlongitude) {
+            this.locationlongitude = locationlongitude;
         }
 
         public String getTimeMon() {
