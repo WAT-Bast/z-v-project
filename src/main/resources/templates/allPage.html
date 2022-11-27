@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:>
 <head>
     <script src="https://kit.fontawesome.com/16dd1d1568.js" crossorigin="anonymous"></script>
     <link href="../css/allPage_css.css" rel="stylesheet" type="text/css">
@@ -8,7 +8,7 @@
 <body>
 <div class="allPage_bar">
     <a href="" class="home">
-        <img src="resources/img/로고.png" alt="Z&V 로고">
+        <img src="/img/융프로고.png" alt="Z&V 로고">
         <div class="home_str">Z&V</div>
     </a>
     <form action="" method="post">
@@ -19,13 +19,15 @@
     <div class="Search">
         <div class="Search_text">
             <form action="" method="post">
-                <input type="text" name="search" value="" type="submit">
+                <input name="search" value="" type="submit">
                 <button type="button" class="search_Btn" onClick="location.href=''">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </form>
         </div>
     </div>
+
+
     <div class="filter">
         <form method="post" class="filter_list">
             <div class="filter_box">
@@ -61,9 +63,73 @@
 <div class="allList">
     <a>전체 목록</a>
 </div>
-<div class="list_img">
+
+<div class="container">
+
+
+    <table border="1px" class="hospital_list" th:href="@{/templates/hospital_information}"> <!--=> th:href="@{/templates/hospital_information}"버튼을 누르면 저기로 이동-->
+        <!--onclke 을 사용해서 하면 됨-->
+        <tbody  th:each="hoOdd : ${hospitial}" th:if="${hoDoo /2 == 0}">
+        <tbody  th:each="hoEven : ${hospitial}" th:if="${hoEven / 2 != 0}">
+        <tr class="img">
+            <td rowspan='3'>
+                <div class="listBox_img">
+                    <div class="imgSize">
+                        <img th:src="${hoOdd.image_information}" alt="Z&V 로고" style="width:200px; height: 150px">
+                    </div>
+                    <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
+                </div>
+            </td>
+            <td class="hospitalName" th:text="${hoOdd.hospital}"> 24시 유앤미 동물병원</td>
+            <td rowspan='3'>
+                <div class="listBox_img">
+                    <div class="imgSize">
+                        <img th:src="${hoEven.image_information}" alt="Z&V 로고" style="width:200px; height: 150px">
+                    </div>
+                    <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
+                </div>
+            </td>
+            <td class="hospitalName" th:text="${hoEven.hospital}"> 24시 유앤미 동물병원</td>
+        </tr>
+        <tr><!-- => th:each="Hospital : ${Hospitals}" 리스트 불러오기-->
+            <!--            <td th:text="${ho.hospital}"></td>
+                        <td th:text="${ho.grade}"></td>
+                        <td th:text="${ho.reviewCount}"></td>-->
+            <td th:text="${hoOdd.grade}">
+                    <span class="star">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </span>
+                <p>  </p>
+            </td>
+                <td th:text="${hoEven.grade}">
+                    <span class="star">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </span>
+                    <p>  </p>
+                </td>
+        </tr>
+        <tr>
+                <td th:text="${hoOdd.reviewCount}"></td>
+                <td th:text="${hoEven.reviewCount}"></td>
+            <!--<td ><img class ="tes" th:src="${ho.image_information}"/></td>-->
+        </tr>
+
+        </tbody>
+    </table>
+
+
+</div>
+<!--<div class="list_img">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -82,7 +148,7 @@
 </div>
 <div class="list_img_1">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -101,7 +167,7 @@
 </div>
 <div class="list_img_2">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -120,7 +186,7 @@
 </div>
 <div class="list_img_3">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -139,7 +205,7 @@
 </div>
 <div class="list_img_4">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -158,7 +224,7 @@
 </div>
 <div class="list_img_5">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -177,7 +243,7 @@
 </div>
 <div class="list_img_6">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -196,7 +262,7 @@
 </div>
 <div class="list_img_7">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -215,7 +281,7 @@
 </div>
 <div class="list_img_8">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -234,7 +300,7 @@
 </div>
 <div class="list_img_9">
     <div class="listBox_img">
-        <div  class="imgSize">
+        <div class="imgSize">
             <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
         </div>
         <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
@@ -250,6 +316,6 @@
     </span>
         <p class="starText">(4.5)</p>
     </div>
-</div>
+</div>-->
 </body>
 </html>

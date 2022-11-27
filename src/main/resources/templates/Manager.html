@@ -20,18 +20,17 @@
     </div>
 </div>
 
-
-
     <div class="hospital_title">
-        <form class="hospital_form_container" method="post" name="manager">
+        <form class="hospital_form_container" method="post" name="manager" action="/test" >
             <div class="hospital_title_name_box">
-                <input type="text" class="hospital_name_input" placeholder="병원명을 입력해주세요.">
+                <input type="text" class="hospital_name_input" placeholder="병원명을 입력해주세요." name="Hosptial_name">
             </div>
 
 
             <div class="hospital_img_box">
                 <div class="hospital_img_container">
-                    <div class="imgPlus"><i class="fa-regular fa-images"></i></div>
+<!--                    <div class="imgPlus"><i class="fa-regular fa-images"></i></div>-->
+                    <input type="text" name="image_information">
                 </div>
             </div>
 
@@ -40,27 +39,28 @@
                 <div class="Address_Box">
                     <div class="hospital_address">
                         <div class="address_icon"><i class="fa-solid fa-location-dot"></i></div>
-                        <input class="address_inputBox" type="text" placeholder="병원 주소를 입력해주세요.">
+                        <input class="address_inputBox" id="hospitalAddress" type="text" placeholder="병원 주소를 입력해주세요." name="Hospital_address">
+<!--                        <button type="submit" id="searchBtn"></button>-->
                     </div>
                 </div>
 
                             <div class="time_container">
                                 <div class="test">
                                     <div class="time_icon"><i class="fa-regular fa-clock"></i></div>
-                                    <div class="monday_box"><li class="monday_container"><div class="monday"><strong>월</strong></div><input class="Monday_title" type="text" placeholder="병원 운영시간을 적어주세요."></li></div>
+                                    <div class="monday_box"><li class="monday_container"><div class="monday"><strong>월</strong></div><input class="Monday_title" type="text" placeholder="병원 운영시간을 적어주세요." name="TimeMon"></li></div>
                                 </div>
-                                <div class="week_box"><li class="week_container"><strong>화</strong><input class="week_title" type="text"  placeholder="병원 운영시간을 적어주세요."></li></div>
-                                <div class="week_box"><li class="week_container"><strong>수</strong><input class="week_title" type="text"  placeholder="병원 운영시간을 적어주세요."></li></div>
-                                <div class="week_box"><li class="week_container"><strong>목</strong><input class="week_title" type="text"  placeholder="병원 운영시간을 적어주세요."></li></div>
-                                <div class="week_box"><li class="week_container"><strong>금</strong><input class="week_title" type="text"  placeholder="병원 운영시간을 적어주세요."></li></div>
-                                <div class="week_box"><li class="week_container"><strong>토</strong><input class="week_title" type="text"  placeholder="병원 운영시간을 적어주세요."></li></div>
-                                <div class="week_box"><li class="week_container"><strong>일</strong><input class="week_title" type="text"  placeholder="병원 운영시간을 적어주세요."></li></div>
+                                <div class="week_box"><li class="week_container"><strong>화</strong><input class="week_title" type="text"  placeholder="병원 운영시간을 적어주세요." name="TimeTues"></li></div>
+                                <div class="week_box"><li class="week_container"><strong>수</strong><input class="week_title" type="text"  placeholder="병원 운영시간을 적어주세요." name="TimeWednes"></li></div>
+                                <div class="week_box"><li class="week_container"><strong>목</strong><input class="week_title" type="text"  placeholder="병원 운영시간을 적어주세요." name="TimeThurs"></li></div>
+                                <div class="week_box"><li class="week_container"><strong>금</strong><input class="week_title" type="text"  placeholder="병원 운영시간을 적어주세요." name="TimeFri"></li></div>
+                                <div class="week_box"><li class="week_container"><strong>토</strong><input class="week_title" type="text"  placeholder="병원 운영시간을 적어주세요." name="TimeSatur"></li></div>
+                                <div class="week_box"><li class="week_container"><strong>일</strong><input class="week_title" type="text"  placeholder="병원 운영시간을 적어주세요." name="TimeSun"></li></div>
                             </div>
             <div class="phoneNumber_container">
                 <div class="hospital_phoneNumber">
                     <div class="phoneNumberBox">
                         <div class="phoneNumber_icon"><i class="fa-solid fa-phone"></i></div>
-                        <input class="phoneNumberBox" type="tel"  placeholder="병원 전화번호를 적어주세요.">
+                        <input class="phoneNumberBox" type="tel"  placeholder="병원 전화번호를 적어주세요." name="Tell">
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                     <div class="hospital_link">
                         <div class="link_Box">
                             <div class="link_icon"><i class="fa-solid fa-house"></i></div>
-                            <input class="link_urlBox" type="url" placeholder="병원의 홈페이지 주소를 적어주세요.">
+                            <input class="link_urlBox" type="url" placeholder="병원의 홈페이지 주소를 적어주세요." name="site">
                         </div>
                     </div>
 
@@ -76,27 +76,27 @@
                 <div class="shop_box">
                     <div class="shop_title">shop</div>
                     <div class="shop_radioBtn">
-                        <input class="shop_radioBtn_text" type="radio" name="shopBtn" checked="checked" value="yes" /> Yes
-                        <input class="shop_radioBtn_text" type="radio" name="shopBtn" value="no" /> No
+                        <input class="shop_radioBtn_text" type="radio" checked="checked" value="yes" name="Shop_number"/> Yes
+                        <input class="shop_radioBtn_text" type="radio" value="no" name="Shop_number"/> No
                     </div>
                 </div>
 
                 <div class="Operating_hours_box">
                     <div class="Operating_hours_title">24시 운영</div>
                     <div class="Operating_hours_radioBtn">
-                        <input class="Operating_hours_radioBtn_text" type="radio" name="hours_Btn" checked="checked" value="yes" /> Yes
-                        <input class="Operating_hours_radioBtn_text" type="radio" name="hours_Btn" value="no" /> No
+                        <input class="Operating_hours_radioBtn_text" type="radio" checked="checked" value="yes" name="numHours"/> Yes
+                        <input class="Operating_hours_radioBtn_text" type="radio" value="no" name="numHours"/> No
                     </div>
                 </div>
             <div class="hospital_area_box">
                 <div class="hospital_area_title">병원 지역</div>
-                    <select class="hospital_area_list_box_1" name="area" >
+                    <select class="hospital_area_list_box_1" name="Area_address" >
                         <option value="">인천</option>
                         <option value="">서울</option>
                         <option value="">대전</option>
                         <option value="">부산</option>
                     </select>
-                    <select class="hospital_area_list_box_2" name="area" >
+                    <select class="hospital_area_list_box_2" name="Area_address" >
                         <option value="">남동구</option>
                         <option value="">서구</option>
                         <option value="">연수구</option>
@@ -107,43 +107,24 @@
             <div class="animal_box">
                 <div class="label_text">주 진찰 동물 :</div>
                 <div class="animal_box_list">
-                    <input type="checkbox" name="animal">강아지
-                    <input type="checkbox" name="animal">고양이
-                    <input type="checkbox" name="animal">햄스터
-                    <input type="checkbox" name="animal">기타
+                    <input type="checkbox" name="hospital_Area">강아지
+                    <input type="checkbox" name="hospital_Area">고양이
+                    <input type="checkbox" name="hospital_Area">햄스터
+                    <input type="checkbox" name="hospital_Area">기타
                 </div>
             </div>
             <br>
-            <div class="map_class">
-                <div id="map" style="width:75%;height:400px;"></div>
-                <script class="map_scr" type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=82ae9863074c3e5fe237c9bb8fdcd654"></script>
-                <script>
-                    var container = document.getElementById('map');
-                    var options = {
-                        center: new kakao.maps.LatLng(37.46600455348215, 126.70753044325791),
-                        level: 3
-                    };
 
-                    var map = new kakao.maps.Map(container, options);
-
-                    var markerPosition  = new kakao.maps.LatLng(37.46604302079694, 126.7076009421976);
-
-                    // 마커를 생성합니다
-                    var marker = new kakao.maps.Marker({
-                        position: markerPosition
-                    });
-
-                    // 마커가 지도 위에 표시되도록 설정합니다
-                    marker.setMap(map);
-
-                    // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
-                    // marker.setMap(null);
-                </script>
+            <div class="locationBox">
+                <div class="locationTitle">위치 [위도, 경도를 입력하세요]</div>
+                <div class="locationBox_list">
+                <p>위도 : <input type="text" name="locationLatitude"></p>
+                <p>경도 : <input type="text" name="locationlongitude"></p>
+                </div>
             </div>
 
-
             <div class="finishBtn_Box">
-                <input class="finishBtn" type="submit" value="등록하기">
+                <input class="finishBtn" type="submit" value="등록하기" id="subBTN">
             </div>
             </form>
 

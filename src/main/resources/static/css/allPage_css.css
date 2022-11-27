@@ -165,11 +165,31 @@ body{
     margin-left: 55%;
 }
 
+/*table 크기*/
+.container{
+    margin-top: 100px;
+    margin-left: 100px;
+}
+.img{
+    width: 300px;
+    height: 200px;
+}
+/*
+.hospital_list{
+    display: flex;
+}
+
+
+
+*/
+
+
 /*이미지 조절*/
 .imgSize {
     width: 200px;
     height: 100px;
     margin-right: 20px;
+    position: relative;
 }
 
 /*찜 하트 아이콘 조절*/
@@ -179,6 +199,7 @@ body{
     font-size: 25px;
     margin-left: 165px;
     margin-top: 15px;
+
 }
 
 .iconSize:hover {
