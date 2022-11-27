@@ -1,6 +1,7 @@
 package project.z_v.manager.entity;
 
-import org.w3c.dom.Text;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,13 +14,14 @@ import javax.persistence.*;
 
     @Table(name = "manager")
     @Entity
+    @Getter
+    @Setter
     public class managerEntity {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY) //Hospital_number 자동으로 생성
         private Long Hospital_number;
 
-        @Column
         private String Hosptial_name;
 
         @Column
