@@ -50,13 +50,11 @@ public class TestController {
 
     @GetMapping ("/login")
     public String login() {
-        return "login";
-    }
+        return "login"; }
 
     @GetMapping("/main")
     public String main() {
-        return "main";
-    }
+        return "main"; }
 
     @GetMapping("/manager")
     public String manager(){
@@ -66,7 +64,16 @@ public class TestController {
     public String bestPage(){
         return "bestPage"; }
 
-    @GetMapping("/hospital_information")
-    public String hospital_information(){
-        return "hospital_information"; }
+    @GetMapping("/interest")
+    public String interest(){
+        return "interest"; }
+
+    @GetMapping("/ShopRemove")
+    public String ShopRemove(){
+        return "ShopRemove"; }
+
+    @GetMapping("/allPage")
+    public String allPage(){
+        return "allPage"; }
+
 }
