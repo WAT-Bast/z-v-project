@@ -10,18 +10,17 @@
 <!-- navbar -->
 <div class="main_bar">
     <a href="" class="home">
-      <!--  <img src="resources/img/로고.png" alt="Z&V 로고">-->
-        <div th:if="${session.user != null}">됨</div>
-        <div th:if="${session.user == null}">asdasd</div>
+        <img src="" alt="Z&V 로고">
+<!--        <div th:if="${session.user != null}">됨</div>-->
+<!--        <div th:if="${session.user == null}">asdasd</div>-->
         <div class="home_str">Z&V</div>
     </a>
-    <form action="" method="post">
+    <form  method="post">
        <div th:if="${session.user == null}">
-           <button value="로그인">login </button>
+           <button value="로그인">login</button>
        </div>
-        <div th:unless="${session.user == null}" >
-            <button value="로그아웃">logout </button>
-
+        <div th:if="${session.user != null}" href="/main">
+            <button value="로그아웃">logout</button>
         </div>
     </form>
 </div>

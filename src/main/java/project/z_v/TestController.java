@@ -1,5 +1,6 @@
 package project.z_v;
 
+import com.mysql.cj.xdevapi.Session;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
@@ -15,6 +16,7 @@ import project.z_v.UserDB.User;
 import project.z_v.UserDB.repository.UserRepository;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
@@ -41,7 +43,7 @@ public class TestController {
         return "join_test";
     }
 
-    @GetMapping("duplicate/id")
+    @GetMapping("/duplicate/id")
     public void duplicateId(@RequestParam String loginId, Model model) {
         if(userRepository.existsByUserId(loginId)){
             model.addAttribute("isDuplicate", true);
@@ -51,53 +53,53 @@ public class TestController {
     @PostMapping("/join")
     public String join(@ModelAttribute User user) {
         userRepository.save(user);
-        return "join_test";
+        return "main";
     }
 
     @GetMapping ("/login")
     public String login() { return "login";}
 
+    @PostMapping("/main")
+    public String main(LoginDto loginDto,Model model, HttpServletRequest request){
 
-    @PostMapping("/login")
-    public String login(LoginDto loginDto,Model model) {
         User user = userRepository.findByUserId(loginDto.getLoginId());
-        System.out.println("user = " + user);
-        String str = "hi";
 
         if (user==null){
-            str = null;
-            model.addAttribute("loginIdMessage", str) ;
-            model.addAttribute("passwordMessage", str);
             return "redirect:/login";
         }
 
-        if (user.getUser_PW().equals(loginDto.getPassword())){
+        if (user.getUserId().equals(loginDto.getLoginId()) && user.getUser_PW().equals(loginDto.getPassword())){
             httpSession.setAttribute("user", user);
             return "main";
         } else {
-            model.addAttribute("passwordMessage", "비밀번호를 다시 입력하세요");
             return "redirect:/login";
         }
+
+    }
+
+//    @PostMapping("/logout")
+//    public String logout(HttpServletRequest request) {
+//        HttpSession session = request.getSession(false);
+//        if(session != null) {
+//            session.invalidate();
+//        }
+//        return "redirect:/main";
+//    }
+
+
+    @PostMapping(value = "logout")
+    public String logoutGET(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        session.invalidate();
+        return "redirect:/main";
     }
 
 
 
-    @RequestMapping(value="/main", method = {RequestMethod.GET, RequestMethod.POST})
-    public String main(Model model, HttpServletRequest request){
 
-        HttpSession session = request.getSession(true);
-        User user = (User)session.getAttribute("user");
-        
-        if(user != null) {
-            System.out.println("user.getUserId() = " + user.getUserId());
-        }
-//
-//        String userName = (String)session.getAttribute("userName");
-//      System.out.println("user.getUserId() = " +  session.getId());
-//        User user = (User)session.getAttribute("user");
-//        System.out.println("user.getUserId() = " + user.getUserId());
-//        model.addAttribute("user",user);
-        return "/main";
+    @GetMapping("/main")
+    public String mainGo() {
+        return "main";
     }
 
 
