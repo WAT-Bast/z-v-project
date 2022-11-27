@@ -70,13 +70,8 @@ public class TestController {
     public String ShopRemove(){
         return "ShopRemove"; }
 
-    @Autowired
-    private  BoardRepository boardRepository;
-
     @GetMapping("/allPage")
-    public String allPage(Model model){
-        List<Hospital> Hospitals = boardRepository.findAll();
-        model.addAttribute("Hospitals",Hospitals);
-        return "bord/allPage"; }
+    public String allPage(){
+        return "allPage"; }
 
 }

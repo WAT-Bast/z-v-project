@@ -1,6 +1,5 @@
 package project.z_v.manager.dto;
 
-import org.w3c.dom.Text;
 import project.z_v.manager.entity.managerEntity;
 
 public class managerDto {
