@@ -9,7 +9,7 @@
     function checkJoin() {
         if(document.joinForm.user_ID.value == "") {
             alert("아이디를 입력해주세요.");
-            document.joinForm.user_ID.focus();
+            document.joinForm.userID.focus();
             return false;
         } else if(document.joinForm.user_name.value == ""){
             alert("이름을 입력해주세요.");
@@ -39,15 +39,16 @@
 
 
     <div class="mainBox">
-        <form method="post" class="formStyle"   name="joinForm" >
+        <form method="post" class="formStyle"  action="/join"  name="joinForm" >
             <h3>회원가입</h3>
             <div class="idBox">
-                <input class="inputSize" type="text" name="userId" placeholder="아이디" maxlength="20" >
-                <div>
-                <input class="idCheckBtn" type="submit" value="중복확인">
-
+                <input class="inputSize" type="text" name="userId" placeholder="아이디" maxlength="20" id="id">
+                <div class="idCheckBtn_container">
+                <input class="idCheckBtn" type="submit" value="중복확인" id="checkBtnID">
                 </div>
             </div>
+
+
             <div>
                 <input class="inputSize_1" type="password" name="user_PW" placeholder="비밀번호" maxlength="20">
             </div>
@@ -57,6 +58,7 @@
             <div>
                 <input class="inputSize_1" type="email" name="user_email" placeholder="이메일" maxlength="20">
             </div>
+
 
 
             <div class="animal_check">

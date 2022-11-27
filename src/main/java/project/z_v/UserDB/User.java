@@ -1,5 +1,6 @@
 package project.z_v.UserDB;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,8 +12,10 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
+
 public class User {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)

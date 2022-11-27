@@ -10,11 +10,20 @@
 <!-- navbar -->
 <div class="main_bar">
     <a href="" class="home">
-        <img src="resources/img/로고.png" alt="Z&V 로고">
+        <img src="" alt="Z&V 로고">
+<!--        <div th:if="${session.user != null}">됨</div>-->
+<!--        <div th:if="${session.user == null}">asdasd</div>-->
         <div class="home_str">Z&V</div>
     </a>
-    <form action="" method="post">
-        <button class="navyBtn" onClick="location.href=''" type="submit">로그인</button>
+
+    <form  method="post">
+       <div th:if="${session.user == null}">
+           <button value="로그인">login</button>
+       </div>
+        <div th:if="${session.user != null}" href="/main">
+            <button value="로그아웃">logout</button>
+        </div>
+
     </form>
 </div>
 <!-- main -->
@@ -22,8 +31,13 @@
     <div class="Search">
         <div class="Search_text">
             <form action="" method="post">
-                <input name="search" value="" type="submit">
-                <button type="button" class="search_Btn" onClick="location.href=''">
+
+                <input type="text" name="search" value="" >
+                <button  class="search_Btn" onClick="location.href=''">
+
+                //<input name="search" value="" type="submit">
+                //<button type="button" class="search_Btn" onClick="location.href=''">
+
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </form>
@@ -33,6 +47,8 @@
         <form method="post" class="filter_list">
             <div class="filter_box">
                 <div>지역</div>
+
+
                 <select class="Area_list" name="area">
                     <option value="">서울</option>
                     <option value="">인천</option>
@@ -79,7 +95,7 @@
                 <hr>
                 <div class="small_str">가 본 사람들의 꿀팁이 가득한<br>418,740개의 리뷰를 만나보세요.</div>
                 <form action="" class="go_button" method="post">
-                    <button type="button" class="navyBtn" onClick="location.href=''">병원 둘러보기 ></button>
+                    <button class="navyBtn" onClick="location.href=''">병원 둘러보기 ></button>
                 </form>
             </div>
             <div class="Reviews">
@@ -90,7 +106,7 @@
                 <hr>
                 <div class="small_str">Z&V 회원이라면 누구나<br>리뷰를 쓸 수 있어요.</div>
                 <form action="" class="go_button" method="post">
-                    <button type="button" class="navyBtn" onClick="location.href=''">리뷰 쓰러가기 ></button>
+                    <button class="navyBtn" onClick="location.href=''">리뷰 쓰러가기 ></button>
                 </form>
             </div>
             <div class="like_List">
@@ -101,7 +117,7 @@
                 <hr>
                 <div class="small_str">우리 동물을 위한 병원을 한눈에<br>찾아보세요.</div>
                 <form action="" class="go_button" method="post">
-                    <button type="button" class="navyBtn" onClick="location.href=''">관심 목록 둘러보기 ></button>
+                    <button class="navyBtn" onClick="location.href=''">관심 목록 둘러보기 ></button>
                 </form>
             </div>
         </div>
