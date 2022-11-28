@@ -1,5 +1,6 @@
 package project.z_v;
 
+
 import com.mysql.cj.xdevapi.Session;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,10 @@ import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
+
+import org.springframework.boot.context.annotation.UserConfigurations;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -59,6 +64,7 @@ public class TestController {
     @GetMapping ("/login")
     public String login() { return "login";}
 
+
     @PostMapping("/main")
     public String main(LoginDto loginDto,Model model, HttpServletRequest request){
 
@@ -103,6 +109,7 @@ public class TestController {
     }
 
 
+
     @GetMapping("/manager")
     public String manager(){
         return "Manager"; }
@@ -110,4 +117,17 @@ public class TestController {
     @GetMapping("/bestPage")
     public String bestPage(){
         return "bestPage"; }
+
+    @GetMapping("/interest")
+    public String interest(){
+        return "interest"; }
+
+    @GetMapping("/ShopRemove")
+    public String ShopRemove(){
+        return "ShopRemove"; }
+
+    @GetMapping("/allPage")
+    public String allPage(){
+        return "allPage"; }
+
 }

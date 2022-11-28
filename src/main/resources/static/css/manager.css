@@ -573,6 +573,20 @@ body{
     margin-top: 3px;
 }
 
+.locationBox {
+    padding-left: 320px;
+}
+
+.locationTitle {
+    font-size: 18px;
+    font-weight: 700;
+    margin-right: 20px;
+}
+
+.locationBox_list {
+    margin-right: 20px;
+    margin-top: 3px;
+}
 
 
 .finishBtn_Box {
