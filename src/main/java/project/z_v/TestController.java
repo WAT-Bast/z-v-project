@@ -87,7 +87,7 @@ public class TestController {
 //    }
 
 
-    @PostMapping(value = "logout")
+    @RequestMapping(value = "logout")
     public String logoutGET(HttpServletRequest request){
         HttpSession session = request.getSession();
         session.invalidate();

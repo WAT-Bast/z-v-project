@@ -19,7 +19,7 @@
        <div th:if="${session.user == null}">
            <button value="로그인">login</button>
        </div>
-        <div th:if="${session.user != null}" href="/main">
+        <div th:if="${session.user != null}">
             <button value="로그아웃">logout</button>
         </div>
     </form>
