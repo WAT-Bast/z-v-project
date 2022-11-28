@@ -143,11 +143,30 @@ body{
     color: #313131;
 }
 
-.listBox_img {
+
+
+
+
+/*table 크기*/
+.container{
+    display: flex;
+    margin-top: 50px;
+    margin-left: 300px;
+}
+
+.img{
+    /*width: 200px;*/
+    /*height: 150px;*/
     position: relative;
 }
 
-.list_img {
+.listBox_img {
+/*    width: 200px;
+    height: 150px;
+    position: relative;*/
+}
+
+/*.list_img {
     display: flex;
     margin-top: 30px;
     margin-left: 20%;
@@ -163,33 +182,18 @@ body{
     display: flex;
     margin-top: -100px;
     margin-left: 55%;
-}
-
-/*table 크기*/
-.container{
-    margin-top: 100px;
-    margin-left: 100px;
-}
-.img{
-    width: 300px;
-    height: 200px;
-}
-/*
-.hospital_list{
-    display: flex;
-}
-
-
-
-*/
-
+}*/
 
 /*이미지 조절*/
 .imgSize {
+/*    width: 200px;
+    height: 150px;*/
+    /*position: relative;*/
+}
+.imgSize img{
     width: 200px;
-    height: 100px;
-    margin-right: 20px;
-    position: relative;
+    height: 150px;
+    /*position: relative;*/
 }
 
 /*찜 하트 아이콘 조절*/
@@ -197,13 +201,17 @@ body{
     position: absolute;
     color: #777777;
     font-size: 25px;
-    margin-left: 165px;
-    margin-top: 15px;
-
+    /*margin-left: 165px;*/
+    top: 105px; left: 160px;
+/*    margin-top: 15px;*/
 }
 
 .iconSize:hover {
     color: red;
+}
+
+.table_information {
+    padding-bottom: 70px;
 }
 
 .hospitalName {
