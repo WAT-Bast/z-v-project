@@ -16,15 +16,20 @@
         <div class="home_str">Z&V</div>
     </a>
 
-    <form  method="post">
+    <form method="post">
        <div th:if="${session.user == null}">
            <button value="로그인">login</button>
        </div>
-        <div th:if="${session.user != null}" href="/main">
+        <div th:if="${session.user != null}">
             <button value="로그아웃">logout</button>
         </div>
 
     </form>
+<form method="get" action="/manager">
+    <div th:if="${adminTrue == true}">
+        <button value="관리자">admin</button>
+    </div>
+</form>
 </div>
 <!-- main -->
 <div class="main_contents">
@@ -35,8 +40,8 @@
                 <input type="text" name="search" value="" >
                 <button  class="search_Btn" onClick="location.href=''">
 
-                //<input name="search" value="" type="submit">
-                //<button type="button" class="search_Btn" onClick="location.href=''">
+<!--                <input name="search" value="" type="submit">-->
+<!--                <button type="button" class="search_Btn" onClick="location.href=''">-->
 
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
