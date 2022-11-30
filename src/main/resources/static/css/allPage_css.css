@@ -143,80 +143,131 @@ body{
     color: #313131;
 }
 
-.listBox_img {
+
+
+
+
+/*table 크기*/
+.tableA{
+    display: flex;
+    margin-bottom: 100px;
+}
+
+.hospital_Left {
+    display: block;
+}
+
+.container_Left{
+    display: flex;
+    margin-top: 50px;
+    margin-left: 300px;
+    width: 450px;
+    height: 155px;
+    background-color: white;
+    border: none;
+}
+
+.listBox_img_Left {
+/*    width: 200px;
+    height: 150px;*/
     position: relative;
 }
-
-.list_img {
-    display: flex;
-    margin-top: 30px;
-    margin-left: 20%;
-}
-
-.list_img_2, .list_img_4, .list_img_6, .list_img_8 {
-    display: flex;
-    margin-top: 90px;
-    margin-left: 20%;
-}
-
-.list_img_1, .list_img_3, .list_img_5, .list_img_7, .list_img_9 {
-    display: flex;
-    margin-top: -100px;
-    margin-left: 55%;
-}
-
-/*table 크기*/
-.container{
-    margin-top: 100px;
-    margin-left: 100px;
-}
-.img{
-    width: 300px;
-    height: 200px;
-}
-/*
-.hospital_list{
-    display: flex;
-}
-
-
-
-*/
-
 
 /*이미지 조절*/
-.imgSize {
+.imgSize_Left {
     width: 200px;
-    height: 100px;
-    margin-right: 20px;
-    position: relative;
+    height: 150px;
+    /*position: relative;*/
+}
+.imgSize_Left img{
+    width: 200px;
+    height: 150px;
+    /*position: relative;*/
 }
 
 /*찜 하트 아이콘 조절*/
-.iconSize {
+.iconSize_Left {
     position: absolute;
     color: #777777;
     font-size: 25px;
-    margin-left: 165px;
-    margin-top: 15px;
-
+    /*margin-left: 165px;*/
+    top: 105px; left: 160px;
+/*    margin-top: 15px;*/
 }
 
-.iconSize:hover {
+.iconSize_Left:hover {
     color: red;
 }
 
-.hospitalName {
+/*병원이름*/
+.table_information_Left {
+    padding-bottom: 70px;
+}
+
+.hospitalName_Left {
+    margin-left: 10px;
     font-weight: 700;
     font-size: 16px;
     margin-bottom: 1px;
 }
 
-.star {
-    color: #183052;
+
+
+
+.hospital_Right {
+    display: block;
 }
 
-.starText {
-    font-weight: 600;
-    margin-top: -3px;
+.container_Right{
+    display: flex;
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 450px;
+    height: 155px;
+    background-color: white;
+    border: none;
+}
+
+.listBox_img_Right {
+    /*    width: 200px;
+        height: 150px;*/
+    position: relative;
+}
+
+/*이미지 조절*/
+.imgSize_Right {
+    width: 200px;
+    height: 150px;
+    /*position: relative;*/
+}
+.imgSize_Right img{
+    width: 200px;
+    height: 150px;
+    /*position: relative;*/
+}
+
+/*찜 하트 아이콘 조절*/
+.iconSize_Right {
+    position: absolute;
+    color: #777777;
+    font-size: 25px;
+    /*margin-left: 165px;*/
+    top: 105px; left: 160px;
+    /*    margin-top: 15px;*/
+}
+
+.iconSize_Right:hover {
+    color: red;
+}
+
+/*병원이름*/
+.table_information_Right {
+    padding-bottom: 70px;
+}
+
+.hospitalName_Right {
+    margin-left: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 1px;
 }
