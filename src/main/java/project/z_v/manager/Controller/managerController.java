@@ -35,19 +35,32 @@ public class managerController {
         model.addAttribute("manager", entity);
         return "hospital_information";
     }
+/*    @PostMapping("/test/{b_no}")
+    public String manager(@PathVariable("b_no") int b_no, managerDto dto, Model model) {
+        model.addAttribute("test",manager(b_no));
+    managerEntity entity = dto.toManagerEntity();
+    managerRepository.save(entity);
+    model.addAttribute("manager", entity);
+    return "hospital_information";
+}*/
 
+/*    @RequestMapping("/test/{hospital_number}")
+    public String allpage_manager(@PathVariable("hospital_number") Long hospital_number, Model model) {
+        model.addAttribute("test", allpage_manager(hospital_number));
+        return "hospital_information";
+    }*/
 
-    @GetMapping("/hospitial-list")
-    public String hospitialList(Model model) {
-        List<managerEntity> managerEntityList = managerRepository.findAll();
-        List<ManagerResponseDto> managerResponseDtos = new ArrayList<>();
+        @GetMapping("/hospitial-list")
+        public String hospitialList(Model model) {
+            List<managerEntity> managerEntityList = managerRepository.findAll();
+            List<ManagerResponseDto> managerResponseDtos = new ArrayList<>();
         for (managerEntity managerEntity : managerEntityList) {
             double grade = 0.0;
             List<Review> reviewList = reviewRepository.findAllByManagerEntity(managerEntity);
             for (Review review : reviewList) {
                 grade += review.getGrade();
             }
-            ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHosptial_name(), grade/reviewList.size(), reviewList.size(), managerEntity.getImage_information());
+            ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHospital_number(),managerEntity.getHosptial_name(), grade/reviewList.size(), reviewList.size(), managerEntity.getImage_information());
             managerResponseDtos.add(managerResponseDto);
         }
         model.addAttribute("hospitial", managerResponseDtos);
@@ -63,5 +76,9 @@ public class managerController {
         model.addAttribute("review", review);
         return "hospital_information";
     }
+
+
+
+
 
 }

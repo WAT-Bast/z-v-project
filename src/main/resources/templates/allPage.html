@@ -64,287 +64,77 @@
     <a>전체 목록</a>
 </div>
 
-<div class="container">
-
-    <onclke>
-    <table class="hospital_Left" th:href="@{/templates/hospital_information}" > <!--=> th:href="@{/templates/hospital_information}"버튼을 누르면 저기로 이동-->
-        <!--onclke 을 사용해서 하면 됨-->
-        <tbody th:each="hoOdd, stat : ${hospitial}">
-            <tr>
-                <td rowspan='3' class="img">
-                    <div class="listBox_img">
-                        <div class="imgSize">
-                            <img th:src="${hoOdd.image_information}" alt="Z&V 로고">
-                        </div>
-                        <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
-                    </div>
-                </td>
-                <td class="table_information">
-                    <div class="hospitalName" th:text="${hoOdd.hospital}"></div>
-                    <div th:text="${hoOdd.grade}">
-                        <span class="star">
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </span>
-                    </div>
-                    <div th:text="${hoOdd.reviewCount}"></div>
+<div class="tableA">
+    <div class="hospital_Left"> <!--flex를 줘서 div 큰 section을 나눈거다-->
+        <!--       for each 문이 start-->
+        <div th:each="hoOdd : ${hospitial}" th:if="${hoOdd.hospital_number%2} != 0">
+            <button class="container_Left" th:onclick="|location.href='@{/templates/hospital_information}'|">
+                <div class="listBox_img_Left">
+                    <img class="imgSize_Left" th:src="${hoOdd.image_information}" alt="Z&V 로고">
+                    <div class="iconSize_Left"><i class="fa-solid fa-heart"></i></div>
+                </div>
+                <div class="table_information_Left">
+                    <div class="hospitalName_Left" th:text="${hoOdd.hospital}"></div>
+                    <!--        <div th:text="${hoOdd.reviewCount}"></div>-->
                     <!--<td ><img class ="tes" th:src="${ho.image_information}"/></td>-->
-                </td>
-            </tr>
-            <!--<tr>&lt;!&ndash; => th:each="Hospital : ${Hospitals}" 리스트 불러오기&ndash;&gt;
-                &lt;!&ndash;            <td th:text="${ho.hospital}"></td>
-                            <td th:text="${ho.grade}"></td>
-                            <td th:text="${ho.reviewCount}"></td>&ndash;&gt;
-                <td th:text="${hoOdd.grade}">
-                    <span class="star">
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td th:text="${hoOdd.reviewCount}"></td>
-                &lt;!&ndash;<td ><img class ="tes" th:src="${ho.image_information}"/></td>&ndash;&gt;
-            </tr>-->
+                </div>
+            </button>
+        </div>
+        <!--       for each 문이 end-->
+
+    </div>
+    <div class="hospital_Right">
+        <div th:each="hoOdd : ${hospitial}" th:if="${hoOdd.hospital_number%2} == 0">
+
+            <button class="container_Right" th:onclick="'window.location.href = \'' + @{/templates/hospital_information/ {bno} (bno=${hospitialH.ospital_number})} + '\''" >
+                    <!--th:onclick="'location.href = \'' + @{/templates/hospital_information} + '\''">-->
+
+                    <!--th:onclick="|location.href='@{/templates/hospital_information}'|">-->
+
+
+
+                <div class="listBox_img_Right">
+                    <img class="imgSize_Right" th:src="${hoOdd.image_information}" alt="Z&V 로고">
+                    <div class="iconSize_Right"><i class="fa-solid fa-heart"></i></div>
+                </div>
+                <div class="table_information_Right">
+                    <div class="hospitalName_Right" th:text="${hoOdd.hospital}"></div>
+                    <!--        <div th:text="${hoOdd.reviewCount}"></div>-->
+                    <!--<td ><img class ="tes" th:src="${ho.image_information}"/></td>-->
+                </div>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!--<div class="container">
+    &lt;!&ndash;<button type="button" th:onclick="|location.href='@{/templates/hospital_information}'|">&ndash;&gt;
+    <table border="1px" class="hospital_Left" th:href="@{/templates/hospital_information}">
+        &lt;!&ndash;=> th:href="@{/templates/hospital_information}"버튼을 누르면 저기로 이동&ndash;&gt;
+        &lt;!&ndash;onclke 을 사용해서 하면 됨&ndash;&gt;
+        <tbody th:each="hoOdd : ${hospitial}">
+        <tr>
+            <td rowspan='3' class="img">&lt;!&ndash;th:if="${hoOdd/2} == 0"&ndash;&gt;
+                <div class="listBox_img">
+                    <div class="imgSize">
+                        <img th:src="${hoOdd.image_information}" alt="Z&V 로고">
+                    </div>
+                    <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
+                </div>
+            </td>
+            <td rowspan='3' class="img">&lt;!&ndash; th:if="${ hoOdd/2} != 0" &ndash;&gt;
+                <div class="listBox_img">
+                    <div class="imgSize">
+                        <img th:src="${hoOdd.image_information}" alt="Z&V 로고">
+                    </div>
+                    <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
+                </div>
+            </td>
+        </tr>
         </tbody>
     </table>
-    </onclke>
-<!--
-    <onclke>
-        <table border="1px" class="hospital_Right" th:href="@{/templates/hospital_information}"> &lt;!&ndash;=> th:href="@{/templates/hospital_information}"버튼을 누르면 저기로 이동&ndash;&gt;
-            &lt;!&ndash;onclke 을 사용해서 하면 됨&ndash;&gt;
-
-            <tbody  th:each="hoOdd, stat : ${hospitial}">
-            <tr class="img">
-                <td rowspan='3'>
-                    <div class="listBox_img">
-                        <div class="imgSize">
-                            <img th:src="${hoOdd.image_information}" alt="Z&V 로고" style="width:200px; height: 150px">
-                        </div>
-                        <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
-                    </div>
-                </td>
-                <td class="hospitalName" th:text="${hoOdd.hospital}"> 24시 유앤미 동물병원</td>
-            </tr>
-            <tr>&lt;!&ndash; => th:each="Hospital : ${Hospitals}" 리스트 불러오기&ndash;&gt;
-                &lt;!&ndash;            <td th:text="${ho.hospital}"></td>
-                            <td th:text="${ho.grade}"></td>
-                            <td th:text="${ho.reviewCount}"></td>&ndash;&gt;
-                <td th:text="${hoOdd.grade}">
-                    <span class="star">
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td th:text="${hoOdd.reviewCount}"></td>
-                &lt;!&ndash;<td ><img class ="tes" th:src="${ho.image_information}"/></td>&ndash;&gt;
-            </tr>
-
-            </tbody>
-        </table>
-    </onclke>-->
-
-</div>
-<!--<div class="list_img">
-    <div class="listBox_img">
-        <div class="imgSize">
-            <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
-        </div>
-        <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
-    </div>
-    <div class="name_box">
-        <p class="hospitalName">24시 유앤미 동물병원</p>
-        <span class="star">
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-    </span>
-        <p class="starText">(4.5)</p>
-    </div>
-</div>
-<div class="list_img_1">
-    <div class="listBox_img">
-        <div class="imgSize">
-            <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
-        </div>
-        <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
-    </div>
-    <div class="name_box">
-        <p class="hospitalName">24시 유앤미 동물병원</p>
-        <span class="star">
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-    </span>
-        <p class="starText">(4.5)</p>
-    </div>
-</div>
-<div class="list_img_2">
-    <div class="listBox_img">
-        <div class="imgSize">
-            <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
-        </div>
-        <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
-    </div>
-    <div class="name_box">
-        <p class="hospitalName">24시 유앤미 동물병원</p>
-        <span class="star">
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-    </span>
-        <p class="starText">(4.5)</p>
-    </div>
-</div>
-<div class="list_img_3">
-    <div class="listBox_img">
-        <div class="imgSize">
-            <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
-        </div>
-        <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
-    </div>
-    <div class="name_box">
-        <p class="hospitalName">24시 유앤미 동물병원</p>
-        <span class="star">
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-    </span>
-        <p class="starText">(4.5)</p>
-    </div>
-</div>
-<div class="list_img_4">
-    <div class="listBox_img">
-        <div class="imgSize">
-            <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
-        </div>
-        <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
-    </div>
-    <div class="name_box">
-        <p class="hospitalName">24시 유앤미 동물병원</p>
-        <span class="star">
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-    </span>
-        <p class="starText">(4.5)</p>
-    </div>
-</div>
-<div class="list_img_5">
-    <div class="listBox_img">
-        <div class="imgSize">
-            <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
-        </div>
-        <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
-    </div>
-    <div class="name_box">
-        <p class="hospitalName">24시 유앤미 동물병원</p>
-        <span class="star">
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-    </span>
-        <p class="starText">(4.5)</p>
-    </div>
-</div>
-<div class="list_img_6">
-    <div class="listBox_img">
-        <div class="imgSize">
-            <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
-        </div>
-        <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
-    </div>
-    <div class="name_box">
-        <p class="hospitalName">24시 유앤미 동물병원</p>
-        <span class="star">
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-    </span>
-        <p class="starText">(4.5)</p>
-    </div>
-</div>
-<div class="list_img_7">
-    <div class="listBox_img">
-        <div class="imgSize">
-            <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
-        </div>
-        <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
-    </div>
-    <div class="name_box">
-        <p class="hospitalName">24시 유앤미 동물병원</p>
-        <span class="star">
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-    </span>
-        <p class="starText">(4.5)</p>
-    </div>
-</div>
-<div class="list_img_8">
-    <div class="listBox_img">
-        <div class="imgSize">
-            <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
-        </div>
-        <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
-    </div>
-    <div class="name_box">
-        <p class="hospitalName">24시 유앤미 동물병원</p>
-        <span class="star">
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-    </span>
-        <p class="starText">(4.5)</p>
-    </div>
-</div>
-<div class="list_img_9">
-    <div class="listBox_img">
-        <div class="imgSize">
-            <img src="resources/img/동물병원.png" alt="Z&V 로고" style="width:200px; height: 150px">
-        </div>
-        <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
-    </div>
-    <div class="name_box">
-        <p class="hospitalName">24시 유앤미 동물병원</p>
-        <span class="star">
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-    </span>
-        <p class="starText">(4.5)</p>
-    </div>
 </div>-->
 </body>
+
 </html>
