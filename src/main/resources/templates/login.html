@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="kr" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>login</title>
     <script src="https://kit.fontawesome.com/5ef77fbbed.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/login_css.css">
+
 </head>
 <body>
 
@@ -16,25 +17,70 @@
 </div>
 
     <div>
-        <div class="login_container">
-            <form method="post" class="formStyle">
+        <div   class="login_container">
+            <form method="post" action="/login" class="formStyle">
                 <h3>로그인</h3>
                 <div class="login_id_box">
-                    <input class="formControl" type="text" name="userID" placeholder="아이디" maxlength="20" >
+                    <input class="formControl" type="text" name="loginId" id="loginId" placeholder="아이디" maxlength="20" >
                 </div>
                 <div>
-                    <input class="formControl" type="password" name="userPW" placeholder="비밀번호" maxlength="20">
+                    <input class="formControl" type="password" name="password" id="password" placeholder="비밀번호" maxlength="20">
                 </div>
                 <div class="login_find_container">
-                    <button type="button" class="id_find">아이디 찾기</button>
+
+                    <button type="submit" class="id_find">아이디 찾기</button>
                     <div class="login_bar">|</div>
-                    <button type="button" class="pw_find">비밀번호 찾기</button>
+                    <button type="submit" class="pw_find">비밀번호 찾기</button>
                     <div class="login_bar">|</div>
-                    <button type="button" class="sign_up_find">회원가입</button>
+                    <button type="submit" class="sign_up_find">회원가입</button>
                 </div>
                 <input type="submit" class="login_button" value="로그인하기">
+
+
             </form>
+
+
         </div>
     </div>
+<!--
+<script th:inline="javascript">
+    $(function () {
+        $('.login_button').click((e) => {
+            const id = $('#loginId').val();
+            const password = $('#password').val();
+
+            if (id == '') {
+                alert('아이디를 입력해주세요');
+                e.preventDefault();
+            }
+            if (password == '') {
+                alert('패스워드를 입력해주세요');
+                e.preventDefault();
+            }
+
+            if (id != '' && password !='') {
+                const path = '/login';
+                const json = JSON.stringify({
+                    'id': id,
+                    'password': password,
+                });
+                $.ajax({
+                    url: path,
+                    type: 'POST',
+                    data: json,
+                }).done((response) => {
+                    if (response == 'success') {
+                        alert('로그인 성공')
+                        localStorage.setItem('id', id);
+                        location.href = ""
+                    } else {
+                        alert(response);
+                    }
+                });
+            }
+        });
+    });
+</script>
+-->
 </body>
 </html>

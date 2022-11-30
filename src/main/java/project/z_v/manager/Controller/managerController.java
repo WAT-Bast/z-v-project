@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import project.z_v.UserDB.User;
+import project.z_v.UserDB.repository.UserRepository;
 import project.z_v.manager.dto.ManagerResponseDto;
 import project.z_v.manager.dto.managerDto;
 import project.z_v.manager.entity.managerEntity;
@@ -17,6 +19,7 @@ import project.z_v.reviewDB.Review;
 import project.z_v.reviewDB.dto.ReviewRequestDto;
 import project.z_v.reviewDB.repository.ReviewRepository;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,11 +28,36 @@ import java.util.List;
 @RequiredArgsConstructor
 public class managerController {
 
-   private final managerRepository managerRepository;
-   private final ReviewRepository reviewRepository;
+    private final managerRepository managerRepository;
+    private final ReviewRepository reviewRepository;
+    private final UserRepository userRepository;
+    private final HttpSession session;
+
+    @GetMapping("/manager")
+    public String managerPage() {
+        User user = (User) session.getAttribute("user");
+        if (user == null) {
+            return "redirect:/main";
+        } else {
+            if (user.isAdmin() == false) {
+                return "redirect:/main";
+            }
+        }
+        return "Manager";
+
+    }
 
     @PostMapping("/test")
     public String manager(managerDto dto, Model model) {
+        User user = (User) session.getAttribute("user");
+        if (user == null) {
+            return "redirect:/main";
+        } else {
+            if (user.isAdmin() == false) {
+                return "redirect:/main";
+            }
+        }
+
         managerEntity entity = dto.toManagerEntity();
         managerRepository.save(entity);
         model.addAttribute("manager", entity);
@@ -60,7 +88,10 @@ public class managerController {
             for (Review review : reviewList) {
                 grade += review.getGrade();
             }
-            ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHospital_number(),managerEntity.getHosptial_name(), grade/reviewList.size(), reviewList.size(), managerEntity.getImage_information());
+
+            /*ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHospital_number(),managerEntity.getHosptial_name(), grade/reviewList.size(), reviewList.size(), managerEntity.getImage_information());*/
+
+            ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHosptial_name(), grade / reviewList.size(), reviewList.size(), managerEntity.getImage_information());
             managerResponseDtos.add(managerResponseDto);
         }
         model.addAttribute("hospitial", managerResponseDtos);
