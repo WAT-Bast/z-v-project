@@ -38,9 +38,17 @@ public class manager {
 
     private String image_information;
 
+    private double locationLatitude;
+
+    private double locationlongitude;
+
     public manager() {}
 
-    public manager(Long hospital_number, String hosptial_name, String hospital_address, String tell, String site, boolean shop_number, boolean aDay, String timeMon, String timeTues, String timeWednes, String timeThurs, String timeFri, String timeSatur, String timeSun, String areaAddress, String image_information) {
+
+<!--    public manager(Long hospital_number, String hosptial_name, String hospital_address, String tell, String site, boolean shop_number, boolean aDay, String timeMon, String timeTues, String timeWednes, String timeThurs, String timeFri, String timeSatur, String timeSun, String areaAddress, String image_information) {-->
+
+    public manager(Long hospital_number, String hosptial_name, String hospital_address, String tell, String site, boolean shop_number, boolean aDay, String timeMon, String timeTues, String timeWednes, String timeThurs, String timeFri, String timeSatur, String timeSun, String area_address, String image_information, double locationLatitude, double locationlongitude) {
+
         Hospital_number = hospital_number;
         Hosptial_name = hosptial_name;
         Hospital_address = hospital_address;
@@ -57,6 +65,24 @@ public class manager {
         TimeSun = timeSun;
         this.areaAddress = areaAddress;
         this.image_information = image_information;
+        this.locationLatitude = locationLatitude;
+        this.locationlongitude = locationlongitude;
+    }
+
+    public double getLocationLatitude() {
+        return locationLatitude;
+    }
+
+    public void setLocationLatitude(double locationLatitude) {
+        this.locationLatitude = locationLatitude;
+    }
+
+    public double getLocationlongitude() {
+        return locationlongitude;
+    }
+
+    public void setLocationlongitude(double locationlongitude) {
+        this.locationlongitude = locationlongitude;
     }
 
     public String getTimeMon() {

@@ -68,7 +68,8 @@
     <div class="hospital_Left"> <!--flex를 줘서 div 큰 section을 나눈거다-->
         <!--       for each 문이 start-->
         <div th:each="hoOdd : ${hospitial}" th:if="${hoOdd.hospital_number%2} != 0">
-            <form method="get" th:action="@{'/test/' + ${hoOdd.hospital_number}}">
+
+<!--            <form method="get" th:action="@{'/test/' + ${hoOdd.hospital_number}}">
                 <button class="container_Left" type="submit">
                     <div hidden th:value="${hoOdd.hospital_number}"></div>
                     <div class="listBox_img_Left">
@@ -81,7 +82,21 @@
                         <!--<td ><img class ="tes" th:src="${ho.image_information}"/></td>-->
                     </div>
                 </button>
-            </form>
+            </form> -->
+
+            <button class="container_Left" >
+                <!--th:onclick="|location.href='@{/templates/hospital_information}'|"-->
+                <div class="listBox_img_Left">
+                    <img class="imgSize_Left" th:src="${hoOdd.image_information}" alt="Z&V 로고">
+                    <div class="iconSize_Left"><i class="fa-solid fa-heart"></i></div>
+                </div>
+                <div class="table_information_Left">
+                    <div class="hospitalName_Left" th:text="${hoOdd.hospital}"></div>
+                    <!--        <div th:text="${hoOdd.reviewCount}"></div>-->
+                    <!--<td ><img class ="tes" th:src="${ho.image_information}"/></td>-->
+                </div>
+            </button>
+
         </div>
         <!--       for each 문이 end-->
 
@@ -89,7 +104,7 @@
     <div class="hospital_Right">
         <div th:each="hoOdd : ${hospitial}" th:if="${hoOdd.hospital_number%2} == 0">
 
-            <form method="get" th:action="@{'/test/' + ${hoOdd.hospital_number}}">
+<!--            <form method="get" th:action="@{'/test/' + ${hoOdd.hospital_number}}">
                 <button class="container_Right" type="submit">
                     <div hidden th:value="${hoOdd.hospital_number}"></div>
                     <div class="listBox_img_Right">
@@ -102,7 +117,25 @@
                         <!--<td ><img class ="tes" th:src="${ho.image_information}"/></td>-->
                     </div>
                 </button>
-            </form>
+            </form>-->
+            <button class="container_Right" >
+                <!--th:onclick="'window.location.href = \'' + @{/templates/hospital_information/ {bno} (bno=${hospitialH.ospital_number})} + '\''"-->
+                <!--th:onclick="'location.href = \'' + @{/templates/hospital_information} + '\''">-->
+
+                    <!--th:onclick="|location.href='@{/templates/hospital_information}'|">-->
+
+
+
+                <div class="listBox_img_Right">
+                    <img class="imgSize_Right" th:src="${hoOdd.image_information}" alt="Z&V 로고">
+                    <div class="iconSize_Right"><i class="fa-solid fa-heart"></i></div>
+                </div>
+                <div class="table_information_Right">
+                    <div class="hospitalName_Right" th:text="${hoOdd.hospital}"></div>
+                    <!--        <div th:text="${hoOdd.reviewCount}"></div>-->
+                    <!--<td ><img class ="tes" th:src="${ho.image_information}"/></td>-->
+                </div>
+            </button>
         </div>
     </div>
 </div>

@@ -151,6 +151,7 @@
                 var list_Daejeon = ["둔산동", "은행동", "대덕구", "동구", "서구", "유성구", "중구"];
                 var list_Sejong = ["도담동", "나성동", "새롬동", "다정동", "한솔동", "보람동", "가람동", "어진동", "소담동", "반곡동", "종촌동", "대평동", "아름동", "고운동", "조치원읍"];
 
+<!--
                 var target = document.getElementById("state");
 
                 if (e.value == "서울") {
@@ -190,7 +191,19 @@
                 <input type="checkbox" name="hospital_Area">강아지
                 <input type="checkbox" name="hospital_Area">고양이
                 <input type="checkbox" name="hospital_Area">햄스터
-                <input type="checkbox" name="hospital_Area">기타
+                <input type="checkbox" name="hospital_Area">기타 -->
+
+            <div class="locationBox">
+                <div class="locationTitle">위치 [위도, 경도를 입력하세요]</div>
+                <div class="locationBox_list">
+                <p>위도 : <input type="text" name="locationLatitude"></p>
+                <p>경도 : <input type="text" name="locationlongitude"></p>
+                </div>
+            </div>
+
+            <div class="finishBtn_Box">
+                <input class="finishBtn" type="submit" value="등록하기" id="subBTN">
+
             </div>
         </div>
         <br>
