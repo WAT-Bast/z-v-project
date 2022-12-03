@@ -150,14 +150,14 @@ public class TestController {
     }
 */
 
-//    @PostMapping("/logout")
-//    public String logout(HttpServletRequest request) {
-//        HttpSession session = request.getSession(false);
-//        if(session != null) {
-//            session.invalidate();
-//        }
-//        return "redirect:/main";
-//    }
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        if(session != null) {
+            session.invalidate();
+        }
+        return "redirect:/main";
+    }
 
 
 //    @RequestMapping(value = "logout")
