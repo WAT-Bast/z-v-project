@@ -174,8 +174,9 @@ public class managerController {
     @PostMapping("{id}")
     public String review(@PathVariable Long id, ReviewRequestDto reviewRequestDto, Model model) {
         managerEntity managerEntity = managerRepository.findById(id).orElse(null);
-        Review review = reviewRepository.save(new Review(reviewRequestDto.getGrade(), reviewRequestDto.getReviewContent(), managerEntity));
-        model.addAttribute("review", review);
+        reviewRepository.save(new Review(reviewRequestDto.getGrade(), reviewRequestDto.getReviewContent(), managerEntity));
+        List<Review> reviewList = reviewRepository.findAllByManagerEntity(managerEntity);
+        model.addAttribute("reviewList", reviewList);
         return "hospital_information";
     }
 
