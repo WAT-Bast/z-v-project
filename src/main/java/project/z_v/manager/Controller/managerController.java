@@ -3,6 +3,10 @@ package project.z_v.manager.Controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -89,9 +93,9 @@ public class managerController {
                 grade += review.getGrade();
             }
 
-            /*ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHospital_number(),managerEntity.getHosptial_name(), grade/reviewList.size(), reviewList.size(), managerEntity.getImage_information());*/
+            ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHospital_number(),managerEntity.getHosptial_name(), grade/reviewList.size(), reviewList.size(), managerEntity.getImage_information());
 
-            ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHosptial_name(), grade / reviewList.size(), reviewList.size(), managerEntity.getImage_information());
+            /*ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHosptial_name(), grade / reviewList.size(), reviewList.size(), managerEntity.getImage_information());*/
             managerResponseDtos.add(managerResponseDto);
         }
         model.addAttribute("hospitial", managerResponseDtos);
@@ -108,6 +112,20 @@ public class managerController {
         return "hospital_information";
     }
 
+
+//    @GetMapping("/Filter")
+//    public String filter(Model model, @PageableDefault(page = 0, size = 10, sort="id", direction = Sort.Direction.DESC)
+//            Pageable pageable, String Hospital_address, boolean a_day, boolean Shop_number) {
+//
+//        Page<managerEntity> list = null;
+//
+//        if(Hospital_address == null) {
+//            list = filterBorder.filter(pageable);
+//        }else {
+//            list = filterBorder.filterSearchList(Hospital_address, a_day, Shop_number, pageable);
+//        }
+//        return "/main";
+//    }
 
 
 

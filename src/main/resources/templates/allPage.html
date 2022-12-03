@@ -68,7 +68,8 @@
     <div class="hospital_Left"> <!--flex를 줘서 div 큰 section을 나눈거다-->
         <!--       for each 문이 start-->
         <div th:each="hoOdd : ${hospitial}" th:if="${hoOdd.hospital_number%2} != 0">
-            <button class="container_Left" th:onclick="|location.href='@{/templates/hospital_information}'|">
+            <button class="container_Left" >
+                <!--th:onclick="|location.href='@{/templates/hospital_information}'|"-->
                 <div class="listBox_img_Left">
                     <img class="imgSize_Left" th:src="${hoOdd.image_information}" alt="Z&V 로고">
                     <div class="iconSize_Left"><i class="fa-solid fa-heart"></i></div>
@@ -86,8 +87,9 @@
     <div class="hospital_Right">
         <div th:each="hoOdd : ${hospitial}" th:if="${hoOdd.hospital_number%2} == 0">
 
-            <button class="container_Right" th:onclick="'window.location.href = \'' + @{/templates/hospital_information/ {bno} (bno=${hospitialH.ospital_number})} + '\''" >
-                    <!--th:onclick="'location.href = \'' + @{/templates/hospital_information} + '\''">-->
+            <button class="container_Right" >
+                <!--th:onclick="'window.location.href = \'' + @{/templates/hospital_information/ {bno} (bno=${hospitialH.ospital_number})} + '\''"-->
+                <!--th:onclick="'location.href = \'' + @{/templates/hospital_information} + '\''">-->
 
                     <!--th:onclick="|location.href='@{/templates/hospital_information}'|">-->
 
