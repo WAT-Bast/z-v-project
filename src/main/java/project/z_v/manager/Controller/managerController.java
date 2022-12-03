@@ -141,6 +141,7 @@ public class managerController {
                     if(review.getGrade() == null) {
                         continue;
                     }
+
                     grade += review.getGrade();
                 }
             }
