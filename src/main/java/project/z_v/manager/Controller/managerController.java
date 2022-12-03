@@ -1,16 +1,8 @@
 package project.z_v.manager.Controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
-<!--import org.springframework.web.bind.annotation.*;-->
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,12 +17,9 @@ import project.z_v.reviewDB.Review;
 import project.z_v.reviewDB.dto.ReviewRequestDto;
 import project.z_v.reviewDB.repository.ReviewRepository;
 
-<!--import java.awt.print.Pageable;-->
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping
@@ -48,7 +37,7 @@ public class managerController {
         if (user == null) {
             return "redirect:/main";
         } else {
-            if (user.isAdmin() == false) {
+            if (user.getIsAdmin() == false || user.getIsAdmin() == null) {
                 return "redirect:/main";
             }
         }
@@ -70,7 +59,7 @@ public class managerController {
         if (user == null) {
             return "redirect:/main";
         } else {
-            if (user.isAdmin() == false) {
+            if (user.getIsAdmin() == false) {
                 return "redirect:/main";
             }
         }
@@ -100,7 +89,6 @@ public class managerController {
                 grade += review.getGrade();
             }
 
-            <!--ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHospital_number(), managerEntity.getHosptial_name(), grade / reviewList.size(), reviewList.size(), managerEntity.getImage_information());-->
 
             ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHospital_number(),managerEntity.getHosptial_name(), grade/reviewList.size(), reviewList.size(), managerEntity.getImage_information());
 

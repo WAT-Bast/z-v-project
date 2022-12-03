@@ -27,7 +27,7 @@ public class User {
     private String animal;
     private String Area;
 
-    private boolean isAdmin;
+    private Boolean isAdmin;
 
 
 

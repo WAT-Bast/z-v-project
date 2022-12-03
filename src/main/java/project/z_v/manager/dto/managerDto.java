@@ -47,10 +47,8 @@ public class managerDto {
 
     public managerEntity toManagerEntity() {
         return new managerEntity(Hospital_number, Hosptial_name, Hospital_address, Tell, site, Shop_number,
+                aDay, TimeMon, TimeTues, TimeWednes, TimeThurs, TimeFri, TimeSatur, TimeSun, representativeAddress+areaAddress, image_information);
 
-                <!--aDay, TimeMon, TimeTues, TimeWednes, TimeThurs, TimeFri, TimeSatur, TimeSun, representativeAddress+areaAddress, image_information);-->
-                aDay, TimeMon, TimeTues, TimeWednes, TimeThurs, TimeFri, TimeSatur, TimeSun,Area_address, image_information
-                ,locationLatitude, locationlongitude);
     }
 
 
