@@ -52,7 +52,7 @@
         <form method="post" class="filter_list">
             <div class="filter_box">
                 <div>지역</div>
-                <select class="Area_list" name="area">
+                <select class="Area_list" name="Area" onchange="areaList(this)">
                     <option>시/도 선택</option>
                     <option value="서울">서울</option>
                     <option value="경기">경기</option>
@@ -66,10 +66,12 @@
                 </select>
             </div>
             <div class="filter_box">
-                <select class="District_list" name="area" id="state">
+                <div>구</div>
+                <select class="District_list" name="Area" id="state">
                     <option>군/구 선택</option>
                 </select>
             </div>
+
             <script type="text/javascript">
                 function areaList(e) {
                     var list_Seoul = ["강남구","서초구","중구","서초구","양천구","종로구","송파구","마포구","용산구","강동구","서대문구","성동구","관악구","은평구","동대문구",
@@ -116,18 +118,17 @@
                     }
                 }
             </script>
+
+
             <div class="filter_box">
                 <div>옵션</div>
-                <select class="Options_list" name="area">
-                    <option value="">shop</option>
+                <select class="Options_list" name="Area">
+                    <option value="">샵</option>
                     <option value="">24시</option>
-                    <option value="">추천순</option>
-                    <option value="">리뷰순</option>
                 </select>
             </div>
         </form>
     </div>
-</div>
 <div class="allList">
     <a>전체 목록</a>
 </div>
