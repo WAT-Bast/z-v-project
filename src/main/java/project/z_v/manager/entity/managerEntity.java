@@ -66,7 +66,6 @@ import javax.persistence.*;
         @Column
         private String image_information;
 
-        <!--public managerEntity(Long hospital_number, String hosptial_name, String hospital_address, String tell, String site, boolean shop_number, boolean aDay, String timeMon, String timeTues, String timeWednes, String timeThurs, String timeFri, String timeSatur, String timeSun, String areaAddress, String image_information) {-->
 
         @Column
         private double locationLatitude;
@@ -74,7 +73,7 @@ import javax.persistence.*;
         @Column
         private double locationlongitude;
 
-        public managerEntity(Long hospital_number, String hosptial_name, String hospital_address, String tell, String site, boolean shop_number, boolean aDay, String timeMon, String timeTues, String timeWednes, String timeThurs, String timeFri, String timeSatur, String timeSun, String area_address, String image_information, double locationLatitude, double locationlongitude ) {
+        public managerEntity(Long hospital_number, String hosptial_name, String hospital_address, String tell, String site, boolean shop_number, boolean aDay, String timeMon, String timeTues, String timeWednes, String timeThurs, String timeFri, String timeSatur, String timeSun, String areaAddress, String image_information) {
 
             Hospital_number = hospital_number;
             Hosptial_name = hosptial_name;
@@ -230,11 +229,11 @@ import javax.persistence.*;
         }
 
         public String getArea_address() {
-            return Area_address;
+            return areaAddress;
         }
 
         public void setArea_address(String area_address) {
-            Area_address = area_address;
+            areaAddress = area_address;
         }
 
         public String getImage_information() {

@@ -10,7 +10,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
-<!--import org.springframework.web.bind.annotation.*;-->
+//<!--import org.springframework.web.bind.annotation.*;-->
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,7 +25,7 @@ import project.z_v.reviewDB.Review;
 import project.z_v.reviewDB.dto.ReviewRequestDto;
 import project.z_v.reviewDB.repository.ReviewRepository;
 
-<!--import java.awt.print.Pageable;-->
+//<!--import java.awt.print.Pageable;-->
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -100,7 +100,7 @@ public class managerController {
                 grade += review.getGrade();
             }
 
-            <!--ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHospital_number(), managerEntity.getHosptial_name(), grade / reviewList.size(), reviewList.size(), managerEntity.getImage_information());-->
+            /*<!-- ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHospital_number(), managerEntity.getHosptial_name(), grade / reviewList.size(), reviewList.size(), managerEntity.getImage_information());-->*/
 
             ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHospital_number(),managerEntity.getHosptial_name(), grade/reviewList.size(), reviewList.size(), managerEntity.getImage_information());
 
