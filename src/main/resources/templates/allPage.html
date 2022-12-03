@@ -5,14 +5,10 @@
     <link href="../css/allPage_css.css" rel="stylesheet" type="text/css">
     <title>Title</title>
 </head>
-
 <body>
-<!-- navbar -->
-<div class="main_bar">
-    <a th:href="@{/main}" class="home">
-        <img src="../img/융프로고.png" alt="Z&V 로고">
-        <!--        <div th:if="${session.user != null}">됨</div>-->
-        <!--        <div th:if="${session.user == null}">asdasd</div>-->
+<div class="allPage_bar">
+    <a href="" class="home">
+        <img src="/img/융프로고.png" alt="Z&V 로고">
         <div class="home_str">Z&V</div>
     </a>
     <div id ="button_id">
@@ -39,23 +35,19 @@
         </div>
     </div>
 </div>
-<!-- main -->
-<div class="main_contents">
+<div class="allPage_contents">
     <div class="Search">
         <div class="Search_text">
             <form action="" method="post">
-
-                <input type="text" name="search" value="" >
-                <button  class="search_Btn" onClick="location.href=''">
-
-                    <!--                <input name="search" value="" type="submit">-->
-                    <!--                <button type="button" class="search_Btn" onClick="location.href=''">-->
-
+                <input name="search" value="" type="submit">
+                <button type="button" class="search_Btn" onClick="location.href=''">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </form>
         </div>
     </div>
+
+
     <div class="filter">
         <form method="post" class="filter_list">
             <div class="filter_box">
@@ -139,6 +131,7 @@
 <div class="allList">
     <a>전체 목록</a>
 </div>
+
 <div class="tableA">
     <div class="hospital_Left"> <!--flex를 줘서 div 큰 section을 나눈거다-->
         <!--       for each 문이 start-->
@@ -152,7 +145,7 @@
                     </div>
                     <div class="table_information_Left">
                         <div class="hospitalName_Left" th:text="${hoOdd.hospital}"></div>
-                        <!--        <div th:text="${hoOdd.reviewCount}"></div>-->
+                              <div th:text="${hoOdd.reviewCount}"></div>-->
                         <!--<td ><img class ="tes" th:src="${ho.image_information}"/></td>-->
                     </div>
                 </button>
@@ -177,38 +170,10 @@
                     </div>
                 </button>
             </form>
+
         </div>
     </div>
 </div>
-
-
-<!--<div class="container">
-    &lt;!&ndash;<button type="button" th:onclick="|location.href='@{/templates/hospital_information}'|">&ndash;&gt;
-    <table border="1px" class="hospital_Left" th:href="@{/templates/hospital_information}">
-        &lt;!&ndash;=> th:href="@{/templates/hospital_information}"버튼을 누르면 저기로 이동&ndash;&gt;
-        &lt;!&ndash;onclke 을 사용해서 하면 됨&ndash;&gt;
-        <tbody th:each="hoOdd : ${hospitial}">
-        <tr>
-            <td rowspan='3' class="img">&lt;!&ndash;th:if="${hoOdd/2} == 0"&ndash;&gt;
-                <div class="listBox_img">
-                    <div class="imgSize">
-                        <img th:src="${hoOdd.image_information}" alt="Z&V 로고">
-                    </div>
-                    <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
-                </div>
-            </td>
-            <td rowspan='3' class="img">&lt;!&ndash; th:if="${ hoOdd/2} != 0" &ndash;&gt;
-                <div class="listBox_img">
-                    <div class="imgSize">
-                        <img th:src="${hoOdd.image_information}" alt="Z&V 로고">
-                    </div>
-                    <div class="iconSize"><i class="fa-solid fa-heart"></i></div>
-                </div>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</div>-->
 </body>
 
 </html>

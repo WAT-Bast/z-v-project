@@ -41,16 +41,18 @@
 </div>
 
 <div class="hospital_title">
-    <form class="hospital_form_container" method="post" name="manager" action="/test">
+    <form class="hospital_form_container" method="post" name="manager" th:action="@{'/test/'+${hospital.hospital_number}}">
         <div class="hospital_title_name_box">
-            <input type="text" class="hospital_name_input" placeholder="병원명을 입력해주세요." name="Hosptial_name">
+            <input type="text" class="hospital_name_input" th:if="${hospital == null}"placeholder="병원명을 입력해주세요." name="Hosptial_name">
+            <input type="text" class="hospital_name_input"th:if="${hospital != null}" th:value="${hospital.hosptial_name}" placeholder="병원명을 입력해주세요." name="Hosptial_name">
         </div>
 
 
         <div class="hospital_img_box">
             <div class="hospital_img_container">
                 <!--                    <div class="imgPlus"><i class="fa-regular fa-images"></i></div>-->
-                <input type="text" name="image_information">
+                <input type="text" th:if="${hospital == null}"name="image_information">
+                <input type="text" th:if="${hospital != null}" th:value="${hospital.image_information}" name="image_information">
             </div>
         </div>
 
@@ -59,8 +61,8 @@
             <div class="Address_Box">
                 <div class="hospital_address">
                     <div class="address_icon"><i class="fa-solid fa-location-dot"></i></div>
-                    <input class="address_inputBox" id="hospitalAddress" type="text" placeholder="병원 주소를 입력해주세요."
-                           name="Hospital_address">
+                    <input class="address_inputBox hospitalAddress"   th:if="${hospital == null}" type="text" placeholder="병원 주소를 입력해주세요." name="Hospital_address">
+                    <input class="address_inputBox hospitalAddress"  th:if="${hospital != null}" th:value="${hospital.hospital_address}" type="text" placeholder="병원 주소를 입력해주세요." name="Hospital_address">
                     <!--                        <button type="submit" id="searchBtn"></button>-->
                 </div>
             </div>
@@ -71,37 +73,45 @@
                     <div class="monday_box">
                         <li class="monday_container">
                             <div class="monday"><strong>월</strong></div>
-                            <input class="Monday_title" type="text" placeholder="병원 운영시간을 적어주세요." name="TimeMon"></li>
+                            <input class="Monday_title" th:if="${hospital == null}" type="text" placeholder="병원 운영시간을 적어주세요." name="TimeMon">
+                            <input class="Monday_title" th:if="${hospital != null}" th:value="${hospital.timeMon}" type="text" placeholder="병원 운영시간을 적어주세요." name="TimeMon">
+                        </li>
                     </div>
                 </div>
                 <div class="week_box">
-                    <li class="week_container"><strong>화</strong><input class="week_title" type="text"
-                                                                        placeholder="병원 운영시간을 적어주세요." name="TimeTues">
+                    <li class="week_container"><strong>화</strong>
+                        <input class="week_title"  th:if="${hospital == null}" type="text" placeholder="병원 운영시간을 적어주세요." name="TimeTues">
+                        <input class="week_title" th:if="${hospital != null}" th:value="${hospital.timeTues}" type="text" placeholder="병원 운영시간을 적어주세요." name="TimeTues">
                     </li>
                 </div>
                 <div class="week_box">
-                    <li class="week_container"><strong>수</strong><input class="week_title" type="text"
-                                                                        placeholder="병원 운영시간을 적어주세요." name="TimeWednes">
+                    <li class="week_container"><strong>수</strong>
+                        <input class="week_title" type="text" th:if="${hospital == null}" placeholder="병원 운영시간을 적어주세요." name="TimeWednes">
+                        <input class="week_title" type="text" th:if="${hospital != null}" th:value="${hospital.timeWednes}" placeholder="병원 운영시간을 적어주세요." name="TimeWednes">
                     </li>
                 </div>
                 <div class="week_box">
-                    <li class="week_container"><strong>목</strong><input class="week_title" type="text"
-                                                                        placeholder="병원 운영시간을 적어주세요." name="TimeThurs">
+                    <li class="week_container"><strong>목</strong>
+                        <input class="week_title" type="text" th:if="${hospital == null}" placeholder="병원 운영시간을 적어주세요." name="TimeThurs">
+                        <input class="week_title" type="text" th:if="${hospital != null}" th:value="${hospital.timeThurs}" placeholder="병원 운영시간을 적어주세요." name="TimeThurs">
                     </li>
                 </div>
                 <div class="week_box">
-                    <li class="week_container"><strong>금</strong><input class="week_title" type="text"
-                                                                        placeholder="병원 운영시간을 적어주세요." name="TimeFri">
+                    <li class="week_container"><strong>금</strong>
+                        <input class="week_title" type="text" th:if="${hospital == null}" placeholder="병원 운영시간을 적어주세요." name="TimeFri">
+                        <input class="week_title" type="text" th:if="${hospital != null}" th:value="${hospital.timeFri}" placeholder="병원 운영시간을 적어주세요." name="TimeFri">
                     </li>
                 </div>
                 <div class="week_box">
-                    <li class="week_container"><strong>토</strong><input class="week_title" type="text"
-                                                                        placeholder="병원 운영시간을 적어주세요." name="TimeSatur">
+                    <li class="week_container"><strong>토</strong>
+                        <input class="week_title" type="text" th:if="${hospital == null}" placeholder="병원 운영시간을 적어주세요." name="TimeSatur">
+                        <input class="week_title" type="text" th:if="${hospital != null}" th:value="${hospital.timeSatur}"placeholder="병원 운영시간을 적어주세요." name="TimeSatur">
                     </li>
                 </div>
                 <div class="week_box">
-                    <li class="week_container"><strong>일</strong><input class="week_title" type="text"
-                                                                        placeholder="병원 운영시간을 적어주세요." name="TimeSun">
+                    <li class="week_container"><strong>일</strong>
+                        <input class="week_title" type="text"  th:if="${hospital == null}"placeholder="병원 운영시간을 적어주세요." name="TimeSun">
+                        <input class="week_title" type="text" th:if="${hospital != null}" th:value="${hospital.timeSun}"placeholder="병원 운영시간을 적어주세요." name="TimeSun">
                     </li>
                 </div>
             </div>
@@ -109,7 +119,8 @@
                 <div class="hospital_phoneNumber">
                     <div class="phoneNumberBox">
                         <div class="phoneNumber_icon"><i class="fa-solid fa-phone"></i></div>
-                        <input class="phoneNumberBox" type="tel" placeholder="병원 전화번호를 적어주세요." name="Tell">
+                        <input class="phoneNumberBox" type="tel" th:if="${hospital == null}" placeholder="병원 전화번호를 적어주세요." name="Tell">
+                        <input class="phoneNumberBox" type="tel" th:if="${hospital != null}" th:value="${hospital.tell}"placeholder="병원 전화번호를 적어주세요." name="Tell">
                     </div>
                 </div>
             </div>
@@ -117,7 +128,8 @@
             <div class="hospital_link">
                 <div class="link_Box">
                     <div class="link_icon"><i class="fa-solid fa-house"></i></div>
-                    <input class="link_urlBox" type="url" placeholder="병원의 홈페이지 주소를 적어주세요." name="site">
+                    <input class="link_urlBox" type="url"  th:if="${hospital == null}"placeholder="병원의 홈페이지 주소를 적어주세요." name="site">
+                    <input class="link_urlBox" type="url"  th:if="${hospital != null}" th:value="${hospital.site}"placeholder="병원의 홈페이지 주소를 적어주세요." name="site">
                 </div>
             </div>
 
@@ -125,8 +137,10 @@
         <div class="shop_box">
             <div class="shop_title">shop</div>
             <div class="shop_radioBtn">
-                <input class="shop_radioBtn_text" type="radio" checked="checked" value="yes" name="Shop_number"/> Yes
-                <input class="shop_radioBtn_text" type="radio" value="no" name="Shop_number"/> No
+                <input class="shop_radioBtn_text" th:if="${hospital == null}" type="radio" checked="checked" value="yes" name="Shop_number"/> Yes
+                <input class="shop_radioBtn_text" th:if="${hospital != null}" th:value="${hospital.shop_number}" type="radio" checked="checked" value="yes" name="Shop_number"/> Yes
+                <input class="shop_radioBtn_text" type="radio" th:if="${hospital == null}" value="no" name="Shop_number"/> No
+                <input class="shop_radioBtn_text" type="radio"  th:if="${hospital != null}" th:value="${hospital.shop_number}" value="no" name="Shop_number"/> No
             </div>
         </div>
 
@@ -213,21 +227,27 @@
                 <input type="checkbox" name="hospital_Area">햄스터
                 <input type="checkbox" name="hospital_Area">기타 -->
 
-                <div class="locationBox">
-                    <div class="locationTitle">위치 [위도, 경도를 입력하세요]</div>
-                    <div class="locationBox_list">
-                        <p>위도 : <input type="text" name="locationLatitude"></p>
-                        <p>경도 : <input type="text" name="locationlongitude"></p>
-                    </div>
+            <div class="locationBox">
+                <div class="locationTitle">위치 [위도, 경도를 입력하세요]</div>
+                <div class="locationBox_list">
+                <p>위도 : <input type="text"  th:if="${hospital == null}"  name="locationLatitude"></p>
+                <p>위도 : <input type="text"  th:if="${hospital != null}" th:value="${hospital.locationLatitude}" name="locationLatitude"></p>
+                <p>경도 : <input type="text" th:if="${hospital == null}"  name="locationlongitude"></p>
+                <p>경도 : <input type="text" th:if="${hospital != null}" th:value="${hospital.locationlongitude}" name="locationlongitude"></p>
                 </div>
+            </div>
 
-                <div class="finishBtn_Box">
-                    <input class="finishBtn" type="submit" value="등록하기" id="subBTN">
+            <div class="finishBtn_Box" th:if="${hospital == null}">
+                <input class="finishBtn subBTN"  th:if="${hospital == null}" type="submit" value="등록하기" >
+            </div>
+                <div class="finishBtn_Box" th:if="${hospital != null}">
+                    <input class="finishBtn subBTN"    type="submit" value="수정하기">
                 </div>
-            </div>
-            </div>
-            <br>
-    </form>
+        </div>
+        <br>
+
+        </div>
+    </form></form>
 
 </div>
 
