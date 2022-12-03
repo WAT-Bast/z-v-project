@@ -10,6 +10,7 @@ body {
 }
 
 .join_navbar_icon {
+    text-decoration-line: none;
     width: 20px;
     display: flex;
     padding-left: 25px;

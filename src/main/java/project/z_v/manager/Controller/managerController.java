@@ -89,7 +89,7 @@ public class managerController {
     }
 
 
-    @GetMapping("/hospitial-list")
+    @GetMapping("/hospital-list")
     public String hospitialList(Model model) {
         List<managerEntity> managerEntityList = managerRepository.findAll();
         List<ManagerResponseDto> managerResponseDtos = new ArrayList<>();
