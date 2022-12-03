@@ -7,29 +7,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
 </head>
 <body>
-<div class="main_bar_container">
-    <div class="main_bar">
-        <a href="" class="home">
-            <img src="/img/융프로고.png" alt="Z&V 로고">
-            <div class="home_str">Z&V</div>
-        </a>
-        <div class = "logout_delete_or_update_container">
-            <div class ="logout_container">
-                <form action="" method="post" class="manager_form">
-                    <i class="fa-solid fa-heart"></i>
-                    <button class="navyBtn" onClick="location.href=''" type="submit">로그아웃</button>
-                </form>
-            </div>
-            <div class ="delete_container" th:if="${isAdmin == true}">
-                <form th:action="@{'/hospital/delete/' + ${manager.hospital_number}}" method="post" class="manager_form">
-                    <button class="navyBtn"  type="submit">삭제</button>
-                </form>
-            </div>
-            <div class ="update_container" th:if="${isAdmin == true}">
-                <form th:action="@{'/hospital/' + ${manager.hospital_number}}" method="get" class="manager_form">
-                    <button class="navyBtn" onClick="location.href=''" type="submit">수정</button>
-                </form>
-            </div>
+<!-- navbar -->
+<div class="main_bar">
+    <a th:href="@{/main}" class="home">
+        <img src="../img/융프로고.png" alt="Z&V 로고">
+        <!--        <div th:if="${session.user != null}">됨</div>-->
+        <!--        <div th:if="${session.user == null}">asdasd</div>-->
+        <div class="home_str">Z&V</div>
+    </a>
+    <div id="button_id">
+        <div>
+            <form action="/login">
+                <div th:if="${session.user == null}">
+                    <button value="로그인" type="submit">login</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <form method="get" action="/logout">
+                <div th:if="${session.user != null}">
+                    <button value="로그아웃">logout</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <form method="get" action="/manager">
+                <div th:if="${adminTrue == true}">
+                    <button value="관리자">admin</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -225,6 +231,15 @@
             </div>
         </div>
     </form>
+    <footer>
+        <section id="contact" class="section">
+            <div class="contact__rights">
+                <div>개인정보처리방침 | 침해행위금지 | 개인정보공시</div>
+                <br>
+                <div>페이지 제작 : 누구보다 빛나조</div>
+            </div>
+        </section>
+    </footer>
 </div>
 
 

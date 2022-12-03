@@ -9,7 +9,6 @@ body{
     justify-content: space-between;
     height: 60px;
 }
-
 .home {
     margin-left: 10px;
     margin-top: 10px;
@@ -103,10 +102,26 @@ body{
     margin-left: 10px;
     width: 130px;
     height: 30px;
+    border-radius: 10px;
     border-color: black;
     border-width: 2px;
 
 }
+
+.Area_list {
+    margin-right: 50px;
+    text-align: center;
+}
+
+.District_list {
+    margin-right: 40px;
+    text-align: center;
+}
+
+.Options_list {
+    text-align: center;
+}
+
 /* poster */
 .poster img{
     margin-bottom: 5%;
@@ -191,6 +206,11 @@ body{
     background-color: white;
     height: 450px;
 
+}
+.like_List img {
+    margin: 28px 0px 5px 0px;
+    width: 210px;
+    height: 210px;
 }
 .go_button{
     margin-top: 10px;
@@ -327,4 +347,17 @@ body{
 
 #button_id {
     display: flex;
+}
+
+/* Contact */
+#contact {
+    margin-top: 70px;
+    background-color: gray;
+    height: 200px;
+}
+
+.contact__rights {
+    color: white;
+    text-align: center;
+    padding-top: 80px;
 }

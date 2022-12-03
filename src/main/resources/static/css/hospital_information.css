@@ -1,6 +1,6 @@
 body{
     margin: 0px;
-    height: 400vh;
+    /*height: 400vh;*/
 }
 
 input:disabled {
@@ -481,4 +481,17 @@ input:disabled {
 
 .monday_box {
     padding-top: 5px;
+}
+
+/* Contact */
+#contact {
+    margin-top: 70px;
+    background-color: gray;
+    height: 200px;
+}
+
+.contact__rights {
+    color: white;
+    text-align: center;
+    padding-top: 80px;
 }
