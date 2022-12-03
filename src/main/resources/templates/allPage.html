@@ -38,9 +38,9 @@
 <div class="allPage_contents">
     <div class="Search">
         <div class="Search_text">
-            <form action="" method="post">
-                <input name="search" value="" type="submit">
-                <button type="button" class="search_Btn" onClick="location.href=''">
+            <form method="get" th:action="@{/hospital-list}" >
+                <input type = "text" name="keyword"/>
+                <button class="search_Btn" type="submit">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </form>
