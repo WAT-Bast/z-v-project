@@ -1,6 +1,7 @@
 package project.z_v.manager.Controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -12,11 +13,14 @@ import project.z_v.manager.dto.managerDto;
 import project.z_v.manager.entity.managerEntity;
 import project.z_v.manager.repository.managerRepository;
 import project.z_v.reviewDB.Review;
+import project.z_v.reviewDB.dto.HospitalReviewResponse;
 import project.z_v.reviewDB.dto.ReviewRequestDto;
 import project.z_v.reviewDB.repository.ReviewRepository;
 
 import javax.servlet.http.HttpSession;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -101,11 +105,22 @@ public class managerController {
         managerEntity managerEntity = managerRepository.findById(id).orElse(null);
         model.addAttribute("manager", managerEntity);
         User user = (User) session.getAttribute("user");
+        if(user == null) {
+            model.addAttribute("message", "로그인을 하셔야됩니다.");
+        }
         if(user != null && user.isAdmin() == true) {
             model.addAttribute("isAdmin",true);
         }else {
             model.addAttribute("isAdmin",false);
         }
+        List<Review> reviewList = reviewRepository.findAllByManagerEntity(managerEntity);
+        List<HospitalReviewResponse.ReviewResponse> reviewResponses = new ArrayList<>();
+        for (Review review : reviewList) {
+            String localDateTime = review.getCreatedAt().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+            reviewResponses.add(new HospitalReviewResponse.ReviewResponse(review.getReview_number(),review.getReviewMessage(),localDateTime,review.getUser()));
+
+        }
+        model.addAttribute("reviewList",reviewResponses);
         return "hospital_information";
     }
 
@@ -123,6 +138,10 @@ public class managerController {
             List<Review> reviewList = reviewRepository.findAllByManagerEntity(managerEntity);
             if(reviewList.size() > 0) {
                 for (Review review : reviewList) {
+                    if(review.getGrade() == null) {
+                        continue;
+                    }
+
                     grade += review.getGrade();
                 }
             }
@@ -177,8 +196,20 @@ public class managerController {
     @PostMapping("{id}")
     public String review(@PathVariable Long id, ReviewRequestDto reviewRequestDto, Model model) {
         managerEntity managerEntity = managerRepository.findById(id).orElse(null);
-        Review review = reviewRepository.save(new Review(reviewRequestDto.getGrade(), reviewRequestDto.getReviewContent(), managerEntity));
-        model.addAttribute("review", review);
+        User user = (User) session.getAttribute("user");
+        if(user == null) {
+            model.addAttribute("message", "로그인을 하셔야됩니다.");
+            return "redirect:/test/" + managerEntity.getHospital_number();
+        }
+        reviewRepository.save(new Review(reviewRequestDto.getGrade(), reviewRequestDto.getReviewContent(), managerEntity, user));
+        List<Review> reviewList = reviewRepository.findAllByManagerEntity(managerEntity);
+        List<HospitalReviewResponse.ReviewResponse> reviewResponses = new ArrayList<>();
+        for (Review review : reviewList) {
+            String localDateTime = review.getCreatedAt().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+            reviewResponses.add(new HospitalReviewResponse.ReviewResponse(review.getReview_number(),review.getReviewMessage(),localDateTime,review.getUser()));
+        }
+        model.addAttribute("manager", managerEntity);
+        model.addAttribute("reviewList", reviewResponses);
         return "hospital_information";
     }
 

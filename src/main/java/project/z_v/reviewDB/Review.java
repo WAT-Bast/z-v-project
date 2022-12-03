@@ -1,14 +1,13 @@
 package project.z_v.reviewDB;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import project.z_v.BaseEntity;
+import project.z_v.UserDB.User;
 import project.z_v.manager.entity.managerEntity;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -20,16 +19,20 @@ public class Review extends BaseEntity {
     @Id
     private Long Review_number;
     private Double Grade;
-    private String Review_message;
+    private String reviewMessage;
     @ManyToOne(fetch = FetchType.LAZY)
     private managerEntity managerEntity;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
 
 /*    @ManyToOne(fetch = FetchType.LAZY) => 회원
     private Users Users;*/
 
-    public Review(Double grade, String review_message, project.z_v.manager.entity.managerEntity managerEntity) {
+    public Review(Double grade, String reviewMessage, project.z_v.manager.entity.managerEntity managerEntity, User user) {
         Grade = grade;
-        Review_message = review_message;
+        this.reviewMessage = reviewMessage;
         this.managerEntity = managerEntity;
+        this.user = user;
     }
 }
