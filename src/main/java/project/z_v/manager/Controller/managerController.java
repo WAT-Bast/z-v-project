@@ -112,9 +112,22 @@ public class managerController {
     // 병원 전체 보기
 
    @GetMapping("/hospital-list")
-    public String hospitialList(Model model) {
+    public String hospitalList(@RequestParam(value = "keyword", required = false) String keyword,Model model) {
+       List<managerEntity> managerEntityList = managerRepository.manager(keyword);
+       List<ManagerResponseDto> managerResponseDtos = new ArrayList<>();
+       for (managerEntity managerEntity : managerEntityList) {
+           double grade = 0.0;
+           List<Review> reviewList = reviewRepository.findAllByManagerEntity(managerEntity);
+           if(reviewList.size() > 0) {
+               for (Review review : reviewList) {
+                   grade += review.getGrade();
+               }
+           }
+           ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHospital_number(),managerEntity.getHosptial_name(), grade/reviewList.size(), reviewList.size(), managerEntity.getImage_information());
+           managerResponseDtos.add(managerResponseDto);
+       }
 
-        model.addAttribute("hospitial", managerResponseDtos());
+        model.addAttribute("hospitial", managerResponseDtos);
         return "allPage";
     }
 
