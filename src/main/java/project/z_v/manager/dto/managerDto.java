@@ -1,7 +1,11 @@
 package project.z_v.manager.dto;
 
+import lombok.Getter;
+import lombok.Setter;
 import project.z_v.manager.entity.managerEntity;
 
+@Getter
+@Setter
 public class managerDto {
     private Long Hospital_number;
 
@@ -31,7 +35,9 @@ public class managerDto {
 
     private String TimeSun;
 
-    private String Area_address;
+    private String representativeAddress;
+
+    private String areaAddress;
 
     private String image_information;
 
@@ -41,6 +47,8 @@ public class managerDto {
 
     public managerEntity toManagerEntity() {
         return new managerEntity(Hospital_number, Hosptial_name, Hospital_address, Tell, site, Shop_number,
+
+                <!--aDay, TimeMon, TimeTues, TimeWednes, TimeThurs, TimeFri, TimeSatur, TimeSun, representativeAddress+areaAddress, image_information);-->
                 aDay, TimeMon, TimeTues, TimeWednes, TimeThurs, TimeFri, TimeSatur, TimeSun,Area_address, image_information
                 ,locationLatitude, locationlongitude);
     }
@@ -61,6 +69,7 @@ public class managerDto {
 
     public void setLocationlongitude(double locationlongitude) {
         this.locationlongitude = locationlongitude;
+
     }
 
     public Long getHospital_number() {
@@ -175,12 +184,12 @@ public class managerDto {
         TimeSun = timeSun;
     }
 
-    public String getArea_address() {
-        return Area_address;
+    public String getAreaAddress() {
+        return areaAddress;
     }
 
-    public void setArea_address(String area_address) {
-        Area_address = area_address;
+    public void setAreaAddress(String areaAddress) {
+        this.areaAddress = areaAddress;
     }
 
     public String getImage_information() {

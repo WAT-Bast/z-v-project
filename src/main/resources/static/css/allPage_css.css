@@ -31,7 +31,7 @@ body{
     font-size: large;
 }
 
-.allPage_bar button {
+.allPage_bar a {
     margin-top: 15px;
     margin-right: 10px;
     height: 30px;
