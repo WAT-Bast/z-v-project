@@ -241,15 +241,16 @@ body{
 /*병원이름*/
 .table_information_Left {
     padding-bottom: 70px;
-}
-
-.hospitalName_Left {
     margin-left: 10px;
+    margin-bottom: 1px;
     font-weight: 700;
     font-size: 16px;
-    margin-bottom: 1px;
-}
+    text-align: left;
 
+}
+.hospitalName_Left {
+    margin-bottom: 10px;
+}
 
 
 
@@ -302,11 +303,26 @@ body{
 /*병원이름*/
 .table_information_Right {
     padding-bottom: 70px;
+    margin-left: 10px;
+    margin-bottom: 1px;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: left;
 }
 
 .hospitalName_Right {
-    margin-left: 10px;
-    font-weight: 700;
-    font-size: 16px;
-    margin-bottom: 1px;
+    margin-bottom: 10px;
+}
+
+/* Contact */
+#contact {
+    margin-top: 70px;
+    background-color: gray;
+    height: 200px;
+}
+
+.contact__rights {
+    color: white;
+    text-align: center;
+    padding-top: 80px;
 }

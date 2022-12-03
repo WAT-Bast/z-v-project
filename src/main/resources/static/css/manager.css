@@ -578,3 +578,16 @@ body{
 .map_class {
     padding-left: 320px;
 }
+
+/* Contact */
+#contact {
+    margin-top: 70px;
+    background-color: gray;
+    height: 200px;
+}
+
+.contact__rights {
+    color: white;
+    text-align: center;
+    padding-top: 80px;
+}
