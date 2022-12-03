@@ -111,21 +111,24 @@ public class managerController {
 
     // 병원 전체 보기
 
-   @GetMapping("/hospital-list")
+    @GetMapping("/hospital-list")
     public String hospitalList(@RequestParam(value = "keyword", required = false) String keyword,Model model) {
-       List<managerEntity> managerEntityList = managerRepository.manager(keyword);
-       List<ManagerResponseDto> managerResponseDtos = new ArrayList<>();
-       for (managerEntity managerEntity : managerEntityList) {
-           double grade = 0.0;
-           List<Review> reviewList = reviewRepository.findAllByManagerEntity(managerEntity);
-           if(reviewList.size() > 0) {
-               for (Review review : reviewList) {
-                   grade += review.getGrade();
-               }
-           }
-           ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHospital_number(),managerEntity.getHosptial_name(), grade/reviewList.size(), reviewList.size(), managerEntity.getImage_information());
-           managerResponseDtos.add(managerResponseDto);
-       }
+        if(keyword == null) {
+            keyword="";
+        }
+        List<managerEntity> managerEntityList = managerRepository.manager(keyword);
+        List<ManagerResponseDto> managerResponseDtos = new ArrayList<>();
+        for (managerEntity managerEntity : managerEntityList) {
+            double grade = 0.0;
+            List<Review> reviewList = reviewRepository.findAllByManagerEntity(managerEntity);
+            if(reviewList.size() > 0) {
+                for (Review review : reviewList) {
+                    grade += review.getGrade();
+                }
+            }
+            ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHospital_number(),managerEntity.getHosptial_name(), grade/reviewList.size(), reviewList.size(), managerEntity.getImage_information());
+            managerResponseDtos.add(managerResponseDto);
+        }
 
         model.addAttribute("hospitial", managerResponseDtos);
         return "allPage";
@@ -164,9 +167,9 @@ public class managerController {
     //병원 정보 수정할 수 있게 해당 페이지에 들어가주는 api
     @GetMapping("/hospital/{id}")
     public String updateBeforeView(@PathVariable Long id, Model model) {
-            managerEntity managerEntity = managerRepository.findById(id).orElse(null);
-            model.addAttribute("hospital", managerEntity);
-            return "Manager";
+        managerEntity managerEntity = managerRepository.findById(id).orElse(null);
+        model.addAttribute("hospital", managerEntity);
+        return "Manager";
     }
 
 
