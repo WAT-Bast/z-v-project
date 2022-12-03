@@ -204,11 +204,12 @@
         </div>
     </form>
 
-    <form class="review_star_container">
+    <form class="review_star_container" method="post" th:action="'/'+${manager.hospital_number}">
         <div class="review_comment">
             <div class="review_comment_Box">
-                <div class="review_name">레오맘</div>
-                <input type="text" class="comment" placeholder="리뷰를 작성해주세요.">
+                <div th:if="${session.user != null}" th:text="${session.user.user_name}" class="review_name"></div>
+                <input th:if="${message == null}" type="text" class="comment" name="reviewContent" placeholder="리뷰를 작성해주세요.">
+                <div th:if="${message != null}" th:text="${message}"></div>
             </div>
 
             <div class="user_review_Box">
@@ -221,13 +222,22 @@
                         <input type="radio" name="reviewStar1" value="5" id="review5"><label for="review5">★</label>
                     </div>
                 </div>
-                <div class="review_comment_container"><input type="submit" class="review_comment_btn" value="등록하기"></div>
+                <div class="review_comment_container">
+                    <input th:if="${message == null}"type="submit" class="review_comment_btn" value="등록하기">
+                </div>
 
             </div>
 
+
+        </div>
+        <div th:each="review : ${reviewList}">
+            <div th:text="${review.user.user_name}"></div>
+            <div th:text="${review.reviewContent}"></div>
+            <div th:text="${review.reviewCreateAt}"></div>
         </div>
 
     </form>
+
 </div>
 
 
