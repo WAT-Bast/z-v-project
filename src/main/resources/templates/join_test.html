@@ -5,29 +5,6 @@
     <link href="../css/join.css" rel="stylesheet" type="text/css">
     <title></title>
 </head>
-<script th:inline="javascript">
-    function checkJoin() {
-        if(document.joinForm.user_ID.value == "") {
-            alert("아이디를 입력해주세요.");
-            document.joinForm.userID.focus();
-            return false;
-        } else if(document.joinForm.user_name.value == ""){
-            alert("이름을 입력해주세요.");
-            document.joinForm.user_name.focus();
-            return false;
-        } else if(document.joinForm.user_PW.value == ""){
-            alert("비밀번호를 입력해주세요.");
-            document.joinForm.user_PW.focus();
-            return false;
-        }else if(document.joinForm.user_email.value == ""){
-            alert("이메일을 입력해주세요.");
-            document.joinForm.user_email.focus();
-            return false;
-        }
-        checkJoin.submit();
-    }
-
-</script>
 <body>
 <div>
     <div class="join_navbar">
