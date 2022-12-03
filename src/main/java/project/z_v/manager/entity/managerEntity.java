@@ -61,12 +61,12 @@ import javax.persistence.*;
         private String TimeSun;
 
         @Column
-        private String Area_address;
+        private String areaAddress;
 
         @Column
         private String image_information;
 
-        public managerEntity(Long hospital_number, String hosptial_name, String hospital_address, String tell, String site, boolean shop_number, boolean aDay, String timeMon, String timeTues, String timeWednes, String timeThurs, String timeFri, String timeSatur, String timeSun, String area_address, String image_information) {
+        public managerEntity(Long hospital_number, String hosptial_name, String hospital_address, String tell, String site, boolean shop_number, boolean aDay, String timeMon, String timeTues, String timeWednes, String timeThurs, String timeFri, String timeSatur, String timeSun, String areaAddress, String image_information) {
             Hospital_number = hospital_number;
             Hosptial_name = hosptial_name;
             Hospital_address = hospital_address;
@@ -81,7 +81,7 @@ import javax.persistence.*;
             TimeFri = timeFri;
             TimeSatur = timeSatur;
             TimeSun = timeSun;
-            Area_address = area_address;
+            this.areaAddress = areaAddress;
             this.image_information = image_information;
         }
 

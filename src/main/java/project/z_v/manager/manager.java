@@ -1,7 +1,5 @@
 package project.z_v.manager;
 
-import org.w3c.dom.Text;
-
 import javax.persistence.*;
 @Entity
 public class manager {
@@ -36,13 +34,13 @@ public class manager {
 
     private String TimeSun;
 
-    private String Area_address;
+    private String areaAddress;
 
     private String image_information;
 
     public manager() {}
 
-    public manager(Long hospital_number, String hosptial_name, String hospital_address, String tell, String site, boolean shop_number, boolean aDay, String timeMon, String timeTues, String timeWednes, String timeThurs, String timeFri, String timeSatur, String timeSun, String area_address, String image_information) {
+    public manager(Long hospital_number, String hosptial_name, String hospital_address, String tell, String site, boolean shop_number, boolean aDay, String timeMon, String timeTues, String timeWednes, String timeThurs, String timeFri, String timeSatur, String timeSun, String areaAddress, String image_information) {
         Hospital_number = hospital_number;
         Hosptial_name = hosptial_name;
         Hospital_address = hospital_address;
@@ -57,7 +55,7 @@ public class manager {
         TimeFri = timeFri;
         TimeSatur = timeSatur;
         TimeSun = timeSun;
-        Area_address = area_address;
+        this.areaAddress = areaAddress;
         this.image_information = image_information;
     }
 
@@ -173,12 +171,12 @@ public class manager {
         this.aDay = aDay;
     }
 
-    public String getArea_address() {
-        return Area_address;
+    public String getAreaAddress() {
+        return areaAddress;
     }
 
-    public void setArea_address(String area_address) {
-        Area_address = area_address;
+    public void setAreaAddress(String areaAddress) {
+        this.areaAddress = areaAddress;
     }
 
     public String getImage_information() {
