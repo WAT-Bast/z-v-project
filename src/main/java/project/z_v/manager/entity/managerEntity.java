@@ -72,7 +72,7 @@ public class managerEntity {
     @Column
     private double locationlongitude;
 
-    public managerEntity(Long hospital_number, String hosptial_name, String hospital_address, String tell, String site, boolean shop_number, boolean aDay, String timeMon, String timeTues, String timeWednes, String timeThurs, String timeFri, String timeSatur, String timeSun, String areaAddress, String image_information) {
+    public managerEntity(Long hospital_number, String hosptial_name, String hospital_address, String tell, String site, boolean shop_number, boolean aDay, String timeMon, String timeTues, String timeWednes, String timeThurs, String timeFri, String timeSatur, String timeSun, String areaAddress, String image_information,double locationLatitude,double locationlongitude) {
 
         Hospital_number = hospital_number;
         Hosptial_name = hosptial_name;
