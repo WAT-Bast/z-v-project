@@ -50,6 +50,27 @@ public class managerDto {
                 aDay, TimeMon, TimeTues, TimeWednes, TimeThurs, TimeFri, TimeSatur, TimeSun, representativeAddress+areaAddress, image_information,locationLatitude,locationlongitude);
     }
 
+    public void updateManager(managerEntity managerEntity) {
+        managerEntity.setADay(aDay);
+        managerEntity.setAreaAddress(areaAddress);
+        managerEntity.setHospital_address(getHospital_address());
+        managerEntity.setHosptial_name(getHosptial_name());
+        managerEntity.setImage_information(image_information);
+        managerEntity.setTell(getTell());
+        managerEntity.setLocationlongitude(locationlongitude);
+        managerEntity.setLocationLatitude(locationLatitude);
+        managerEntity.setShop_number(Shop_number);
+        managerEntity.setTimeFri(TimeFri);
+        managerEntity.setTimeMon(TimeMon);
+        managerEntity.setTimeTues(TimeTues);
+        managerEntity.setTimeWednes(TimeWednes);
+        managerEntity.setTimeThurs(TimeThurs);
+        managerEntity.setTimeSatur(TimeSatur);
+        managerEntity.setTimeSun(TimeSun);
+        managerEntity.setSite(site);
+
+    }
+
 
 
     public double getLocationLatitude() {
