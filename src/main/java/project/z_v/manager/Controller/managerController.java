@@ -213,4 +213,44 @@ public class managerController {
         return "hospital_information";
     }
 
+
+    @GetMapping("/hospital/filter")
+    public String hospitalFilter(@RequestParam(value = "areaOne", required = false) String areaOne,
+                                 @RequestParam(value = "areaTwo", required = false)String  areaTwo,
+                                 @RequestParam(value = "storeOption",required = false) String storeOption,
+                                 Model model) {
+        String area = "";
+        List<managerEntity> managerEntities = null;
+        if(areaOne !=null && areaTwo !=null) {
+            area = areaOne + " " + areaTwo;
+            if(storeOption.equals("aDay")) {
+                managerEntities = managerRepository.filterADayManager(area);
+            }else if(storeOption.equals("shop")) {
+                managerEntities = managerRepository.filterShopManager(area);
+            }else {
+                managerEntities = managerRepository.filterAllManager(area);
+            }
+        }
+        List<ManagerResponseDto> managerResponseDtos = new ArrayList<>();
+        for (managerEntity managerEntity : managerEntities) {
+            double grade = 0.0;
+            List<Review> reviewList = reviewRepository.findAllByManagerEntity(managerEntity);
+            if(reviewList.size() > 0) {
+                for (Review review : reviewList) {
+                    if(review.getGrade() == null) {
+                        continue;
+                    }
+
+                    grade += review.getGrade();
+                }
+            }
+            ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHospital_number(),managerEntity.getHosptial_name(), grade/reviewList.size(), reviewList.size(), managerEntity.getImage_information());
+            managerResponseDtos.add(managerResponseDto);
+        }
+
+        model.addAttribute("hospitial", managerResponseDtos);
+        return "allPage";
+
+    }
+
 }
