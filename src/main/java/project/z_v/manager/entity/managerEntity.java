@@ -2,6 +2,7 @@ package project.z_v.manager.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import project.z_v.reviewDB.Review;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Table(name = "manager")
@@ -71,6 +73,9 @@ public class managerEntity {
 
     @Column
     private double locationlongitude;
+
+    @OneToMany(mappedBy = "managerEntity", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Review> reviews;
 
     public managerEntity(Long hospital_number, String hosptial_name, String hospital_address, String tell, String site, boolean shop_number, boolean aDay, String timeMon, String timeTues, String timeWednes, String timeThurs, String timeFri, String timeSatur, String timeSun, String areaAddress, String image_information,double locationLatitude,double locationlongitude) {
 
