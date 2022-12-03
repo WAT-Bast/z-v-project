@@ -13,17 +13,31 @@
             <img src="/img/융프로고.png" alt="Z&V 로고">
             <div class="home_str">Z&V</div>
         </a>
-        <form action="" method="post" class="manager_form">
-            <i class="fa-solid fa-heart"></i>
-            <button class="navyBtn" onClick="location.href=''" type="submit">로그아웃</button>
-        </form>
+        <div class = "logout_delete_or_update_container">
+            <div class ="logout_container">
+                <form action="" method="post" class="manager_form">
+                    <i class="fa-solid fa-heart"></i>
+                    <button class="navyBtn" onClick="location.href=''" type="submit">로그아웃</button>
+                </form>
+            </div>
+            <div class ="delete_container" th:if="${isAdmin == true}">
+                <form th:action="@{'/hospital/delete/' + ${manager.hospital_number}}" method="post" class="manager_form">
+                    <button class="navyBtn"  type="submit">삭제</button>
+                </form>
+            </div>
+            <div class ="update_container" th:if="${isAdmin == true}">
+                <form th:action="@{'/hospital/' + ${manager.hospital_number}}" method="get" class="manager_form">
+                    <button class="navyBtn" onClick="location.href=''" type="submit">수정</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 
 <div class="hospital_title">
     <form class="hospital_form_container" method="post" name="manager">
         <div class="hospital_title_name_box">
-<!--            <input type="text" class="hospital_name_input" th:text="${manager.Hosptial_name}" disabled/>-->
+            <!--            <input type="text" class="hospital_name_input" th:text="${manager.Hosptial_name}" disabled/>-->
             <p class="hospital_name_input" th:text="${manager.Hosptial_name}"></p>
         </div>
 
@@ -39,7 +53,7 @@
             <div class="Address_Box">
                 <div class="hospital_address">
                     <div class="address_icon"><i class="fa-solid fa-location-dot"></i></div>
-<!--                    <input class="address_inputBox" type="text" value="인천광역시 남동구 소래역남로16번길 75(논현동) 더타워상가 C동 1층 24시 소래동물병원" disabled/>-->
+                    <!--                    <input class="address_inputBox" type="text" value="인천광역시 남동구 소래역남로16번길 75(논현동) 더타워상가 C동 1층 24시 소래동물병원" disabled/>-->
                     <p class="address_inputBox" id="addressDB" th:text="${manager.hospital_address}"></p>
                 </div>
             </div>
@@ -48,9 +62,9 @@
                 <div class="test">
                     <div class="time_icon"><i class="fa-regular fa-clock"></i></div>
                     <div class="monday_box"><li class="monday_container"><div class="monday"><strong>월</strong></div><p class="week_title" th:text="${manager.TimeMon}"></p></li></div>
-<!--                    <input class="Monday_title" type="text" value="월요일 휴무" disabled/>-->
+                    <!--                    <input class="Monday_title" type="text" value="월요일 휴무" disabled/>-->
                 </div>
-<!--                <div class="week_box"><li class="week_container"><strong>화</strong><input class="week_title" type="text" value="10:00 - 22:00" disabled/></li></div>-->
+                <!--                <div class="week_box"><li class="week_container"><strong>화</strong><input class="week_title" type="text" value="10:00 - 22:00" disabled/></li></div>-->
                 <div class="week_box"><li class="week_container"><strong>화</strong><p class="week_title" th:text="${manager.TimeTues}"></p></li></div>
                 <div class="week_box"><li class="week_container"><strong>수</strong><p class="week_title" th:text="${manager.TimeWednes}"></p></li></div>
                 <div class="week_box"><li class="week_container"><strong>목</strong><p class="week_title" th:text="${manager.TimeThurs}"></p></li></div>
@@ -63,8 +77,8 @@
                 <div class="hospital_phoneNumber">
                     <div class="phoneNumberBox">
                         <div class="phoneNumber_icon"><i class="fa-solid fa-phone"></i></div>
-<!--                        <input class="phoneNumberBox" type="tel" value="032-438-3227" disabled/>-->
-<!--                        <p class="phoneNumberBox">010-8322-7256</p>-->
+                        <!--                        <input class="phoneNumberBox" type="tel" value="032-438-3227" disabled/>-->
+                        <!--                        <p class="phoneNumberBox">010-8322-7256</p>-->
                         <a class="phoneNumberBox" th:text="${manager.tell}"></a>
                     </div>
                 </div>
@@ -73,7 +87,7 @@
             <div class="hospital_link">
                 <div class="link_Box">
                     <div class="link_icon"><i class="fa-solid fa-house"></i></div>
-<!--                    <input class="link_urlBox" type="url" value="http://soraeah.co.kr/index.php" disabled/>-->
+                    <!--                    <input class="link_urlBox" type="url" value="http://soraeah.co.kr/index.php" disabled/>-->
                     <a class="link_urlBox" th:href="${manager.site}"><div th:text="${manager.site}" class="siteTextStyle"></div></a>
                 </div>
             </div>

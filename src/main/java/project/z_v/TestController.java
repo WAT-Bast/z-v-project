@@ -1,29 +1,17 @@
 package project.z_v;
 
 
-import com.mysql.cj.xdevapi.Session;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
-import org.springframework.http.HttpRequest;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 
-
-import org.springframework.boot.context.annotation.UserConfigurations;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import project.LoginDto;
 import project.z_v.UserDB.User;
 import project.z_v.UserDB.repository.UserRepository;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
