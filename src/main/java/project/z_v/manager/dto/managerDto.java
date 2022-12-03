@@ -196,4 +196,10 @@ public class managerDto {
     public void setImage_information(String image_information) {
         this.image_information = image_information;
     }
+
+
+
+
+
+
 }

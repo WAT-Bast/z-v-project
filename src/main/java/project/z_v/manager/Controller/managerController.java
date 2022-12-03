@@ -1,5 +1,6 @@
 package project.z_v.manager.Controller;
 
+import jdk.jfr.Category;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
@@ -11,10 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 //<!--import org.springframework.web.bind.annotation.*;-->
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import project.z_v.UserDB.User;
 import project.z_v.UserDB.repository.UserRepository;
 import project.z_v.manager.dto.ManagerResponseDto;
@@ -41,6 +39,7 @@ public class managerController {
     private final ReviewRepository reviewRepository;
     private final UserRepository userRepository;
     private final HttpSession session;
+
 
     @GetMapping("/manager")
     public String managerPage() {
@@ -89,7 +88,7 @@ public class managerController {
     }
 
 
-    @GetMapping("/hospitial-list")
+    @GetMapping("/hospital-list")
     public String hospitialList(Model model) {
         List<managerEntity> managerEntityList = managerRepository.findAll();
         List<ManagerResponseDto> managerResponseDtos = new ArrayList<>();
@@ -161,4 +160,23 @@ public class managerController {
             return new ArrayList<>(store.values());
         }
     }*/
+
+//@GetMapping("/{category_name}")
+//    public String readAllPost(@PathVariable(required = false) String category_name,
+//                              @RequestParam(required = false, defaultValue = "0", value = "page") int pageNo,
+//                              @RequestParam(required = false, defaultValue = "id", value = "orderby") String orderCriteria,
+//                              Pageable pageable,
+//                              @AuthenticationPrincipal UserAdapter user,
+//                              Model model){
+//
+//    page<managerDto.managerDto> postPageList = managerDto.getPageList(pageable, pageNo, category_name, orderCriteria);
+//
+//    model.addAttribute("postPageList", postPageList);
+//
+//    return "community/post-all";
+//
+//}
+
+
+
 }

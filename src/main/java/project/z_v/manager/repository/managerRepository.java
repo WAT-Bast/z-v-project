@@ -1,5 +1,6 @@
 package project.z_v.manager.repository;
 
+import org.hibernate.Criteria;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
