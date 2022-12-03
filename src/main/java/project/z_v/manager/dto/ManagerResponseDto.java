@@ -7,6 +7,7 @@ import lombok.Getter;
 @Getter
 public class ManagerResponseDto {
 
+    private Long hospital_number;
     private String hospital;
     private double grade;
     private int reviewCount;
