@@ -6,50 +6,15 @@ body{
 input:disabled {
     background-color: white;
 }
-
+#button_id {
+    display: flex;
+}
 /* navbar */
 .main_bar {
     background-color: rgb(217,231,251);
     display: flex;
     justify-content: space-between;
     height: 60px;
-}
-
-.manager_form i {
-    color: gray;
-    font-size: x-large;
-    opacity: 0.5;
-}
-
-.watchlist {}
-.title_box{
-    background-color: white;
-    padding-top: 50px;
-    height: 90px;
-}
-.title {
-    /* margin-top: 50px; */
-    border-style: solid none;
-    border-width: 5px;
-    border-color: rgb(217, 231, 251);
-    display: flex;
-    height: 55px;
-    justify-content: space-around;
-    /* margin-bottom: 20px; */
-    background-color: white;
-}
-
-.title_str {
-    font-size: 30px;
-    font-weight: bolder;
-    margin-top: auto;
-    margin-bottom: auto;
-    padding-left: 150px;
-    color: gray;
-}
-
-.a {
-    width: 300px;
 }
 
 .home {
@@ -71,7 +36,6 @@ input:disabled {
     font-weight: bolder;
     font-size: large;
 }
-
 .main_bar button {
     margin-top: 15px;
     margin-right: 10px;
@@ -81,6 +45,7 @@ input:disabled {
     background-color: white;
     font-weight: bold;
 }
+
 
 .hospital_name_input {
     /*background-color: #77adff;*/

@@ -10,11 +10,13 @@ body {
 }
 
 .login_navbar_icon {
+    text-decoration-line: none;
     display: flex;
     align-items: center;
     /*background-color: aqua;*/
     width: 20px;
     margin-left: 10px;
+
 }
 
 .login_navbar_title {
