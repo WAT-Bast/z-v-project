@@ -1,7 +1,10 @@
 package project.z_v.reviewDB.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.springframework.format.annotation.DateTimeFormat;
+import project.z_v.UserDB.User;
 import project.z_v.manager.dto.managerDto;
 
 import java.time.LocalDateTime;
@@ -18,9 +21,9 @@ public class HospitalReviewResponse {
     @AllArgsConstructor
     @Getter
     public static class ReviewResponse {
-        private Long Review_number;
-        private Double Grade;
-        private String Review_message;
-        private LocalDateTime Review_create_day;
+        private Long reviewNumber;
+        private String reviewContent;
+        private String reviewCreateAt;
+        private User user;
     }
 }
