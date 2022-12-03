@@ -51,10 +51,10 @@
 
 
     <div class="filter">
-        <form method="post" class="filter_list">
+        <form method="get" action="/hospital/filter" class="filter_list">
             <div class="filter_box">
                 <div>지역</div>
-                <select class="Area_list" name="Area" onchange="areaList(this)">
+                <select class="Area_list" name="areaOne" onchange="areaList(this)">
                     <option>시/도 선택</option>
                     <option value="서울">서울</option>
                     <option value="경기">경기</option>
@@ -69,7 +69,7 @@
             </div>
             <div class="filter_box">
                 <div>구</div>
-                <select class="District_list" name="Area" id="state">
+                <select class="District_list" name="areaTwo" id="state">
                     <option>군/구 선택</option>
                 </select>
             </div>
@@ -124,11 +124,13 @@
 
             <div class="filter_box">
                 <div>옵션</div>
-                <select class="Options_list" name="Area">
-                    <option value="">샵</option>
-                    <option value="">24시</option>
+                <select class="Options_list" name="storeOption">
+                    <option value="all">전체</option>
+                    <option value="shop">샵</option>
+                    <option value="aDay">24시</option>
                 </select>
             </div>
+            <button type="submit" >검색</button>
         </form>
     </div>
     <div class="allList">

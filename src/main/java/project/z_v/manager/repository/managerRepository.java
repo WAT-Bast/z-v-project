@@ -16,4 +16,11 @@ public interface managerRepository extends JpaRepository<managerEntity, Long> {
     @Query("select me from managerEntity me where me.Hosptial_name like %:keyword%")
     List<managerEntity> manager(@Param("keyword") String keyword);
 
+    @Query("select me from managerEntity me where me.Hospital_address like %:area% and me.Shop_number = true")
+    List<managerEntity> filterShopManager(@Param("area") String area);
+    @Query("select me from managerEntity me where me.Hospital_address like %:area% and me.aDay = true")
+    List<managerEntity> filterADayManager(@Param("area") String area);
+    @Query("select me from managerEntity me where me.Hospital_address like %:area% ")
+    List<managerEntity> filterAllManager(@Param("area") String area);
+
 }
