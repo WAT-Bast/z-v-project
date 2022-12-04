@@ -337,7 +337,7 @@ input:disabled {
 /*}*/
 
 .score {
-    /*background-color: pink;*/
+    !*background-color: pink;*!
     display: flex;
     justify-content: center;
     font-size: xxx-large;
@@ -353,10 +353,10 @@ input:disabled {
 }
 
 #canvas {
-    /*background-color: pink;*/
+    !*background-color: pink;*!
     margin-top: 50px;
     margin-left: 20%;
-}
+}*/
 
 .hospital_form_container input[type=radio] {
     display: none;
@@ -406,12 +406,14 @@ input:disabled {
     /*text-align: center;*/
 }
 
+/*
 .review_score_container {
-    /*background-color: pink;*/
+    !*background-color: pink;*!
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 30px;
 }
+*/
 
 .comment {
     width: 700px;
@@ -439,6 +441,7 @@ input:disabled {
 /*    display: none;*/
 /*}*/
 
+
 .review_score_container2 label {
     font-size: 1.5em;
     color: transparent;
@@ -455,16 +458,16 @@ input:disabled {
 
 .review_score_container2 input[type=radio]:checked ~ label {
     text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
-}
+}*/
 
-.ScoreBox2 {
-    /*background-color: bisque;*/
+/*.ScoreBox2 {
+    !*background-color: bisque;*!
     display: flex;
     align-items: center;
     margin-top: 20px;
     margin-bottom: 30px;
     margin-left: 5px;
-}
+}*/
 
 .user_review_Box {
     /*background-color: darksalmon;*/
@@ -516,4 +519,23 @@ input:disabled {
     color: white;
     text-align: center;
     padding-top: 80px;
+}
+
+.reviews {
+    margin-top: 10px;
+    margin-left: 350px;
+    margin-bottom: 10px;
+}
+.review_user_name{
+    font-weight: bolder;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.review_content{
+    width: 580px;
+}
+
+.review_comments{
+    display: flex;
 }
