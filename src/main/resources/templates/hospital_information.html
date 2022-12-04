@@ -17,7 +17,8 @@
             <div class="logout_container">
                 <form action="" method="post" class="manager_form">
 <!--                    <i class="fa-solid fa-heart"></i>-->
-                    <button class="navyBtn" onClick="location.href=''" type="submit">logout</button>
+                    <button class="navyBtn" th:if="${session.user != null}" onClick="location.href=''" type="submit">logout</button>
+                    <button class="navyBtn" th:if="${session.user == null}" onClick="location.href=''" type="submit">login</button>
                 </form>
             </div>
             <div class="delete_container" th:if="${isAdmin == true}">
