@@ -21,8 +21,9 @@
                 </form>
             </div>
             <div class="delete_container" th:if="${isAdmin == true}">
-                <form th:action="@{'/hospital/delete/' + ${manager.hospital_number}}" method="post"
-                      class="manager_form">
+
+                <form th:action="@{'/hospital/delete/' + ${manager.hospital_number}}" method="post" class="manager_form">
+                
                     <button class="navyBtn" type="submit">삭제</button>
                 </form>
             </div>
@@ -67,9 +68,8 @@
                             <div class="monday"><strong>월</strong></div>
                             <p class="week_title" th:text="${manager.TimeMon}"></p></li>
                     </div>
-                    <!--                    <input class="Monday_title" type="text" value="월요일 휴무" disabled/>-->
+
                 </div>
-                <!--                <div class="week_box"><li class="week_container"><strong>화</strong><input class="week_title" type="text" value="10:00 - 22:00" disabled/></li></div>-->
                 <div class="week_box">
                     <li class="week_container"><strong>화</strong>
                         <p class="week_title" th:text="${manager.TimeTues}"></p></li>
@@ -156,77 +156,6 @@
             </div>
 
 
-            <!--<div class="review">
-
-                <div style="width:35%;">
-                    <canvas id="canvas"></canvas>
-                </div>
-
-                <script>
-                    new Chart(document.getElementById("canvas"), {
-                        type: 'horizontalBar',
-                        data: {
-                            labels: ['5', '4', '3', '2', '1'],
-                            datasets: [{
-                                // label: '테스트 데이터셋',
-                                data: [10, 3, 30, 23, 10, 5, 15, 25, 2, 4, 1, 13, 52, 23],
-                                borderColor: "rgba(255, 201, 14, 1)",
-                                backgroundColor: "rgba(255, 201, 14, 0.5)",
-                                fill: false,
-                            }]
-                        },
-                        options: {
-                            legend: {
-                                display: false
-                            },
-                            responsive: true,
-                            title: {
-                                display: false,
-                                text: '막대 차트 테스트'
-                            },
-                            tooltips: {
-                                mode: 'index',
-                                intersect: true,
-                            },
-                            hover: {
-                                mode: 'nearest',
-                                intersect: false
-                            },
-                            scales: {
-                                xAxes: [{
-                                    display: false,
-                                    scaleLabel: {
-                                        display: false,
-
-                                    },
-                                }],
-                                yAxes: [{
-                                    display: true,
-                                    ticks: {
-                                        autoSkip: true,
-                                    },
-                                    scaleLabel: {
-                                        display: true,
-                                    }
-                                }]
-                            }
-                        }
-                    });
-
-                </script>
-
-                <div class="review_score_container">
-                    <div class="ScoreBox">
-                        <div class="score">4.9</div>
-                        <input type="radio" name="reviewStar1" value="5" id="rate1"><label for="rate1" checked>★</label>
-                        <input type="radio" name="reviewStar1" value="5" id="rate2"><label for="rate2">★</label>
-                        <input type="radio" name="reviewStar1" value="5" id="rate3"><label for="rate3">★</label>
-                        <input type="radio" name="reviewStar1" value="5" id="rate4"><label for="rate4">★</label>
-                        <input type="radio" name="reviewStar1" value="5" id="rate5"><label for="rate5">★</label>
-                        <div class="review_score">리뷰 1017개</div>
-                    </div>
-                </div>
-            </div>-->
         </div>
     </form>
 
@@ -240,33 +169,21 @@
             </div>
 
             <div class="user_review_Box">
-<!--                <div class="review_score_container2">
-                    <div class="ScoreBox2">
-                        <input type="radio" name="reviewStar1" value="5" id="review1"><label for="review1">★</label>
-                        <input type="radio" name="reviewStar1" value="5" id="review2"><label for="review2">★</label>
-                        <input type="radio" name="reviewStar1" value="5" id="review3"><label for="review3">★</label>
-                        <input type="radio" name="reviewStar1" value="5" id="review4"><label for="review4">★</label>
-                        <input type="radio" name="reviewStar1" value="5" id="review5"><label for="review5">★</label>
-                    </div>
-                </div>-->
+
                 <div class="review_comment_container">
-                    <input th:if="${message == null}" type="submit" class="review_comment_btn" value="등록하기">
+                    <input th:if="${message == null}"type="submit" class="review_comment_btn" value="등록하기">
                 </div>
-
+                </div>
             </div>
-
-
-        </div>
-        <div class="reviews" th:each="review : ${reviewList}">
+            <div class="reviews" th:each="review : ${reviewList}">
                 <div class="review_user_name" th:text="${review.user.user_name}"></div>
-            <div class="review_comments">
-                <div class="review_content" th:text="${review.reviewContent}"></div>
-            <div class="review_CreateAt" th:text="${review.reviewCreateAt}"></div>
+                <div class="review_comments">
+                    <div class="review_content" th:text="${review.reviewContent}"></div>
+                    <div class="review_CreateAt" th:text="${review.reviewCreateAt}"></div>
+                </div>
             </div>
-        </div>
-
     </form>
-    <!--footer-->
+
     <footer>
         <section id="contact" class="section">
             <div class="contact__rights">
