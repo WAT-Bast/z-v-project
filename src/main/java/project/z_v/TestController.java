@@ -36,28 +36,6 @@ public class TestController {
         return "join_test";
     }
 
-    @GetMapping("/duplicate/id")
-    public void duplicateId(@RequestParam String loginId, Model model) {
-        if (userRepository.existsByUserId(loginId)) {
-            model.addAttribute("isDuplicate", true);
-        }
-    }
-
-    /**
-     * @PostMapping("/join") public String join(@RequestParam String userId,@ModelAttribute User user, Model model) {
-     * if(userRepository.existsByUserId(userId)) {
-     * model.addAttribute("userId", userId);
-     * model.addAttribute("duplicate", true);
-     * return "join_test";
-     * }else if(!userRepository.existsByUserId(userId)) {
-     * model.addAttribute("userId", userId);
-     * model.addAttribute("duplicate", false);
-     * return "join_test";
-     * }
-     * userRepository.save(user);
-     * return "main";
-     * }
-     **/
 
 
     @PostMapping("/join")

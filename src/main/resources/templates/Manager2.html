@@ -42,7 +42,7 @@
 
 <div class="hospital_title">
     <form class="hospital_form_container" method="post" name="manager"
-          th:action="@{/test}"
+          th:action="@{'/test/' + ${hospital.hospital_number}}"
     >
         <div class="hospital_title_name_box">
             <input type="text" class="hospital_name_input" th:if="${hospital == null}" placeholder="병원명을 입력해주세요."

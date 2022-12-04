@@ -36,12 +36,8 @@ public class managerController {
     @GetMapping("/manager")
     public String managerPage() {
         User user = (User) session.getAttribute("user");
-        if (user == null) {
+        if (user == null || user.isAdmin() == false) {
             return "redirect:/main";
-        } else {
-            if (user.isAdmin() == false) {
-                return "redirect:/main";
-            }
         }
         return "Manager";
 
@@ -59,17 +55,13 @@ public class managerController {
     // 글 동록 api or 글 수정 api
     @PostMapping("/test/{id}")
     @Transactional
-    public String manager(@PathVariable(required = false) Long id,managerDto dto, Model model) {
+    public String managerUpdate(@PathVariable(required = false) Long id,managerDto dto, Model model) {
 
         User user = (User) session.getAttribute("user");
-        if (user == null) {
+        if (user == null || user.isAdmin() == false) {
             return "redirect:/main";
         } else {
-            if (user.isAdmin() == false) {
-                return "redirect:/main";
-            }else {
                 model.addAttribute("isAdmin",true);
-            }
         }
         if(id != null) {
             managerEntity managerEntity = managerRepository.findById(id).orElseThrow(null);
@@ -96,6 +88,31 @@ public class managerController {
         managerEntity entity = dto.toManagerEntity();
         managerRepository.save(entity);
         model.addAttribute("manager", entity);
+        return "allPage";
+    }
+
+    @PostMapping("/test")
+    @Transactional
+    public String managerCreate(managerDto dto, Model model) {
+
+        User user = (User) session.getAttribute("user");
+        if (user == null) {
+            return "redirect:/main";
+        } else {
+            if (user.isAdmin() == false) {
+                return "redirect:/main";
+            }else {
+                model.addAttribute("isAdmin",true);
+            }
+        }
+
+        managerEntity entity = dto.toManagerEntity();
+        managerRepository.save(entity);
+        model.addAttribute("hospitial", managerResponseDtos());
+        List<ManagerResponseDto> managerResponseDtos = managerResponseDtos();
+        for (ManagerResponseDto managerResponseDto : managerResponseDtos) {
+            System.out.println("managerResponseDto.getHospital() = " + managerResponseDto.getHospital());
+        }
         return "allPage";
     }
 
@@ -138,11 +155,10 @@ public class managerController {
             List<Review> reviewList = reviewRepository.findAllByManagerEntity(managerEntity);
             if(reviewList.size() > 0) {
                 for (Review review : reviewList) {
-                    if(review.getGrade() == null) {
-                        continue;
+                    if(review.getGrade() != null) {
+                        grade += review.getGrade();
                     }
 
-                    grade += review.getGrade();
                 }
             }
             ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHospital_number(),managerEntity.getHosptial_name(), grade/reviewList.size(), reviewList.size(), managerEntity.getImage_information());
@@ -161,7 +177,10 @@ public class managerController {
             double grade = 0.0;
             List<Review> reviewList = reviewRepository.findAllByManagerEntity(managerEntity);
             for (Review review : reviewList) {
-                grade += review.getGrade();
+                if(review.getGrade() != null) {
+
+                    grade += review.getGrade();
+                }
             }
 
             /*<!-- ManagerResponseDto managerResponseDto = new ManagerResponseDto(managerEntity.getHospital_number(), managerEntity.getHosptial_name(), grade / reviewList.size(), reviewList.size(), managerEntity.getImage_information());-->*/
@@ -176,6 +195,7 @@ public class managerController {
     }
 
     // 병원 정보 삭제하기
+    //CASCADE
     @PostMapping("/hospital/delete/{id}")
     public String deleteHospital(@PathVariable Long id, Model model) {
         managerRepository.deleteById(id);
@@ -188,7 +208,7 @@ public class managerController {
     public String updateBeforeView(@PathVariable Long id, Model model) {
         managerEntity managerEntity = managerRepository.findById(id).orElse(null);
         model.addAttribute("hospital", managerEntity);
-        return "Manager";
+        return "Manager2";
     }
 
 
@@ -200,6 +220,9 @@ public class managerController {
         if(user == null) {
             model.addAttribute("message", "로그인을 하셔야됩니다.");
             return "redirect:/test/" + managerEntity.getHospital_number();
+        }
+        if(user.isAdmin() == true ){
+            model.addAttribute("isAdmin", true);
         }
         reviewRepository.save(new Review(reviewRequestDto.getGrade(), reviewRequestDto.getReviewContent(), managerEntity, user));
         List<Review> reviewList = reviewRepository.findAllByManagerEntity(managerEntity);
