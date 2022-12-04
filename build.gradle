@@ -26,6 +26,9 @@ dependencies {
     //implementation "org.apache.tomcat.embed:tomcat-embed-jasper"
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.projectlombok:lombok'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 }
 
 

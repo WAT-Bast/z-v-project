@@ -255,14 +255,18 @@
                 <input type="checkbox" name="hospital_Area">고양이
                 <input type="checkbox" name="hospital_Area">햄스터
                 <input type="checkbox" name="hospital_Area">기타
+            </div>
+        </div>
+        <br>
 
                 <div class="locationBox">
                     <div class="locationTitle">위치 [위도, 경도를 입력하세요]</div>
                     <div class="locationBox_list">
-                        <p>위도 : <input type="text" th:if="${hospital == null}" name="locationLatitude"></p>
+<!--                        아래 주석처리 해둔 위도 경도를 풀면 수정 페이지로 넘어갔을때 위도 경도 텍스트가 중복으로 2개씩 나옴-->
+<!--                        <p>위도 : <input type="text" th:if="${hospital == null}" name="locationLatitude"></p>-->
                         <p>위도 : <input type="text" th:if="${hospital != null}" th:value="${hospital.locationLatitude}"
                                        name="locationLatitude"></p>
-                        <p>경도 : <input type="text" th:if="${hospital == null}" name="locationlongitude"></p>
+<!--                        <p>경도 : <input type="text" th:if="${hospital == null}" name="locationlongitude"></p>-->
                         <p>경도 : <input type="text" th:if="${hospital != null}" th:value="${hospital.locationlongitude}"
                                        name="locationlongitude"></p>
                     </div>
@@ -274,10 +278,7 @@
                 <div class="finishBtn_Box" th:if="${hospital != null}">
                     <input class="finishBtn subBTN" type="submit" value="수정하기">
                 </div>
-            </div>
             <br>
-
-        </div>
     </form>
     </form>
     <footer>

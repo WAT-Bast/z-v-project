@@ -9,23 +9,23 @@
 <body>
 <div class="main_bar_container">
     <div class="main_bar">
-        <a href="" class="home">
+        <a th:href="@{/main}" class="home">
             <img src="/img/융프로고.png" alt="Z&V 로고">
             <div class="home_str">Z&V</div>
         </a>
-        <div class = "logout_delete_or_update_container">
-            <div class ="logout_container">
+        <div class="logout_delete_or_update_container">
+            <div class="logout_container">
                 <form action="" method="post" class="manager_form">
-                    <i class="fa-solid fa-heart"></i>
-                    <button class="navyBtn" onClick="location.href=''" type="submit">로그아웃</button>
+<!--                    <i class="fa-solid fa-heart"></i>-->
+                    <button class="navyBtn" onClick="location.href=''" type="submit">logout</button>
                 </form>
             </div>
-            <div class ="delete_container" th:if="${isAdmin == true}">
+            <div class="delete_container" th:if="${isAdmin == true}">
                 <form th:action="@{'/hospital/delete/' + ${manager.hospital_number}}" method="post" class="manager_form">
-                    <button class="navyBtn"  type="submit">삭제</button>
+                    <button class="navyBtn" type="submit">삭제</button>
                 </form>
             </div>
-            <div class ="update_container" th:if="${isAdmin == true}">
+            <div class="update_container" th:if="${isAdmin == true}">
                 <form th:action="@{'/hospital/' + ${manager.hospital_number}}" method="get" class="manager_form">
                     <button class="navyBtn" onClick="location.href=''" type="submit">수정</button>
                 </form>
@@ -61,16 +61,36 @@
             <div class="time_container">
                 <div class="test">
                     <div class="time_icon"><i class="fa-regular fa-clock"></i></div>
-                    <div class="monday_box"><li class="monday_container"><div class="monday"><strong>월</strong></div><p class="week_title" th:text="${manager.TimeMon}"></p></li></div>
-                    <!--                    <input class="Monday_title" type="text" value="월요일 휴무" disabled/>-->
+                    <div class="monday_box">
+                        <li class="monday_container">
+                            <div class="monday"><strong>월</strong></div>
+                            <p class="week_title" th:text="${manager.TimeMon}"></p></li>
+                    </div>
                 </div>
-                <!--                <div class="week_box"><li class="week_container"><strong>화</strong><input class="week_title" type="text" value="10:00 - 22:00" disabled/></li></div>-->
-                <div class="week_box"><li class="week_container"><strong>화</strong><p class="week_title" th:text="${manager.TimeTues}"></p></li></div>
-                <div class="week_box"><li class="week_container"><strong>수</strong><p class="week_title" th:text="${manager.TimeWednes}"></p></li></div>
-                <div class="week_box"><li class="week_container"><strong>목</strong><p class="week_title" th:text="${manager.TimeThurs}"></p></li></div>
-                <div class="week_box"><li class="week_container"><strong>금</strong><p class="week_title" th:text="${manager.TimeFri}"></p></li></div>
-                <div class="week_box"><li class="week_container"><strong>토</strong><p class="week_title" th:text="${manager.TimeSatur}"></p></li></div>
-                <div class="week_box"><li class="week_container"><strong>일</strong><p class="week_title" th:text="${manager.TimeSun}"></p></li></div>
+                <div class="week_box">
+                    <li class="week_container"><strong>화</strong>
+                        <p class="week_title" th:text="${manager.TimeTues}"></p></li>
+                </div>
+                <div class="week_box">
+                    <li class="week_container"><strong>수</strong>
+                        <p class="week_title" th:text="${manager.TimeWednes}"></p></li>
+                </div>
+                <div class="week_box">
+                    <li class="week_container"><strong>목</strong>
+                        <p class="week_title" th:text="${manager.TimeThurs}"></p></li>
+                </div>
+                <div class="week_box">
+                    <li class="week_container"><strong>금</strong>
+                        <p class="week_title" th:text="${manager.TimeFri}"></p></li>
+                </div>
+                <div class="week_box">
+                    <li class="week_container"><strong>토</strong>
+                        <p class="week_title" th:text="${manager.TimeSatur}"></p></li>
+                </div>
+                <div class="week_box">
+                    <li class="week_container"><strong>일</strong>
+                        <p class="week_title" th:text="${manager.TimeSun}"></p></li>
+                </div>
 
             </div>
             <div class="phoneNumber_container">
@@ -88,13 +108,16 @@
                 <div class="link_Box">
                     <div class="link_icon"><i class="fa-solid fa-house"></i></div>
                     <!--                    <input class="link_urlBox" type="url" value="http://soraeah.co.kr/index.php" disabled/>-->
-                    <a class="link_urlBox" th:href="${manager.site}"><div th:text="${manager.site}" class="siteTextStyle"></div></a>
+                    <a class="link_urlBox" th:href="${manager.site}">
+                        <div th:text="${manager.site}" class="siteTextStyle"></div>
+                    </a>
                 </div>
             </div>
         </div>
 
         <div id="map" style="width:60%;height:400px; margin-left:310px"></div>
-        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=82ae9863074c3e5fe237c9bb8fdcd654"></script>
+        <script type="text/javascript"
+                src="//dapi.kakao.com/v2/maps/sdk.js?appkey=82ae9863074c3e5fe237c9bb8fdcd654"></script>
         <script th:inline="javascript">
             let lateX = [[${manager.locationLatitude}]]
             let lateY = [[${manager.locationlongitude}]]
@@ -129,102 +152,42 @@
                 <h3 class="review_title">방문자 리뷰</h3>
             </div>
 
-
-            <div class="review">
-
-                <div style="width:35%;">
-                    <canvas id="canvas"></canvas>
-                </div>
-
-                <script>
-                    new Chart(document.getElementById("canvas"), {
-                        type: 'horizontalBar',
-                        data: {
-                            labels: ['5', '4', '3', '2', '1'],
-                            datasets: [{
-                                // label: '테스트 데이터셋',
-                                data: [10, 3, 30, 23, 10, 5, 15, 25, 2, 4, 1, 13, 52, 23],
-                                borderColor: "rgba(255, 201, 14, 1)",
-                                backgroundColor: "rgba(255, 201, 14, 0.5)",
-                                fill: false,
-                            }]
-                        },
-                        options: {
-                            legend: {
-                                display: false
-                            },
-                            responsive: true,
-                            title: {
-                                display: false,
-                                text: '막대 차트 테스트'
-                            },
-                            tooltips: {
-                                mode: 'index',
-                                intersect: true,
-                            },
-                            hover: {
-                                mode: 'nearest',
-                                intersect: false
-                            },
-                            scales: {
-                                xAxes: [{
-                                    display: false,
-                                    scaleLabel: {
-                                        display: false,
-
-                                    },
-                                }],
-                                yAxes: [{
-                                    display: true,
-                                    ticks: {
-                                        autoSkip: true,
-                                    },
-                                    scaleLabel: {
-                                        display: true,
-                                    }
-                                }]
-                            }
-                        }
-                    });
-
-                </script>
-
-                <div class="review_score_container">
-                    <div class="ScoreBox">
-                        <div class="score">4.9</div>
-                        <input type="radio" name="reviewStar1" value="5" id="rate1"><label for="rate1" checked>★</label>
-                        <input type="radio" name="reviewStar1" value="5" id="rate2"><label for="rate2">★</label>
-                        <input type="radio" name="reviewStar1" value="5" id="rate3"><label for="rate3">★</label>
-                        <input type="radio" name="reviewStar1" value="5" id="rate4"><label for="rate4">★</label>
-                        <input type="radio" name="reviewStar1" value="5" id="rate5"><label for="rate5">★</label>
-                        <div class="review_score">리뷰 1017개</div>
-                    </div>
-                </div>
-            </div>
         </div>
     </form>
 
-    <form class="review_star_container">
+    <form class="review_star_container" method="post" th:action="'/'+${manager.hospital_number}">
         <div class="review_comment">
             <div class="review_comment_Box">
-                <div class="review_name">레오맘</div>
-                <input type="text" class="comment" placeholder="리뷰를 작성해주세요.">
+                <div th:if="${session.user != null}" th:text="${session.user.user_name}" class="review_name"></div>
+                <input th:if="${message == null}" type="text" class="comment" name="reviewContent"
+                       placeholder="리뷰를 작성해주세요.">
+                <div th:if="${message != null}" th:text="${message}"></div>
             </div>
 
             <div class="user_review_Box">
-                <div class="review_score_container2">
-                    <div class="ScoreBox2">
-                        <input type="radio" name="reviewStar1" value="5" id="review1"><label for="review1">★</label>
-                        <input type="radio" name="reviewStar1" value="5" id="review2"><label for="review2">★</label>
-                        <input type="radio" name="reviewStar1" value="5" id="review3"><label for="review3">★</label>
-                        <input type="radio" name="reviewStar1" value="5" id="review4"><label for="review4">★</label>
-                        <input type="radio" name="reviewStar1" value="5" id="review5"><label for="review5">★</label>
-                    </div>
+                <div class="review_comment_container">
+                    <input th:if="${message == null}"type="submit" class="review_comment_btn" value="등록하기">
                 </div>
-                <div class="review_comment_container"><input type="submit" class="review_comment_btn" value="등록하기"></div>
+                </div>
             </div>
-        </div>
+            <div class="reviews" th:each="review : ${reviewList}">
+                <div class="review_user_name" th:text="${review.user.user_name}"></div>
+                <div class="review_comments">
+                    <div class="review_content" th:text="${review.reviewContent}"></div>
+                    <div class="review_CreateAt" th:text="${review.reviewCreateAt}"></div>
+                </div>
+            </div>
     </form>
+
+    <footer>
+        <section id="contact" class="section">
+            <div class="contact__rights">
+                <div>개인정보처리방침 | 침해행위금지 | 개인정보공시</div>
+                <br>
+                <div>페이지 제작 : 누구보다 빛나조</div>
+            </div>
+        </section>
+    </footer>
 </div>
 
 
