@@ -326,3 +326,12 @@ body{
     text-align: center;
     padding-top: 80px;
 }
+
+.searchBtn_main {
+    text-align: center;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 15px;
+    background-color: white;
+}
