@@ -1,6 +1,6 @@
 body{
     margin: 0px;
-    height: 250vh;
+    /*height: 250vh;*/
 }
 
 /* navbar */
@@ -80,7 +80,6 @@ body{
     padding: 180px;
     margin-top: 25px;
     width: 600px;
-
 }
 
 .hospital_img_container i {
@@ -500,7 +499,7 @@ body{
     margin-right: 20px;
     margin-bottom: 20px;
 }
-
+/*
 .hospital_area_box {
     display: flex;
     padding-left: 320px;
@@ -525,6 +524,46 @@ body{
     text-align: center;
     width: 100px;
     height: 25px;
+}
+*/
+
+.filter{
+    height: 45px;
+/*    margin-bottom: 30px;*/
+    display: flex;
+    padding-left: 320px;
+}
+
+.filter_list{
+    display: flex;
+    /*justify-content: center;*/
+}
+
+.filter_box{
+    display: flex;
+    /*align-items: center;*/
+}
+
+.filter_box div{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.filter_box select {
+    margin-left: 10px;
+    width: 130px;
+    height: 30px;
+    border-color: black;
+}
+
+.Area_list {
+    margin-right: 50px;
+    text-align: center;
+}
+
+.District_list {
+    margin-right: 40px;
+    text-align: center;
 }
 
 .animal_box {
@@ -556,6 +595,8 @@ body{
 .locationBox_list {
     margin-right: 20px;
     margin-top: 3px;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 
