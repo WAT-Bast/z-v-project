@@ -336,16 +336,16 @@ input:disabled {
 /*    width: 400px;*/
 /*}*/
 
-.score {
+/*.score {
     !*background-color: pink;*!
     display: flex;
     justify-content: center;
     font-size: xxx-large;
     font-weight: bolder;
     color: gray;
-}
+}*/
 
-.review_score {
+/*.review_score {
     display: flex;
     justify-content: center;
     margin-top: 10px;
@@ -356,7 +356,7 @@ input:disabled {
     !*background-color: pink;*!
     margin-top: 50px;
     margin-left: 20%;
-}*/
+}*!*/
 
 .hospital_form_container input[type=radio] {
     display: none;
@@ -442,7 +442,7 @@ input:disabled {
 /*}*/
 
 
-.review_score_container2 label {
+/*.review_score_container2 label {
     font-size: 1.5em;
     color: transparent;
     text-shadow: 0 0 0 #f0f0f0;
@@ -458,7 +458,7 @@ input:disabled {
 
 .review_score_container2 input[type=radio]:checked ~ label {
     text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
-}*/
+}*!*/
 
 /*.ScoreBox2 {
     !*background-color: bisque;*!

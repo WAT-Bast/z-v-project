@@ -207,8 +207,8 @@ body{
 }
 
 .listBox_img_Left {
-/*    width: 200px;
-    height: 150px;*/
+    /*    width: 200px;
+        height: 150px;*/
     position: relative;
 }
 
@@ -231,7 +231,7 @@ body{
     font-size: 25px;
     /*margin-left: 165px;*/
     top: 105px; left: 160px;
-/*    margin-top: 15px;*/
+    /*    margin-top: 15px;*/
 }
 
 .iconSize_Left:hover {
@@ -325,4 +325,13 @@ body{
     color: white;
     text-align: center;
     padding-top: 80px;
+}
+
+.searchBtn_main {
+    text-align: center;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 15px;
+    background-color: white;
 }
